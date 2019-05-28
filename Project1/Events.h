@@ -1,0 +1,19 @@
+#pragma once
+
+
+namespace sde {
+	enum Events {
+		EVENT_KEYDOWN = 10,
+		EVENT_KEYUP = 12,
+
+		EVENT_MOUSE_BUTTON_DOWN = 21,
+		EVENT_MOUSE_BUTTON_UP = 22,
+		EVENT_MOUSE_GAIN_FOCUS = 23,
+		EVENT_MOUSE_LOSE_FOCUS = 24,
+
+		EVENT_TIMER_EXPIRED = 30,
+
+		EVENT_APP_RESIZE = 41,
+		EVENT_APP_CLOSE = 42,
+	};
+}
