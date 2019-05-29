@@ -2,7 +2,7 @@
 
 
 namespace sde {
-	enum MessageButtons {
+	enum class MessageButtons : int {
 		MSGBOX_WARNING = 1,
 		MSGBOX_ERROR = 2,
 		MSGBOX_OK_CANCEL = 4,

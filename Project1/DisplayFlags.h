@@ -4,7 +4,7 @@
 
 
 namespace sde {
-	enum DisplayFlags {
+	enum class DisplayFlags : int {
 		DISPLAY_WINDOWED = 1 << 0,
 		DISPLAY_FULLSCREEN = 1 << 1,
 		DISPLAY_RESIZABLE = 1 << 4,

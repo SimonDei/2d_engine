@@ -6,11 +6,15 @@
 #include <string>
 #include <unordered_map>
 
+#include "NullException.h"
+#include "Disposable.h"
+
 
 namespace sde {
-	class Font {
+	class Font : public Disposable {
 		private:
-			std::unordered_map<std::string, ALLEGRO_FONT*> m_fonts;
+			ALLEGRO_FONT* m_font = nullptr;
+
 
 		public:
 			Font() = default;
@@ -18,6 +22,8 @@ namespace sde {
 
 			void load_font(const std::string& name, const std::string& path, int size);
 
-			const ALLEGRO_FONT& get_font(const std::string& name);
+			const ALLEGRO_FONT& get_font();
+
+			void dispose() override;
 	};
 }

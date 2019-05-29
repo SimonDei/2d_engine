@@ -3,7 +3,7 @@
 
 namespace sde {
 	void sde::MusicQueue::push_music(const Music& music) {
-		m_music_map.insert(std::make_pair(m_music_map.size(), sde_ref_to_ptr(Music, music)));
+		m_music_map.insert(std::make_pair(m_music_map.size(), std::make_shared<Music>(music)));
 	}
 
 	void MusicQueue::play() {
@@ -36,7 +36,7 @@ namespace sde {
 	}
 
 	void MusicQueue::update() {
-		if (!m_paused) {
+		if (!m_paused && m_playing_music->get_sample_instance() != nullptr) {
 			if (!al_get_sample_instance_playing(m_playing_music->get_sample_instance()) && m_playing_music->get_started()) {
 				m_playing_music->set_started(false);
 				m_playing_music = nullptr;
@@ -48,7 +48,7 @@ namespace sde {
 		}
 	}
 
-	const std::unordered_map<unsigned int, Music*>& MusicQueue::get_music_map() const {
+	const std::unordered_map<unsigned int, std::shared_ptr<Music>>& MusicQueue::get_music_map() const {
 		return m_music_map;
 	}
 

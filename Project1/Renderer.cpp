@@ -38,6 +38,10 @@ namespace sde {
 		al_draw_filled_rectangle(rectangle.get_x(), rectangle.get_y(), rectangle.get_width(), rectangle.get_height(), color.get_al_color());
 	}
 
+	void Renderer::draw_circle(int x, int y, int radius, int red, int green, int blue) {
+		al_draw_circle(x, y, radius, al_map_rgb(red, green, blue), m_thickness);
+	}
+
 	void Renderer::draw_circle(int x, int y, int radius, const Color3<unsigned char>& color) {
 		al_draw_circle(x, y, radius, color.get_al_color(), m_thickness);
 	}

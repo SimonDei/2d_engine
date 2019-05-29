@@ -3,12 +3,21 @@
 
 namespace sde {
 	void Font::load_font(const std::string& name, const std::string& path, int size) {
-		ALLEGRO_FONT* font = al_load_ttf_font(path.c_str(), size, 0);
-		m_fonts.insert(std::make_pair(name, std::move(font)));
+		if ((m_font = al_load_ttf_font(path.c_str(), size, 0)) == nullptr) {
+			throw NullException("Font at " + path + " does not exist.");
+		}
 	}
 
-	const ALLEGRO_FONT& Font::get_font(const std::string& name) {
-		return *m_fonts.at(name);
+	const ALLEGRO_FONT& Font::get_font() {
+		return *m_font;
+	}
+
+	void Font::dispose() {
+		if (m_font != nullptr && !m_disposed) {
+			al_destroy_font(m_font);
+			m_font = nullptr;
+			m_disposed = true;
+		}
 	}
 
 	Font::~Font() {

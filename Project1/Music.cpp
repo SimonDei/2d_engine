@@ -3,9 +3,12 @@
 
 namespace sde {
 	Music::Music(const std::string& path) {
-		m_sample = al_load_sample(path.c_str());
-		m_instance = al_create_sample_instance(m_sample);
-		al_attach_sample_instance_to_mixer(m_instance, al_get_default_mixer());
+		if ((m_sample = al_load_sample(path.c_str())) != nullptr) {
+			m_instance = al_create_sample_instance(m_sample);
+			al_attach_sample_instance_to_mixer(m_instance, al_get_default_mixer());
+		} else {
+			throw NullException("Sample at " + path + " does not exist.");
+		}
 	}
 
 	Music::Music(const Music& music) {
@@ -19,17 +22,11 @@ namespace sde {
 	}
 
 	ALLEGRO_SAMPLE* Music::get_sample() const {
-		if (m_sample != nullptr) {
-			return m_sample;
-		}
-		return nullptr;
+		return m_sample;
 	}
 
 	ALLEGRO_SAMPLE_INSTANCE* Music::get_sample_instance() const {
-		if (m_instance != nullptr) {
-			return m_instance;
-		}
-		return nullptr;
+		return m_instance;
 	}
 
 	void Music::set_started(bool started) {

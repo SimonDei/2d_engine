@@ -236,5 +236,8 @@
     <ClInclude Include="SubTexture.h">
       <Filter>Headerdateien\graphic\wrapper</Filter>
     </ClInclude>
+    <ClInclude Include="NullException.h">
+      <Filter>Headerdateien\core</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

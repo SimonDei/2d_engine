@@ -21,7 +21,7 @@ namespace sde {
 		m_width = m_texture->get_width();
 		m_height = m_texture->get_height();
 	}
-
+	
 	Sprite::Sprite(const std::string& path, float x, float y) {
 		m_texture = new Texture(path);
 		m_x = x;

@@ -47,6 +47,18 @@ namespace sde {
 		m_disposer.add_disposable(disposable);
 	}
 
+	void Core::set_mouse_visible(bool visible) {
+		if (visible) {
+			al_show_mouse_cursor(m_display.get_display());
+		} else {
+			al_hide_mouse_cursor(m_display.get_display());
+		}
+	}
+
+	void Core::set_mouse_grabbed(bool grabbed) const {
+		set_mouse_grabbed(grabbed);
+	}
+
 	bool Core::is_event_in_queue() {
 		m_has_event = al_wait_for_event_until(m_queue, &m_event, &m_timeout);
 		if (m_event.type == ALLEGRO_EVENT_DISPLAY_CLOSE) {
@@ -55,8 +67,8 @@ namespace sde {
 		return m_has_event;
 	}
 
-	int Core::get_keycode() const {
-		return m_event.keyboard.keycode;
+	const Keycode& Core::get_keycode() const {
+		return (Keycode) m_event.keyboard.keycode;
 	}
 
 	const Display& Core::get_display() const {
@@ -71,7 +83,7 @@ namespace sde {
 		return m_updater;
 	}
 
-	void Core::wait(int ms) {
+	void Core::wait(int ms) const {
 		std::this_thread::sleep_for(std::chrono::milliseconds(ms));
 	}
 

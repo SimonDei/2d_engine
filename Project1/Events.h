@@ -1,8 +1,10 @@
 #pragma once
 
+#include <allegro5/allegro.h>
+
 
 namespace sde {
-	enum Events {
+	enum class Event : ALLEGRO_EVENT_TYPE {
 		EVENT_KEYDOWN = 10,
 		EVENT_KEYUP = 12,
 

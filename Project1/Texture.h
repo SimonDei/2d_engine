@@ -4,12 +4,13 @@
 
 #include <string>
 
+#include "NullException.h"
 #include "Disposable.h"
 
 
 namespace sde {
 	class Texture : public Disposable {
-		private:
+		protected:
 			ALLEGRO_BITMAP* m_bitmap = nullptr;
 			float m_width = 0.0f;
 			float m_height = 0.0f;

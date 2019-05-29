@@ -6,6 +6,8 @@ namespace sde {
 		if ((m_bitmap = al_load_bitmap(path.c_str())) != nullptr) {
 			m_width = sde_cast(float, al_get_bitmap_width(m_bitmap));
 			m_height = sde_cast(float, al_get_bitmap_height(m_bitmap));
+		} else {
+			throw NullException("Texture at " + path + " does not exist.");
 		}
 	}
 
@@ -25,6 +27,8 @@ namespace sde {
 		if ((m_bitmap = al_load_bitmap(path.c_str())) != nullptr) {
 			m_width = sde_cast(float, al_get_bitmap_width(m_bitmap));
 			m_height = sde_cast(float, al_get_bitmap_height(m_bitmap));
+		} else {
+			throw NullException("Texture at " + path + " does not exist.");
 		}
 	}
 

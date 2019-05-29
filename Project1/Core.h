@@ -55,11 +55,14 @@ namespace sde {
 			void add_updateable(const Updateable& updateable);
 			void add_disposable(std::shared_ptr<Disposable> disposable);
 
+			void set_mouse_visible(bool visible);
+			void set_mouse_grabbed(bool grabbed) const;
+
 			inline bool is_running() const {
 				return m_running;
 			}
-			inline const ALLEGRO_EVENT_TYPE& get_event_type() const {
-				return m_event.type;
+			inline const Event& get_event_type() const {
+				return (Event) m_event.type;
 			}
 			inline void update() {
 				m_updater.update();
@@ -67,13 +70,13 @@ namespace sde {
 
 			bool is_event_in_queue();
 
-			int get_keycode() const;
+			const Keycode& get_keycode() const;
 
 			const Display& get_display() const;
 			const Disposer& get_disposer() const;
 			const Updater& get_updater() const;
 
-			void wait(int ms);
+			void wait(int ms) const;
 	
 			void close();
 	};

@@ -186,6 +186,7 @@
     <ClInclude Include="MessageReturn.h" />
     <ClInclude Include="Music.h" />
     <ClInclude Include="MusicQueue.h" />
+    <ClInclude Include="NullException.h" />
     <ClInclude Include="Rectangle.h" />
     <ClInclude Include="Renderer.h" />
     <ClInclude Include="Sprite.h" />

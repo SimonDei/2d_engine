@@ -2,7 +2,7 @@
 
 
 namespace sde {
-	enum FileAccess {
+	enum class FileAccess : int {
 		READ,
 		WRITE,
 		READ_WRITE

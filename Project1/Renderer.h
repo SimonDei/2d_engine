@@ -33,6 +33,7 @@ namespace sde {
 			void draw_filled_rectangle(const Rectangle<int>& rectangle, const Color3<unsigned char>& color);
 			void draw_filled_rectangle(const Rectangle<int>& rectangle, const Color4<unsigned char>& color);
 
+			void draw_circle(int x, int y, int radius, int red, int green, int blue);
 			void draw_circle(int x, int y, int radius, const Color3<unsigned char>& color);
 			void draw_circle(int x, int y, int radius, const Color4<unsigned char>& color);
 

@@ -6,6 +6,7 @@
 
 #include <string>
 
+#include "NullException.h"
 #include "Disposable.h"
 
 

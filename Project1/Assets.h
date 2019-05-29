@@ -27,11 +27,10 @@ namespace sde {
 			void load_texture(const std::string& name, const std::string& path);
 			
 			void load_texture_sheet(const std::string& name, const std::string& path);
-			void load_texture_sheet(const std::string& name, const std::string& path, float tile_width, float tile_height);
-
+			
 			const Music& get_music(const std::string& name) const;
 			const Texture& get_texture(const std::string& name) const;
-			const TextureSheet& get_texture_sheet(const std::string& name) const;
+			TextureSheet& get_texture_sheet(const std::string& name);
 
 			void dispose() override;
 	};

@@ -2,7 +2,7 @@
 
 
 namespace sde {
-	enum Keycode {
+	enum class Keycode : int {
 		KEYCODE_A = 1,
 		KEYCODE_B = 2,
 		KEYCODE_C = 3,

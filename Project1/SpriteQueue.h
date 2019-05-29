@@ -9,7 +9,8 @@
 namespace sde {
 	class SpriteQueue {
 		private:
-			std::unordered_map<unsigned int, Sprite*> m_sprite_map;
+			std::unordered_map<unsigned int, std::shared_ptr<Sprite>> m_sprite_map;
+
 
 		public:
 			SpriteQueue() = default;
@@ -18,6 +19,6 @@ namespace sde {
 			void push_sprite(const Sprite& sprite);
 			void push_sprite(const std::string& path, float x, float y);
 
-			const std::unordered_map<unsigned int, Sprite*>& get_sprite_map() const;
+			const std::unordered_map<unsigned int, std::shared_ptr<Sprite>>& get_sprite_map() const;
 	};
 }
