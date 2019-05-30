@@ -43,11 +43,7 @@ namespace sde {
 		m_updater.add_updateable(updateable);
 	}
 
-	void Core::add_disposable(std::shared_ptr<Disposable> disposable) {
-		m_disposer.add_disposable(disposable);
-	}
-
-	void Core::set_mouse_visible(bool visible) {
+	void Core::set_mouse_visible(bool visible) const {
 		if (visible) {
 			al_show_mouse_cursor(m_display.get_display());
 		} else {
@@ -56,7 +52,11 @@ namespace sde {
 	}
 
 	void Core::set_mouse_grabbed(bool grabbed) const {
-		set_mouse_grabbed(grabbed);
+		if (grabbed) {
+			al_grab_mouse(m_display.get_display());
+		} else {
+			al_ungrab_mouse();
+		}
 	}
 
 	bool Core::is_event_in_queue() {
@@ -68,7 +68,7 @@ namespace sde {
 	}
 
 	const Keycode& Core::get_keycode() const {
-		return (Keycode) m_event.keyboard.keycode;
+		return static_cast<Keycode>(m_event.keyboard.keycode);
 	}
 
 	const Display& Core::get_display() const {
@@ -93,6 +93,7 @@ namespace sde {
 
 	Core::~Core() {
 		m_disposer.dispose();
+		m_display.dispose();
 		al_destroy_event_queue(m_queue);
 	}
 }

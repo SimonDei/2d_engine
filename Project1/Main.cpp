@@ -6,6 +6,7 @@
 #include "Assets.h"
 #include "Sprite.h"
 #include "MusicQueue.h"
+#include "Math.h"
 
 
 int main() {
@@ -21,7 +22,13 @@ int main() {
 	assets.load_music("test1", "res/music.ogg");
 	assets.load_music("test2", "res/music2.ogg");
 	assets.load_texture_sheet("sheet1", "res/sheet.jpg");
-	core.add_disposable(std::make_shared<sde::Assets>(assets));
+	core.add_disposable<sde::Assets>(assets);
+
+	/*
+	bool rect_check = sde::math::collision_rect_rect(sde::Rectangle<int>(50, 50, 50, 50), sde::Rectangle<int>(25, 25, 100, 100));
+	bool rect_vec = sde::math::collision_rect_vector(50, 50, 100, 100, 60, 60);
+	bool circ_vec = sde::math::collision_circle_vector(50, 50, 50, 50, 50);
+	*/
 
 	sde::Sprite sprite(assets.get_texture_sheet("sheet1").get_texture_rect(75, 25, 25, 25), 50.0f, 50.0f, 90.0f);
 

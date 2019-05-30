@@ -29,10 +29,11 @@
 #include "Rectangle.h"
 #include "Vector2.h"
 #include "Vector3.h"
+#include "Circle.h"
 
 
 namespace sde {
-	class Core {
+	class Core : public Updateable {
 		private:
 			Display m_display;
 			ALLEGRO_EVENT_QUEUE* m_queue = nullptr;
@@ -53,18 +54,22 @@ namespace sde {
 			void create_display(unsigned int width, unsigned int height);
 
 			void add_updateable(const Updateable& updateable);
-			void add_disposable(std::shared_ptr<Disposable> disposable);
 
-			void set_mouse_visible(bool visible);
+			template<typename T>
+			void add_disposable(const T& disposable) {
+				m_disposer.add_disposable(std::make_shared<T>(disposable));
+			}
+
+			void set_mouse_visible(bool visible) const;
 			void set_mouse_grabbed(bool grabbed) const;
 
 			inline bool is_running() const {
 				return m_running;
 			}
 			inline const Event& get_event_type() const {
-				return (Event) m_event.type;
+				return static_cast<Event>(m_event.type);
 			}
-			inline void update() {
+			inline void update() override {
 				m_updater.update();
 			}
 

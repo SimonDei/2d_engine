@@ -2,6 +2,8 @@
 
 #include <iostream>
 
+#include "Vector2.h"
+
 
 namespace sde {
 	template<typename T>
@@ -11,6 +13,7 @@ namespace sde {
 			T m_y;
 			T m_width;
 			T m_height;
+
 
 		public:
 			Rectangle() = default;
@@ -53,6 +56,22 @@ namespace sde {
 				m_y = y;
 				m_width = width;
 				m_height = height;
+			}
+
+			bool intersects(const Rectangle<T>& other) {
+				if ((other.m_x <= m_x + m_width || other.m_x + other.m_width >= m_x) &&
+					(other.m_y <= m_y + m_height || other.m_y + other.m_height >= m_y)) {
+					return true;
+				}
+				return false;
+			}
+
+			bool contains(const Vector2<T>& other) {
+				if ((other.m_x >= m_x && other.m_x <= m_x + m_width) &&
+					(other.m_y >= m_y && other.m_y <= m_y + m_height)) {
+					return true;
+				}
+				return false;
 			}
 
 			const Rectangle<T>& get_rectangle() const {

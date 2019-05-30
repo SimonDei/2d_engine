@@ -7,50 +7,51 @@ namespace sde {
 	template<typename T>
 	class Vector2 {
 		private:
-			T m_val1;
-			T m_val2;
+			T m_x;
+			T m_y;
+
 
 		public:
 			Vector2() = default;
-			Vector2(T val1, T val2) {
-				m_val1 = val1;
-				m_val2 = val2;
+			Vector2(const T& val1, const T& val2) {
+				m_x = val1;
+				m_y = val2;
 			}
 			~Vector2() { }
 
 			const T& get_x() const {
-				return m_val1;
+				return m_x;
 			}
 			const T& get_y() const {
-				return m_val2;
+				return m_y;
 			}
 
 			void set_x(const T& x) {
-				m_val1 = x;
+				m_x = x;
 			}
 			void set_y(const T& y) {
-				m_val2 = y;
+				m_y = y;
 			}
 
 			void set_vector(const T& x, const T& y) {
-				m_val1 = x;
-				m_val2 = y;
+				m_x = x;
+				m_y = y;
 			}
 
 			void add_x(const T& x) {
-				m_val1 += x;
+				m_x += x;
 			}
 			void add_y(const T& y) {
-				m_val2 += y;
+				m_y += y;
 			}
 
 			void multiply(const T& x, const T& y) {
-				m_val1 *= x;
-				m_val2 *= y;
+				m_x *= x;
+				m_y *= y;
 			}
 			void divide(const T& x, const T& y) {
-				m_val1 /= x;
-				m_val2 /= y;
+				m_x /= x;
+				m_y /= y;
 			}
 
 			const Vector2<T>& get_vector() const {
@@ -58,8 +59,8 @@ namespace sde {
 			}
 
 			inline Vector2<T>& operator=(const Vector2<T>& other) {
-				m_val1 = other.get_x();
-				m_val2 = other.get_y();
+				m_x = other.get_x();
+				m_y = other.get_y();
 				return *this;
 			}
 	};

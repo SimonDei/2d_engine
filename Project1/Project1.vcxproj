@@ -89,7 +89,7 @@
       <EnablePREfast>true</EnablePREfast>
       <BrowseInformation>true</BrowseInformation>
       <PreprocessorDefinitions>%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <ForcedIncludeFiles>Casting.h;%(ForcedIncludeFiles)</ForcedIncludeFiles>
+      <ForcedIncludeFiles>Macros.h;%(ForcedIncludeFiles)</ForcedIncludeFiles>
     </ClCompile>
     <Bscmake>
       <PreserveSbr>true</PreserveSbr>
@@ -148,6 +148,7 @@
     <ClCompile Include="Font.cpp" />
     <ClCompile Include="Logger.cpp" />
     <ClCompile Include="Main.cpp" />
+    <ClCompile Include="Math.cpp" />
     <ClCompile Include="Messagebox.cpp" />
     <ClCompile Include="Music.cpp" />
     <ClCompile Include="MusicQueue.cpp" />
@@ -163,7 +164,8 @@
     <ClInclude Include="Animation.h" />
     <ClInclude Include="Assets.h" />
     <ClInclude Include="Button.h" />
-    <ClInclude Include="Casting.h" />
+    <ClInclude Include="Circle.h" />
+    <ClInclude Include="Macros.h" />
     <ClInclude Include="Disposable.h" />
     <ClInclude Include="Color3.h" />
     <ClInclude Include="Color4.h" />
@@ -181,6 +183,7 @@
     <ClInclude Include="Font.h" />
     <ClInclude Include="Keycodes.h" />
     <ClInclude Include="Logger.h" />
+    <ClInclude Include="Math.h" />
     <ClInclude Include="Messagebox.h" />
     <ClInclude Include="MessageButtons.h" />
     <ClInclude Include="MessageReturn.h" />

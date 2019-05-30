@@ -7,64 +7,65 @@ namespace sde {
 	template<typename T>
 	class Vector3 {
 		private:
-			T m_val1;
-			T m_val2;
-			T m_val3;
+			T m_x;
+			T m_y;
+			T m_z;
+
 
 		public:
 			Vector3() = default;
-			Vector3(T val1, T val2, T val3) {
-				m_val1 = val1;
-				m_val2 = val2;
-				m_val3 = val3;
+			Vector3(const T& val1, const T& val2, const T& val3) {
+				m_x = val1;
+				m_y = val2;
+				m_z = val3;
 			}
 			~Vector3() { }
 
 			const T& get_x() const {
-				return m_val1;
+				return m_x;
 			}
 			const T& get_y() const {
-				return m_val2;
+				return m_y;
 			}
 			const T& get_z() const {
-				return m_val3;
+				return m_z;
 			}
 
 			void set_x(const T& x) {
-				m_val1 = x;
+				m_x = x;
 			}
 			void set_y(const T& y) {
-				m_val2 = y;
+				m_y = y;
 			}
 			void set_z(const T& z) {
-				m_val3 = z;
+				m_z = z;
 			}
 
 			void set_vector(const T& x, const T& y, const T& z) {
-				m_val1 = x;
-				m_val2 = y;
-				m_val3 = z;
+				m_x = x;
+				m_y = y;
+				m_z = z;
 			}
 
 			void add_x(const T& x) {
-				m_val1 += x;
+				m_x += x;
 			}
 			void add_y(const T& y) {
-				m_val2 += y;
+				m_y += y;
 			}
 			void add_z(const T& z) {
-				m_val3 += z;
+				m_z += z;
 			}
 
 			void multiply(const T& x, const T& y, const T& z) {
-				m_val1 *= x;
-				m_val2 *= y;
-				m_val3 *= z;
+				m_x *= x;
+				m_y *= y;
+				m_z *= z;
 			}
 			void divide(const T& x, const T& y, const T& z) {
-				m_val1 /= x;
-				m_val2 /= y;
-				m_val3 /= z;
+				m_x /= x;
+				m_y /= y;
+				m_z /= z;
 			}
 
 			const Vector3<T>& get_vector() const {
@@ -72,9 +73,9 @@ namespace sde {
 			}
 
 			inline Vector3<T>& operator=(const Vector3<T>& other) {
-				m_val1 = other.get_x();
-				m_val2 = other.get_y();
-				m_val3 = other.get_z();
+				m_x = other.get_x();
+				m_y = other.get_y();
+				m_z = other.get_z();
 				return *this;
 			}
 	};

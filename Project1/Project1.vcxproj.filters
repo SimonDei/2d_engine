@@ -49,6 +49,15 @@
     <Filter Include="Headerdateien\graphic\gui">
       <UniqueIdentifier>{e6da55ea-5a30-47d7-ad02-835ce266a7a8}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Headerdateien\io">
+      <UniqueIdentifier>{6c233e3b-dd34-4441-a469-e16537eb4171}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Headerdateien\util\macro">
+      <UniqueIdentifier>{688af559-2514-4c93-a22c-28a4cc3ae805}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Headerdateien\core\math">
+      <UniqueIdentifier>{f40c125e-2ff3-470f-8a85-24cb7d13b6ba}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
@@ -123,6 +132,9 @@
     <ClCompile Include="SubTexture.cpp">
       <Filter>Quelldateien</Filter>
     </ClCompile>
+    <ClCompile Include="Math.cpp">
+      <Filter>Quelldateien</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Vector2.h">
@@ -134,13 +146,7 @@
     <ClInclude Include="Renderer.h">
       <Filter>Headerdateien\graphic</Filter>
     </ClInclude>
-    <ClInclude Include="Assets.h">
-      <Filter>Headerdateien\util</Filter>
-    </ClInclude>
     <ClInclude Include="Logger.h">
-      <Filter>Headerdateien\util</Filter>
-    </ClInclude>
-    <ClInclude Include="File.h">
       <Filter>Headerdateien\util</Filter>
     </ClInclude>
     <ClInclude Include="Component.h">
@@ -164,9 +170,6 @@
     <ClInclude Include="Updateable.h">
       <Filter>Headerdateien\template\interface</Filter>
     </ClInclude>
-    <ClInclude Include="ConfigFile.h">
-      <Filter>Headerdateien\util</Filter>
-    </ClInclude>
     <ClInclude Include="Rectangle.h">
       <Filter>Headerdateien\template</Filter>
     </ClInclude>
@@ -185,9 +188,6 @@
     <ClInclude Include="MessageButtons.h">
       <Filter>Headerdateien\core\enums</Filter>
     </ClInclude>
-    <ClInclude Include="Font.h">
-      <Filter>Headerdateien\graphic</Filter>
-    </ClInclude>
     <ClInclude Include="FileAccess.h">
       <Filter>Headerdateien\core\enums</Filter>
     </ClInclude>
@@ -199,9 +199,6 @@
     </ClInclude>
     <ClInclude Include="Color3.h">
       <Filter>Headerdateien\template</Filter>
-    </ClInclude>
-    <ClInclude Include="Casting.h">
-      <Filter>Headerdateien\util</Filter>
     </ClInclude>
     <ClInclude Include="Music.h">
       <Filter>Headerdateien\audio\wrapper</Filter>
@@ -236,8 +233,29 @@
     <ClInclude Include="SubTexture.h">
       <Filter>Headerdateien\graphic\wrapper</Filter>
     </ClInclude>
-    <ClInclude Include="NullException.h">
+    <ClInclude Include="Font.h">
+      <Filter>Headerdateien\graphic\wrapper</Filter>
+    </ClInclude>
+    <ClInclude Include="Assets.h">
       <Filter>Headerdateien\core</Filter>
+    </ClInclude>
+    <ClInclude Include="NullException.h">
+      <Filter>Headerdateien\template</Filter>
+    </ClInclude>
+    <ClInclude Include="File.h">
+      <Filter>Headerdateien\io</Filter>
+    </ClInclude>
+    <ClInclude Include="ConfigFile.h">
+      <Filter>Headerdateien\io</Filter>
+    </ClInclude>
+    <ClInclude Include="Macros.h">
+      <Filter>Headerdateien\util\macro</Filter>
+    </ClInclude>
+    <ClInclude Include="Math.h">
+      <Filter>Headerdateien\core\math</Filter>
+    </ClInclude>
+    <ClInclude Include="Circle.h">
+      <Filter>Headerdateien\template</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
