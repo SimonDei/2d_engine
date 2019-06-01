@@ -16,6 +16,7 @@
 #include "Display.h"
 #include "Disposer.h"
 #include "Updater.h"
+#include "Assets.h"
 
 #include "Events.h"
 #include "DisplayFlags.h"
@@ -41,6 +42,7 @@ namespace sde {
 			ALLEGRO_TIMEOUT m_timeout;
 			Disposer m_disposer;
 			Updater m_updater;
+			Assets m_assets;
 			bool m_running = false;
 			bool m_has_event = false;
 			
@@ -51,7 +53,9 @@ namespace sde {
 			Core(const std::string& name, unsigned int width, unsigned int height);
 			~Core();
 
-			void create_display(unsigned int width, unsigned int height);
+			void set_window_title(const std::string& name) const;
+			void set_window_position(unsigned int x, unsigned int y) const;
+			void create_window(unsigned int width, unsigned int height);
 
 			void add_updateable(const Updateable& updateable);
 
@@ -76,6 +80,8 @@ namespace sde {
 			bool is_event_in_queue();
 
 			const Keycode& get_keycode() const;
+
+			Assets& get_assets();
 
 			const Display& get_display() const;
 			const Disposer& get_disposer() const;

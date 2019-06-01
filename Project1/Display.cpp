@@ -5,11 +5,19 @@ namespace sde {
 	void Display::create_display(unsigned int width, unsigned int height) {
 		m_width = width;
 		m_height = height;
-		m_display = al_create_display(sde_cast(int, m_width), sde_cast(int, m_height));
+		m_display = al_create_display(static_cast<int>(m_width), static_cast<int>(m_height));
 	}
 
-	void Display::set_flags(const DisplayFlags& flags) {
-		al_set_new_display_flags(sde_cast(int, flags));
+	void Display::set_position(unsigned int x, unsigned int y) const {
+		al_set_new_window_position(static_cast<int>(x), static_cast<int>(y));
+	}
+
+	void Display::set_title(const std::string& name) const {
+		al_set_new_window_title(name.c_str());
+	}
+
+	void Display::set_flags(const DisplayFlags& flags) const {
+		al_set_new_display_flags(static_cast<int>(flags));
 	}
 
 	ALLEGRO_DISPLAY* Display::get_display() const {

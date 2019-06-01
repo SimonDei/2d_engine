@@ -7,7 +7,7 @@ namespace sde {
 
 
 		public:
-			Component();
-			~Component();
+			Component() = default;
+			~Component() { };
 	};
 }

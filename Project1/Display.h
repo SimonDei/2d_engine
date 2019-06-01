@@ -2,6 +2,8 @@
 
 #include "allegro5/allegro.h"
 
+#include <string>
+
 #include "DisplayFlags.h"
 #include "Disposable.h"
 
@@ -20,7 +22,9 @@ namespace sde {
 
 			void create_display(unsigned int width, unsigned int height);
 
-			void set_flags(const DisplayFlags& flags);
+			void set_position(unsigned int x, unsigned int y) const;
+			void set_title(const std::string& name) const;
+			void set_flags(const DisplayFlags& flags) const;
 
 			ALLEGRO_DISPLAY* get_display() const;
 

@@ -4,7 +4,7 @@
 
 
 namespace sde {
-	enum class Event : ALLEGRO_EVENT_TYPE {
+	enum class Event : int {
 		EVENT_KEYDOWN = 10,
 		EVENT_KEYUP = 12,
 

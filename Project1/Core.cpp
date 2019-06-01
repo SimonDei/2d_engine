@@ -7,6 +7,7 @@ namespace sde {
 
 	Core::Core(const std::string& name) {
 		al_set_app_name(name.c_str());
+		al_set_new_window_title(name.c_str());
 
 		al_init();
 		al_init_image_addon();
@@ -24,15 +25,27 @@ namespace sde {
 		m_queue = al_create_event_queue();
 
 		al_init_timeout(&m_timeout, 1.0 / 60.0);
-		
+
 		m_running = true;
 	}
 
 	Core::Core(const std::string& name, unsigned int width, unsigned int height) : Core(name) {
-		create_display(width, height);
+		m_display.create_display(width, height);
+
+		al_register_event_source(m_queue, al_get_display_event_source(m_display.get_display()));
+		al_register_event_source(m_queue, al_get_keyboard_event_source());
 	}
 
-	void Core::create_display(unsigned int width, unsigned int height) {
+	void Core::set_window_title(const std::string& name) const {
+		al_set_app_name(name.c_str());
+		al_set_new_window_title(name.c_str());
+	}
+
+	void Core::set_window_position(unsigned int x, unsigned int y) const {
+		m_display.set_position(x, y);
+	}
+
+	void Core::create_window(unsigned int width, unsigned int height) {
 		m_display.create_display(width, height);
 
 		al_register_event_source(m_queue, al_get_display_event_source(m_display.get_display()));
@@ -71,6 +84,10 @@ namespace sde {
 		return static_cast<Keycode>(m_event.keyboard.keycode);
 	}
 
+	Assets& Core::get_assets() {
+		return m_assets;
+	}
+
 	const Display& Core::get_display() const {
 		return m_display;
 	}
@@ -92,6 +109,7 @@ namespace sde {
 	}
 
 	Core::~Core() {
+		m_assets.dispose();
 		m_disposer.dispose();
 		m_display.dispose();
 		al_destroy_event_queue(m_queue);

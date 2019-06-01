@@ -87,12 +87,6 @@
     <ClCompile Include="Music.cpp">
       <Filter>Quelldateien</Filter>
     </ClCompile>
-    <ClCompile Include="Component.cpp">
-      <Filter>Quelldateien</Filter>
-    </ClCompile>
-    <ClCompile Include="Entity.cpp">
-      <Filter>Quelldateien</Filter>
-    </ClCompile>
     <ClCompile Include="SpriteQueue.cpp">
       <Filter>Quelldateien</Filter>
     </ClCompile>
