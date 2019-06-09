@@ -4,8 +4,8 @@
 namespace sde {
 	Texture::Texture(const std::string& path) {
 		if ((m_bitmap = al_load_bitmap(path.c_str())) != nullptr) {
-			m_width = sde_cast(float, al_get_bitmap_width(m_bitmap));
-			m_height = sde_cast(float, al_get_bitmap_height(m_bitmap));
+			m_width = static_cast<float>(al_get_bitmap_width(m_bitmap));
+			m_height = static_cast<float>(al_get_bitmap_height(m_bitmap));
 		} else {
 			throw NullException("Texture at " + path + " does not exist.");
 		}
@@ -19,14 +19,20 @@ namespace sde {
 
 	Texture::Texture(ALLEGRO_BITMAP* al_bitmap) {
 		m_bitmap = al_bitmap;
-		m_width = sde_cast(float, al_get_bitmap_width(m_bitmap));
-		m_height = sde_cast(float, al_get_bitmap_height(m_bitmap));
+		m_width = static_cast<float>(al_get_bitmap_width(m_bitmap));
+		m_height = static_cast<float>(al_get_bitmap_height(m_bitmap));
+	}
+
+	Texture::Texture(ALLEGRO_BITMAP* al_bitmap, float x, float y, float width, float height) {
+		m_bitmap = al_create_sub_bitmap(al_bitmap, x, y, width, height);
+		m_width = width;
+		m_height = height;
 	}
 
 	void Texture::load_texture(const std::string& path) {
 		if ((m_bitmap = al_load_bitmap(path.c_str())) != nullptr) {
-			m_width = sde_cast(float, al_get_bitmap_width(m_bitmap));
-			m_height = sde_cast(float, al_get_bitmap_height(m_bitmap));
+			m_width = static_cast<float>(al_get_bitmap_width(m_bitmap));
+			m_height = static_cast<float>(al_get_bitmap_height(m_bitmap));
 		} else {
 			throw NullException("Texture at " + path + " does not exist.");
 		}

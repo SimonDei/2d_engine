@@ -36,8 +36,8 @@ namespace sde {
 	}
 
 	const MessageReturn& Messagebox::show() {
-		m_result = al_show_native_message_box(m_display->get_display(), m_caption.c_str(), "", m_message.c_str(), "", sde_cast(int, m_buttons));
-		return sde_cast(MessageReturn, m_result);
+		m_result = al_show_native_message_box(m_display->get_display(), m_caption.c_str(), "", m_message.c_str(), "", static_cast<int>(m_buttons));
+		return static_cast<MessageReturn>(m_result);
 	}
 
 	Messagebox::~Messagebox() {

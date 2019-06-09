@@ -123,9 +123,6 @@
     <ClCompile Include="TextureSheet.cpp">
       <Filter>Quelldateien</Filter>
     </ClCompile>
-    <ClCompile Include="SubTexture.cpp">
-      <Filter>Quelldateien</Filter>
-    </ClCompile>
     <ClCompile Include="Math.cpp">
       <Filter>Quelldateien</Filter>
     </ClCompile>
@@ -222,9 +219,6 @@
       <Filter>Headerdateien\util</Filter>
     </ClInclude>
     <ClInclude Include="TextureSheet.h">
-      <Filter>Headerdateien\graphic\wrapper</Filter>
-    </ClInclude>
-    <ClInclude Include="SubTexture.h">
       <Filter>Headerdateien\graphic\wrapper</Filter>
     </ClInclude>
     <ClInclude Include="Font.h">

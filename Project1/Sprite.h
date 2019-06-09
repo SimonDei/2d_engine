@@ -5,7 +5,6 @@
 #include <string>
 
 #include "Texture.h"
-#include "SubTexture.h"
 #include "Drawable.h"
 #include "Rectangle.h"
 
