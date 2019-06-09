@@ -1,4 +1,5 @@
-#pragma once
+#ifndef _RENDERER_H_
+#define _RENDERER_H_
 
 #include <allegro5/allegro.h>
 #include <allegro5/allegro_primitives.h>
@@ -61,3 +62,5 @@ namespace sde {
 			}
 	};
 }
+
+#endif

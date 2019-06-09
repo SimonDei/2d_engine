@@ -8,6 +8,7 @@ namespace sde {
 
 		protected:
 			bool m_disposed = false;
+			bool m_auto_disposed = false;
 
 
 		public:

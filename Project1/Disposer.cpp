@@ -8,12 +8,8 @@ namespace sde {
 
 	void Disposer::dispose() {
 		if (!m_disposed) {
-			try {
-				for (auto& it : m_dispose_vector) {
-					it->dispose();
-				}
-			} catch (std::exception ex) {
-				std::cout << ex.what() << std::endl;
+			for (auto& it : m_dispose_vector) {
+				it->dispose();
 			}
 			m_disposed = true;
 		}

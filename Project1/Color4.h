@@ -5,7 +5,7 @@
 
 namespace sde {
 	template<typename T>
-	class Color4 {
+	class __declspec(dllexport) Color4 {
 		private:
 			T m_red;
 			T m_green;
@@ -52,8 +52,8 @@ namespace sde {
 	};
 }
 
-template<typename T>
+/*template<typename T>
 inline std::ostream& operator<<(std::ostream& stream, const sde::Color4<T>& other) {
 	stream << other.get_red() << ", " << other.get_green() << ", " << other.get_blue() << ", " << other.get_alpha();
 	return stream;
-}
+}*/

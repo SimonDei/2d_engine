@@ -77,6 +77,8 @@ namespace sde {
 		if (m_event.type == ALLEGRO_EVENT_DISPLAY_CLOSE) {
 			m_running = false;
 		}
+		// TODO: update Methode Platz finden
+		m_updater.update();
 		return m_has_event;
 	}
 

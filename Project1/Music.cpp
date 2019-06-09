@@ -9,12 +9,14 @@ namespace sde {
 		} else {
 			throw NullException("Sample at " + path + " does not exist.");
 		}
+		m_auto_disposed = true;
 	}
 
 	Music::Music(const Music& music) {
 		m_sample = music.get_sample();
 		m_instance = music.get_sample_instance();
 		m_started = music.get_started();
+		m_auto_disposed = true;
 	}
 
 	bool Music::get_started() const {

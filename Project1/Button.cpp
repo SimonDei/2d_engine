@@ -3,13 +3,13 @@
 
 namespace sde {
 	Button::Button(const Texture& button_up, const Texture& button_down) {
-		m_button_up = sde_ref_to_ptr(Texture, button_up);
-		m_button_down = sde_ref_to_ptr(Texture, button_down);
+		m_button_up = const_cast<Texture*>(&button_up);
+		m_button_down = const_cast<Texture*>(&button_down);
 	}
 
 	Button::Button(const Texture& button_up, const Texture& button_down, float x, float y, float width, float height) {
-		m_button_up = sde_ref_to_ptr(Texture, button_up);
-		m_button_down = sde_ref_to_ptr(Texture, button_down);
+		m_button_up = const_cast<Texture*>(&button_up);
+		m_button_down = const_cast<Texture*>(&button_down);
 		m_x = x;
 		m_y = y;
 		m_width = width;

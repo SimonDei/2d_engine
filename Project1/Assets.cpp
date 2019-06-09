@@ -2,6 +2,13 @@
 
 
 namespace sde {
+	Assets::Assets(Assets& assets) {
+		if (!(m_textures.size() == 0 && m_music.size() == 0 && m_texture_sheets.size() == 0)) {
+			throw sde::NullException("Assets konnte nicht zugewiesen werden. Es sind bereits Werte vorhanden.");
+		}
+		*this = assets;
+	}
+
 	void Assets::load_music(const std::string& name, const std::string& path) {
 		m_music.insert(std::make_pair(name, std::move(std::make_shared<Music>(path))));
 	}

@@ -17,6 +17,8 @@ namespace sde {
 
 			void add_updateable(const Updateable& updateable);
 			
+			unsigned int get_size() const;
+
 			void update() override;
 	};
 }

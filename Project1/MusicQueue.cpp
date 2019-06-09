@@ -2,10 +2,14 @@
 
 
 namespace sde {
+	void MusicQueue::set_volume(float volume) {
+		al_set_sample_instance_gain(m_playing_music->get_sample_instance(), volume / 100.0f);
+	}
+
 	void sde::MusicQueue::push_music(const Music& music) {
 		m_music_map.insert(std::make_pair(m_music_map.size(), std::make_shared<Music>(music)));
 	}
-
+	
 	void MusicQueue::play() {
 		m_playing_music = m_music_map.at(m_playing_index);
 		al_play_sample_instance(m_playing_music->get_sample_instance());

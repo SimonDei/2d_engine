@@ -13,9 +13,6 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
-    <Filter Include="Quelldateien\Main">
-      <UniqueIdentifier>{aa2342e8-c6a9-4691-9f3e-b4358936b304}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Headerdateien\audio">
       <UniqueIdentifier>{e19b506d-5d95-4b88-b731-7c32a2a617e4}</UniqueIdentifier>
     </Filter>
@@ -74,9 +71,6 @@
     </ClCompile>
     <ClCompile Include="Assets.cpp">
       <Filter>Quelldateien</Filter>
-    </ClCompile>
-    <ClCompile Include="Main.cpp">
-      <Filter>Quelldateien\Main</Filter>
     </ClCompile>
     <ClCompile Include="Core.cpp">
       <Filter>Quelldateien</Filter>
@@ -244,6 +238,9 @@
     </ClInclude>
     <ClInclude Include="Circle.h">
       <Filter>Headerdateien\template</Filter>
+    </ClInclude>
+    <ClInclude Include="sd_engine.h">
+      <Filter>Headerdateien</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

@@ -65,5 +65,5 @@ int main() {
 		renderer.display();
 	}
 
-	return SDE_SUCCESS;
+	return 0;
 }

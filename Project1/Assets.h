@@ -1,4 +1,5 @@
-#pragma once
+#ifndef _ASSETS_H_
+#define _ASSETS_H_
 
 #include <allegro5/allegro.h>
 
@@ -21,6 +22,7 @@ namespace sde {
 
 		public:
 			Assets() = default;
+			explicit Assets(Assets& assets);
 			~Assets();
 
 			void load_music(const std::string& name, const std::string& path);
@@ -35,3 +37,5 @@ namespace sde {
 			void dispose() override;
 	};
 }
+
+#endif

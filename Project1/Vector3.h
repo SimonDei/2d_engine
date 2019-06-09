@@ -5,7 +5,7 @@
 
 namespace sde {
 	template<typename T>
-	class Vector3 {
+	class __declspec(dllexport) Vector3 {
 		private:
 			T m_x;
 			T m_y;
@@ -81,8 +81,8 @@ namespace sde {
 	};
 }
 
-template<typename T>
+/*template<typename T>
 inline std::ostream& operator<<(std::ostream& stream, const sde::Vector3<T>& other) {
 	stream << other.get_x() << ", " << other.get_y() << ", " << other.get_z();
 	return stream;
-}
+}*/

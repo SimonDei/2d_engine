@@ -20,6 +20,8 @@ namespace sde {
 			MusicQueue() = default;
 			~MusicQueue();
 
+			void set_volume(float volume);
+
 			void push_music(const Music& music);
 
 			void play();

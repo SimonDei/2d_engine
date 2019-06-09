@@ -7,7 +7,7 @@
 
 namespace sde {
 	template<typename T>
-	class Rectangle {
+	class __declspec(dllexport) Rectangle {
 		private:
 			T m_x;
 			T m_y;
@@ -88,8 +88,8 @@ namespace sde {
 	};
 }
 
-template<typename T>
+/*template<typename T>
 inline std::ostream& operator<<(std::ostream& stream, const sde::Rectangle<T>& other) {
 	stream << other.get_x() << ", " << other.get_y() << ", " << other.get_width() << ", " << other.get_height();
 	return stream;
-}
+}*/

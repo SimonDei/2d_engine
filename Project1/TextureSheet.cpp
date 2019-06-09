@@ -9,12 +9,14 @@ namespace sde {
 		} else {
 			throw NullException("Texture at " + path + " does not exist.");
 		}
+		m_auto_disposed = true;
 	}
 
 	TextureSheet::TextureSheet(ALLEGRO_BITMAP* al_bitmap) {
 		m_bitmap = al_bitmap;
 		m_width = static_cast<float>(al_get_bitmap_width(m_bitmap));
 		m_height = static_cast<float>(al_get_bitmap_height(m_bitmap));
+		m_auto_disposed = true;
 	}
 
 	void TextureSheet::set_tile_width(float width) {

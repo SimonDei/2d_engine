@@ -1,4 +1,5 @@
-#pragma once
+#ifndef _ENTITY_H_
+#define _ENTITY_H_
 
 #include <string>
 #include <unordered_map>
@@ -22,3 +23,5 @@ namespace sde {
 			};
 	};
 }
+
+#endif

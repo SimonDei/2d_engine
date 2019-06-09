@@ -1,4 +1,5 @@
-#pragma once
+#ifndef _CORE_H_
+#define _CORE_H_
 
 #include <allegro5/allegro.h>
 #include <allegro5/allegro_image.h>
@@ -34,7 +35,7 @@
 
 
 namespace sde {
-	class Core : public Updateable {
+	class Core {
 		private:
 			Display m_display;
 			ALLEGRO_EVENT_QUEUE* m_queue = nullptr;
@@ -73,9 +74,9 @@ namespace sde {
 			inline const Event& get_event_type() const {
 				return static_cast<Event>(m_event.type);
 			}
-			inline void update() override {
-				m_updater.update();
-			}
+			//inline void update() override {
+			//	m_updater.update();
+			//}
 
 			bool is_event_in_queue();
 
@@ -92,3 +93,5 @@ namespace sde {
 			void close();
 	};
 }
+
+#endif

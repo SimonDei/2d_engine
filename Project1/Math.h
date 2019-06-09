@@ -1,4 +1,5 @@
-#pragma once
+#ifndef _MATH_H_
+#define _MATH_H_
 
 #include <cmath>
 
@@ -47,7 +48,7 @@ namespace sde {
 
 		template<typename T>
 		static bool collision_circle_vector(const Circle<T>& circle, const Vector2<T>& vector) {
-			if (circle.get_radius() > static_cast<T>(sqrtf(powf(abs(vector.get_x() - circle.get_x()), 2.0f) + powf(abs(vector.get_y() - circle.get_y()), 2.0f)))) {
+			if (circle.get_radius() > static_cast<T>(std::sqrt(std::pow(std::abs(vector.get_x() - circle.get_x()), 2.0f) + std::pow(std::abs(vector.get_y() - circle.get_y()), 2.0f)))) {
 				return true;
 			}
 			return false;
@@ -55,10 +56,12 @@ namespace sde {
 
 		template<typename T>
 		static bool collision_circle_vector(const T& center_x, const T& center_y, const T& radius, const T& vec_x, const T& vec_y) {
-			if (radius > static_cast<T>(sqrtf(powf(abs(vec_x - center_x), 2.0f) + powf(abs(vec_y - center_y), 2.0f)))) {
+			if (radius > static_cast<T>(std::sqrt(std::pow(std::abs(vec_x - center_x), 2.0f) + std::pow(std::abs(vec_y - center_y), 2.0f)))) {
 				return true;
 			}
 			return false;
 		}
 	}
 }
+
+#endif

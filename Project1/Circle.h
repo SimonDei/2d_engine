@@ -5,7 +5,7 @@
 
 namespace sde {
 	template<typename T>
-	class Circle {
+	class __declspec(dllexport) Circle {
 		private:
 			T m_center_x;
 			T m_center_y;
@@ -60,8 +60,8 @@ namespace sde {
 	};
 }
 
-template<typename T>
+/*template<typename T>
 inline std::ostream& operator<<(std::ostream& stream, const sde::Circle<T>& other) {
 	stream << other.get_x() << ", " << other.get_y() << ", " << other.get_radius();
 	return stream;
-}
+}*/
