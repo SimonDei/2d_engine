@@ -11,7 +11,7 @@
 namespace sde {
 	class Animation : public Updateable {
 		private:	
-			std::list<ALLEGRO_BITMAP*> m_sprites;
+			
 			float m_frame_delay = 0.0f;
 
 		public:

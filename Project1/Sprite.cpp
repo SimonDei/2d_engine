@@ -3,7 +3,7 @@
 
 namespace sde {
 	Sprite::Sprite(const Sprite& sprite) {
-		m_texture = const_cast<Texture*>(&sprite.get_texture());
+		m_texture = std::make_shared<Texture>(const_cast<Texture*>(&sprite.get_texture()));
 		m_x = sprite.get_x();
 		m_y = sprite.get_y();
 		m_width = m_texture->get_width();
@@ -11,19 +11,19 @@ namespace sde {
 	}
 
 	Sprite::Sprite(const std::string& path) {
-		m_texture = new Texture(path);
+		m_texture = std::make_shared<Texture>(path);
 		m_width = m_texture->get_width();
 		m_height = m_texture->get_height();
 	}
 
 	Sprite::Sprite(const Texture& texture) {
-		m_texture = const_cast<Texture*>(&texture);
+		m_texture = std::make_shared<Texture>(const_cast<Texture*>(&texture));
 		m_width = m_texture->get_width();
 		m_height = m_texture->get_height();
 	}
 	
 	Sprite::Sprite(const std::string& path, float x, float y) {
-		m_texture = new Texture(path);
+		m_texture = std::make_shared<Texture>(path);
 		m_x = x;
 		m_y = y;
 		m_width = m_texture->get_width();
@@ -31,7 +31,7 @@ namespace sde {
 	}
 
 	Sprite::Sprite(const Texture& texture, float x, float y) {
-		m_texture = const_cast<Texture*>(&texture);
+		m_texture = std::make_shared<Texture>(const_cast<Texture*>(&texture));
 		m_x = x;
 		m_y = y;
 		m_width = m_texture->get_width();
@@ -39,7 +39,7 @@ namespace sde {
 	}
 
 	Sprite::Sprite(const Texture& texture, float x, float y, float rotation) {
-		m_texture = const_cast<Texture*>(&texture);
+		m_texture = std::make_shared<Texture>(const_cast<Texture*>(&texture));
 		m_x = x;
 		m_y = y;
 		m_width = m_texture->get_width();

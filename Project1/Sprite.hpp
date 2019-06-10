@@ -13,7 +13,7 @@
 namespace sde {
 	class Sprite : public Drawable {
 		private:
-			Texture* m_texture;
+			std::shared_ptr<Texture> m_texture = nullptr;
 			float m_rotation = 0.0f;
 
 

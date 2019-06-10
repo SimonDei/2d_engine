@@ -1,5 +1,5 @@
 #ifndef _CONFIGFILE_HPP_
-#define _CONFIGFILE_HPP
+#define _CONFIGFILE_HPP_
 
 #include <allegro5/allegro.h>
 

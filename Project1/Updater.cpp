@@ -3,7 +3,7 @@
 
 namespace sde {
 	void Updater::add_updateable(const Updateable& updateable) {
-		m_update_vector.push_back(const_cast<Updateable*>(&updateable));
+		m_update_vector.push_back(std::make_shared<Updateable>(const_cast<Updateable*>(&updateable)));
 	}
 
 	unsigned int Updater::get_size() const {

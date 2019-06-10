@@ -1,4 +1,5 @@
-#pragma once
+#ifndef _FONT_HPP_
+#define _FONT_HPP_
 
 #include <allegro5/allegro_font.h>
 #include <allegro5/allegro_ttf.h>
@@ -6,8 +7,8 @@
 #include <string>
 #include <unordered_map>
 
-#include "NullException.h"
-#include "Disposable.h"
+#include "NullException.hpp"
+#include "Disposable.hpp"
 
 
 namespace sde {
@@ -27,3 +28,5 @@ namespace sde {
 			void dispose() override;
 	};
 }
+
+#endif

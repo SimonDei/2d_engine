@@ -1,5 +1,5 @@
 #ifndef _FILE_HPP_
-#define _FILE_HPP
+#define _FILE_HPP_
 
 #include <allegro5/allegro.h>
 
@@ -15,12 +15,13 @@ namespace sde {
 	class File : public Disposable {
 		private:
 			ALLEGRO_FILE* m_file = nullptr;
-			std::string m_path;
-			FileAccess m_access;
-			bool m_closed = false;
 			std::unordered_map<unsigned int, std::string> m_lines;
+			FileAccess m_access;
+			std::string m_path = "";
+			bool m_closed = false;
 
 			void read();
+
 
 		public:
 			File() = default;

@@ -2,6 +2,7 @@
 #define _UPDATER_HPP_
 
 #include <vector>
+#include <memory>
 
 #include "Updateable.hpp"
 
@@ -9,7 +10,7 @@
 namespace sde {
 	class Updater : public Updateable {
 		private:
-			std::vector<Updateable*> m_update_vector;
+			std::vector<std::shared_ptr<Updateable>> m_update_vector;
 			
 
 		public:

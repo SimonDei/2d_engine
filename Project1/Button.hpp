@@ -8,8 +8,8 @@
 namespace sde {
 	class Button : public Drawable {
 		private:
-			Texture* m_button_up = nullptr;
-			Texture* m_button_down = nullptr;
+			std::shared_ptr<Texture> m_button_up = nullptr;
+			std::shared_ptr<Texture> m_button_down = nullptr;
 			float m_x = 0.0f;
 			float m_y = 0.0f;
 			float m_width = 0.0f;

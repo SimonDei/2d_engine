@@ -1,5 +1,5 @@
 #ifndef _SPRITEQUEUE_HPP_
-#define _SPRITEQUEUE_HPP
+#define _SPRITEQUEUE_HPP_
 
 #include <string>
 #include <unordered_map>
