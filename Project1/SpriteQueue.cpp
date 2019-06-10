@@ -1,4 +1,4 @@
-#include "SpriteQueue.h"
+#include "SpriteQueue.hpp"
 
 
 namespace sde{

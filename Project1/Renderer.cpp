@@ -1,4 +1,4 @@
-#include "Renderer.h"
+#include "Renderer.hpp"
 
 
 namespace sde {
@@ -30,11 +30,13 @@ namespace sde {
 		al_draw_filled_rectangle(x, y, width, height, color.get_al_color());
 	}
 
-	void Renderer::draw_filled_rectangle(const Rectangle<int>& rectangle, const Color3<unsigned char>& color) {
+	template<typename T>
+	void Renderer::draw_filled_rectangle(const Rectangle<T>& rectangle, const Color3<unsigned char>& color) {
 		al_draw_filled_rectangle(rectangle.get_x(), rectangle.get_y(), rectangle.get_width(), rectangle.get_height(), color.get_al_color());
 	}
 
-	void Renderer::draw_filled_rectangle(const Rectangle<int>& rectangle, const Color4<unsigned char>& color) {
+	template<typename T>
+	void Renderer::draw_filled_rectangle(const Rectangle<T>& rectangle, const Color4<unsigned char>& color) {
 		al_draw_filled_rectangle(rectangle.get_x(), rectangle.get_y(), rectangle.get_width(), rectangle.get_height(), color.get_al_color());
 	}
 

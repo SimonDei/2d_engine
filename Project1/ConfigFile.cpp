@@ -1,4 +1,4 @@
-#include "ConfigFile.h"
+#include "ConfigFile.hpp"
 
 
 namespace sde {

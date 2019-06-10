@@ -117,129 +117,126 @@
     <ClCompile Include="TextureSheet.cpp">
       <Filter>Quelldateien</Filter>
     </ClCompile>
-    <ClCompile Include="Math.cpp">
-      <Filter>Quelldateien</Filter>
-    </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Vector2.h">
-      <Filter>Headerdateien\template</Filter>
-    </ClInclude>
-    <ClInclude Include="Sprite.h">
-      <Filter>Headerdateien\graphic</Filter>
-    </ClInclude>
-    <ClInclude Include="Renderer.h">
-      <Filter>Headerdateien\graphic</Filter>
-    </ClInclude>
-    <ClInclude Include="Logger.h">
-      <Filter>Headerdateien\util</Filter>
-    </ClInclude>
-    <ClInclude Include="Component.h">
-      <Filter>Headerdateien\entity_component</Filter>
-    </ClInclude>
-    <ClInclude Include="Core.h">
-      <Filter>Headerdateien\core</Filter>
-    </ClInclude>
-    <ClInclude Include="Entity.h">
-      <Filter>Headerdateien\entity_component</Filter>
-    </ClInclude>
-    <ClInclude Include="SpriteQueue.h">
-      <Filter>Headerdateien\graphic</Filter>
-    </ClInclude>
-    <ClInclude Include="MusicQueue.h">
-      <Filter>Headerdateien\audio</Filter>
-    </ClInclude>
-    <ClInclude Include="Updater.h">
-      <Filter>Headerdateien\util</Filter>
-    </ClInclude>
-    <ClInclude Include="Updateable.h">
-      <Filter>Headerdateien\template\interface</Filter>
-    </ClInclude>
-    <ClInclude Include="Rectangle.h">
-      <Filter>Headerdateien\template</Filter>
-    </ClInclude>
-    <ClInclude Include="Animation.h">
-      <Filter>Headerdateien\graphic</Filter>
-    </ClInclude>
-    <ClInclude Include="Messagebox.h">
-      <Filter>Headerdateien\util</Filter>
-    </ClInclude>
-    <ClInclude Include="Events.h">
-      <Filter>Headerdateien\core\enums</Filter>
-    </ClInclude>
-    <ClInclude Include="Keycodes.h">
-      <Filter>Headerdateien\core\enums</Filter>
-    </ClInclude>
-    <ClInclude Include="MessageButtons.h">
-      <Filter>Headerdateien\core\enums</Filter>
-    </ClInclude>
-    <ClInclude Include="FileAccess.h">
-      <Filter>Headerdateien\core\enums</Filter>
-    </ClInclude>
-    <ClInclude Include="Vector3.h">
-      <Filter>Headerdateien\template</Filter>
-    </ClInclude>
-    <ClInclude Include="Color4.h">
-      <Filter>Headerdateien\template</Filter>
-    </ClInclude>
-    <ClInclude Include="Color3.h">
-      <Filter>Headerdateien\template</Filter>
-    </ClInclude>
-    <ClInclude Include="Music.h">
+    <ClInclude Include="Music.hpp">
       <Filter>Headerdateien\audio\wrapper</Filter>
     </ClInclude>
-    <ClInclude Include="Texture.h">
-      <Filter>Headerdateien\graphic\wrapper</Filter>
+    <ClInclude Include="MusicQueue.hpp">
+      <Filter>Headerdateien\audio</Filter>
     </ClInclude>
-    <ClInclude Include="Display.h">
-      <Filter>Headerdateien\graphic\wrapper</Filter>
-    </ClInclude>
-    <ClInclude Include="DisplayFlags.h">
+    <ClInclude Include="DisplayFlags.hpp">
       <Filter>Headerdateien\core\enums</Filter>
     </ClInclude>
-    <ClInclude Include="MessageReturn.h">
+    <ClInclude Include="Events.hpp">
       <Filter>Headerdateien\core\enums</Filter>
     </ClInclude>
-    <ClInclude Include="Drawable.h">
-      <Filter>Headerdateien\template\interface</Filter>
+    <ClInclude Include="Keycodes.hpp">
+      <Filter>Headerdateien\core\enums</Filter>
     </ClInclude>
-    <ClInclude Include="Button.h">
-      <Filter>Headerdateien\graphic\gui</Filter>
+    <ClInclude Include="FileAccess.hpp">
+      <Filter>Headerdateien\core\enums</Filter>
     </ClInclude>
-    <ClInclude Include="Disposable.h">
-      <Filter>Headerdateien\template\interface</Filter>
+    <ClInclude Include="MessageButtons.hpp">
+      <Filter>Headerdateien\core\enums</Filter>
     </ClInclude>
-    <ClInclude Include="Disposer.h">
-      <Filter>Headerdateien\util</Filter>
+    <ClInclude Include="MessageReturn.hpp">
+      <Filter>Headerdateien\core\enums</Filter>
     </ClInclude>
-    <ClInclude Include="TextureSheet.h">
-      <Filter>Headerdateien\graphic\wrapper</Filter>
-    </ClInclude>
-    <ClInclude Include="Font.h">
-      <Filter>Headerdateien\graphic\wrapper</Filter>
-    </ClInclude>
-    <ClInclude Include="Assets.h">
-      <Filter>Headerdateien\core</Filter>
-    </ClInclude>
-    <ClInclude Include="NullException.h">
-      <Filter>Headerdateien\template</Filter>
-    </ClInclude>
-    <ClInclude Include="File.h">
-      <Filter>Headerdateien\io</Filter>
-    </ClInclude>
-    <ClInclude Include="ConfigFile.h">
-      <Filter>Headerdateien\io</Filter>
-    </ClInclude>
-    <ClInclude Include="Macros.h">
-      <Filter>Headerdateien\util\macro</Filter>
-    </ClInclude>
-    <ClInclude Include="Math.h">
+    <ClInclude Include="Math.hpp">
       <Filter>Headerdateien\core\math</Filter>
     </ClInclude>
-    <ClInclude Include="Circle.h">
+    <ClInclude Include="Assets.hpp">
+      <Filter>Headerdateien\core</Filter>
+    </ClInclude>
+    <ClInclude Include="Core.hpp">
+      <Filter>Headerdateien\core</Filter>
+    </ClInclude>
+    <ClInclude Include="Component.hpp">
+      <Filter>Headerdateien\entity_component</Filter>
+    </ClInclude>
+    <ClInclude Include="Entity.hpp">
+      <Filter>Headerdateien\entity_component</Filter>
+    </ClInclude>
+    <ClInclude Include="Button.hpp">
+      <Filter>Headerdateien\graphic\gui</Filter>
+    </ClInclude>
+    <ClInclude Include="Display.hpp">
+      <Filter>Headerdateien\graphic\wrapper</Filter>
+    </ClInclude>
+    <ClInclude Include="Font.hpp">
+      <Filter>Headerdateien\graphic\wrapper</Filter>
+    </ClInclude>
+    <ClInclude Include="Texture.hpp">
+      <Filter>Headerdateien\graphic\wrapper</Filter>
+    </ClInclude>
+    <ClInclude Include="TextureSheet.hpp">
+      <Filter>Headerdateien\graphic\wrapper</Filter>
+    </ClInclude>
+    <ClInclude Include="Animation.hpp">
+      <Filter>Headerdateien\graphic</Filter>
+    </ClInclude>
+    <ClInclude Include="Renderer.hpp">
+      <Filter>Headerdateien\graphic</Filter>
+    </ClInclude>
+    <ClInclude Include="Sprite.hpp">
+      <Filter>Headerdateien\graphic</Filter>
+    </ClInclude>
+    <ClInclude Include="SpriteQueue.hpp">
+      <Filter>Headerdateien\graphic</Filter>
+    </ClInclude>
+    <ClInclude Include="ConfigFile.hpp">
+      <Filter>Headerdateien\io</Filter>
+    </ClInclude>
+    <ClInclude Include="File.hpp">
+      <Filter>Headerdateien\io</Filter>
+    </ClInclude>
+    <ClInclude Include="Disposable.hpp">
+      <Filter>Headerdateien\template\interface</Filter>
+    </ClInclude>
+    <ClInclude Include="Drawable.hpp">
+      <Filter>Headerdateien\template\interface</Filter>
+    </ClInclude>
+    <ClInclude Include="Updateable.hpp">
+      <Filter>Headerdateien\template\interface</Filter>
+    </ClInclude>
+    <ClInclude Include="Circle.hpp">
       <Filter>Headerdateien\template</Filter>
     </ClInclude>
-    <ClInclude Include="sd_engine.h">
+    <ClInclude Include="Color3.hpp">
+      <Filter>Headerdateien\template</Filter>
+    </ClInclude>
+    <ClInclude Include="Color4.hpp">
+      <Filter>Headerdateien\template</Filter>
+    </ClInclude>
+    <ClInclude Include="NullException.hpp">
+      <Filter>Headerdateien\template</Filter>
+    </ClInclude>
+    <ClInclude Include="Rectangle.hpp">
+      <Filter>Headerdateien\template</Filter>
+    </ClInclude>
+    <ClInclude Include="Vector2.hpp">
+      <Filter>Headerdateien\template</Filter>
+    </ClInclude>
+    <ClInclude Include="Vector3.hpp">
+      <Filter>Headerdateien\template</Filter>
+    </ClInclude>
+    <ClInclude Include="Macros.hpp">
+      <Filter>Headerdateien\util\macro</Filter>
+    </ClInclude>
+    <ClInclude Include="Disposer.hpp">
+      <Filter>Headerdateien\util</Filter>
+    </ClInclude>
+    <ClInclude Include="Logger.hpp">
+      <Filter>Headerdateien\util</Filter>
+    </ClInclude>
+    <ClInclude Include="Messagebox.hpp">
+      <Filter>Headerdateien\util</Filter>
+    </ClInclude>
+    <ClInclude Include="Updater.hpp">
+      <Filter>Headerdateien\util</Filter>
+    </ClInclude>
+    <ClInclude Include="sd_engine.hpp">
       <Filter>Headerdateien</Filter>
     </ClInclude>
   </ItemGroup>
