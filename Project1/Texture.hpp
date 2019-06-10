@@ -20,7 +20,6 @@ namespace sde {
 		public:
 			Texture() = default;
 			explicit Texture(const std::string& path);
-			explicit Texture(const Texture& texture);
 			explicit Texture(ALLEGRO_BITMAP* al_bitmap);
 			Texture(ALLEGRO_BITMAP* al_bitmap, float width, float height, float x, float y);
 			~Texture();

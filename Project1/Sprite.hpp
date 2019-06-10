@@ -19,7 +19,6 @@ namespace sde {
 
 		public:
 			Sprite() = default;
-			explicit Sprite(const Sprite& sprite);
 			explicit Sprite(const std::string& path);
 			explicit Sprite(const Texture& texture);
 			Sprite(const std::string& path, float x, float y);

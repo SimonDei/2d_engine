@@ -23,15 +23,6 @@
 #include "DisplayFlags.hpp"
 #include "FileAccess.hpp"
 #include "Keycodes.hpp"
-#include "MessageButtons.hpp"
-#include "MessageReturn.hpp"
-
-#include "Color3.hpp"
-#include "Color4.hpp"
-#include "Rectangle.hpp"
-#include "Vector2.hpp"
-#include "Vector3.hpp"
-#include "Circle.hpp"
 
 
 namespace sde {
@@ -58,7 +49,10 @@ namespace sde {
 			void set_window_position(unsigned int x, unsigned int y) const;
 			void create_window(unsigned int width, unsigned int height);
 
-			void add_updateable(const Updateable& updateable);
+			template<typename T>
+			void add_updateable(const T& updateable) {
+				m_updater.add_updateable(std::make_shared<T>(updateable));
+			}
 
 			template<typename T>
 			void add_disposable(const T& disposable) {

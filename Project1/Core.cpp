@@ -52,10 +52,6 @@ namespace sde {
 		al_register_event_source(m_queue, al_get_keyboard_event_source());
 	}
 
-	void Core::add_updateable(const Updateable& updateable) {
-		m_updater.add_updateable(updateable);
-	}
-
 	void Core::set_mouse_visible(bool visible) const {
 		if (visible) {
 			al_show_mouse_cursor(m_display.get_display());

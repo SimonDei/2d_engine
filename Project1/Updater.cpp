@@ -2,8 +2,12 @@
 
 
 namespace sde {
-	void Updater::add_updateable(const Updateable& updateable) {
-		m_update_vector.push_back(std::make_shared<Updateable>(const_cast<Updateable*>(&updateable)));
+	void Updater::add_updateable(std::shared_ptr<Updateable> updateable) {
+		if (true) {
+			m_update_vector.push_back(updateable);
+		} else {
+			throw NullException("T is not convertible to Updateable.");
+		}
 	}
 
 	unsigned int Updater::get_size() const {

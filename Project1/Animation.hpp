@@ -3,16 +3,15 @@
 
 #include <allegro5/allegro.h>
 
-#include <list>
-
 #include "Updateable.hpp"
 
 
 namespace sde {
 	class Animation : public Updateable {
-		private:	
+		private:
 			
 			float m_frame_delay = 0.0f;
+
 
 		public:
 			Animation() = default;

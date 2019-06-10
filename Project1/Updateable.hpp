@@ -3,7 +3,7 @@
 
 
 namespace sde {
-	class Updateable {
+	class _declspec(dllexport) Updateable {
 		private:
 
 

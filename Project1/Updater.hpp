@@ -3,8 +3,10 @@
 
 #include <vector>
 #include <memory>
+#include <type_traits>
 
 #include "Updateable.hpp"
+#include "NullException.hpp"
 
 
 namespace sde {
@@ -17,7 +19,7 @@ namespace sde {
 			Updater() = default;
 			~Updater();
 
-			void add_updateable(const Updateable& updateable);
+			void add_updateable(std::shared_ptr<Updateable> updateable);
 			
 			unsigned int get_size() const;
 

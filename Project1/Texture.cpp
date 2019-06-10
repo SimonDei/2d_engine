@@ -12,13 +12,6 @@ namespace sde {
 		m_auto_disposed = true;
 	}
 
-	Texture::Texture(const Texture& texture) {
-		m_bitmap = texture.get_texture();
-		m_width = texture.get_width();
-		m_height = texture.get_height();
-		m_auto_disposed = true;
-	}
-
 	Texture::Texture(ALLEGRO_BITMAP* al_bitmap) {
 		m_bitmap = al_bitmap;
 		m_width = static_cast<float>(al_get_bitmap_width(m_bitmap));
