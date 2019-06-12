@@ -19,11 +19,12 @@ namespace sde {
 
 		public:
 			Font() = default;
+			Font(const std::string& path, unsigned int size);
 			~Font();
 
-			void load_font(const std::string& name, const std::string& path, int size);
+			void load_font(const std::string& name, const std::string& path, unsigned int size);
 
-			const ALLEGRO_FONT& get_font();
+			ALLEGRO_FONT* get_font() const;
 
 			void dispose() override;
 	};

@@ -23,9 +23,11 @@ namespace sde {
 		al_reserve_samples(1);
 
 		m_queue = al_create_event_queue();
-
-		al_init_timeout(&m_timeout, 1.0 / 60.0);
-
+		al_init_timeout(&m_timeout, 1.0 / m_fps);
+		
+		m_old_frame_time = al_get_time();
+		m_random.seed(std::chrono::system_clock::now().time_since_epoch().count());
+		
 		m_running = true;
 	}
 
@@ -37,19 +39,47 @@ namespace sde {
 	}
 
 	void Core::set_window_title(const std::string& name) const {
+		if (m_running) {
+			return;
+		}
 		al_set_app_name(name.c_str());
 		al_set_new_window_title(name.c_str());
 	}
 
 	void Core::set_window_position(unsigned int x, unsigned int y) const {
+		if (m_running) {
+			return;
+		}
 		m_display.set_position(x, y);
 	}
 
 	void Core::create_window(unsigned int width, unsigned int height) {
+		if (m_running) {
+			return;
+		}
 		m_display.create_display(width, height);
 
 		al_register_event_source(m_queue, al_get_display_event_source(m_display.get_display()));
 		al_register_event_source(m_queue, al_get_keyboard_event_source());
+	}
+
+	void Core::set_fps(float fps) {
+		m_fps = static_cast<double>(fps);
+
+		al_init_timeout(&m_timeout, 1.0 / m_fps);
+	}
+
+	void Core::start_event_timer() {
+		m_timer = al_create_timer(1.0 / m_fps);
+
+		al_register_event_source(m_queue, al_get_timer_event_source(m_timer));
+		al_start_timer(m_timer);
+	}
+
+	void Core::stop_event_timer() const {
+		if (m_timer != nullptr && al_get_timer_started(m_timer)) {
+			al_stop_timer(m_timer);
+		}
 	}
 
 	void Core::set_mouse_visible(bool visible) const {
@@ -68,14 +98,21 @@ namespace sde {
 		}
 	}
 
-	bool Core::is_event_in_queue() {
-		m_has_event = al_wait_for_event_until(m_queue, &m_event, &m_timeout);
-		if (m_event.type == ALLEGRO_EVENT_DISPLAY_CLOSE) {
-			m_running = false;
-		}
-		// TODO: update Methode Platz finden
-		m_updater.update();
-		return m_has_event;
+	double Core::get_game_time() const {
+		return al_get_time();
+	}
+
+	double Core::get_frame_time() const {
+		return m_delta_frame_time;
+	}
+
+	double Core::get_fps() const {
+		return m_current_fps;
+	}
+
+	int Core::get_random_number(int min, int max) {
+		std::uniform_int_distribution<int> dis(min, max);
+		return dis(m_random);
 	}
 
 	const Keycode& Core::get_keycode() const {
@@ -110,6 +147,7 @@ namespace sde {
 		m_assets.dispose();
 		m_disposer.dispose();
 		m_display.dispose();
+		al_destroy_timer(m_timer);
 		al_destroy_event_queue(m_queue);
 	}
 }

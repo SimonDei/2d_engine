@@ -48,6 +48,16 @@ namespace sde {
 				m_z = z;
 			}
 
+			void invert_x() {
+				m_x = -m_x;
+			}
+			void invert_y() {
+				m_y = -m_y;
+			}
+			void invert_z() {
+				m_z = -m_z;
+			}
+			
 			void add_x(const T& x) {
 				m_x += x;
 			}

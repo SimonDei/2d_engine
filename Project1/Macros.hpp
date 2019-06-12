@@ -2,8 +2,8 @@
 #define _MACROS_HPP_
 
 
-constexpr unsigned int SDE_SUCCESS = 0;
-constexpr unsigned int SDE_FAILURE = -1;
+static const int SDE_SUCCESS = 0;
+static const int SDE_FAILURE = -1;
 
 #define SDE_EXPORT __declspec(dllexport);
 

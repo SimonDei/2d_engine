@@ -27,6 +27,8 @@ namespace sde {
 			void set_title(const std::string& name) const;
 			void set_flags(const DisplayFlags& flags) const;
 
+			float get_width() const;
+			float get_height() const;
 			ALLEGRO_DISPLAY* get_display() const;
 
 			void dispose() override;

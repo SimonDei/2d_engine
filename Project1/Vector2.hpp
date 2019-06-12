@@ -39,6 +39,13 @@ namespace sde {
 				m_y = y;
 			}
 
+			void invert_x() {
+				m_x = -m_x;
+			}
+			void invert_y() {
+				m_y = -m_y;
+			}
+
 			void add_x(const T& x) {
 				m_x += x;
 			}

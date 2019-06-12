@@ -20,6 +20,14 @@ namespace sde {
 		al_set_new_display_flags(static_cast<int>(flags));
 	}
 
+	float Display::get_width() const {
+		return static_cast<float>(m_width);
+	}
+
+	float Display::get_height() const {
+		return static_cast<float>(m_height);
+	}
+
 	ALLEGRO_DISPLAY* Display::get_display() const {
 		return m_display;
 	}

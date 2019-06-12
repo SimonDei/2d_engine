@@ -3,11 +3,7 @@
 
 namespace sde {
 	void Updater::add_updateable(std::shared_ptr<Updateable> updateable) {
-		if (true) {
-			m_update_vector.push_back(updateable);
-		} else {
-			throw NullException("T is not convertible to Updateable.");
-		}
+		m_update_vector.push_back(updateable);
 	}
 
 	unsigned int Updater::get_size() const {
