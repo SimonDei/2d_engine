@@ -239,5 +239,8 @@
     <ClInclude Include="sd_engine.hpp">
       <Filter>Headerdateien</Filter>
     </ClInclude>
+    <ClInclude Include="Transformable.hpp">
+      <Filter>Headerdateien\template\interface</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

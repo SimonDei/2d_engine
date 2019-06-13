@@ -33,6 +33,7 @@
 #include "Disposable.hpp"
 #include "Drawable.hpp"
 #include "Updateable.hpp"
+#include "Transformable.hpp"
 
 #include "Updater.hpp"
 #include "Disposer.hpp"

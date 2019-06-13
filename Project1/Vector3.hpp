@@ -78,6 +78,9 @@ namespace sde {
 				m_y /= y;
 				m_z /= z;
 			}
+			const T& get_length() const {
+				return static_cast<T>(std::sqrt(std::pow(m_x, 2) + std::pow(m_y, 2) + std::pow(m_z, 2)));
+			}
 
 			const Vector3<T>& get_vector() const {
 				return this;

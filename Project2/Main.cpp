@@ -33,7 +33,7 @@ int main() {
 	unsigned int player_2_score = 0;
 
 	const float paddle_velocity = 10.0f;
-	sde::Vector2<float> ball_velocity(12.5f, 12.5f);
+	sde::Vector2<float> ball_velocity{ 12.5f, 12.5f };
 	
 	while (core.is_running()) {
 		if (core.poll_events_timed()) {
@@ -65,6 +65,11 @@ int main() {
 			paddle1.add_y(paddle_velocity * core.get_frame_time() * 25.0f);
 		} else if (paddle_down) {
 			paddle1.add_y(-paddle_velocity * core.get_frame_time() * 25.0f);
+		}
+		if (ball.get_y() < paddle2.get_y()) {
+			paddle2.add_y(-paddle_velocity * core.get_frame_time() * 25.0f);
+		} else if (ball.get_y() + ball.get_height() > paddle2.get_y() + paddle2.get_height()) {
+			paddle2.add_y(paddle_velocity * core.get_frame_time() * 25.0f);
 		}
 		if (sde::math::collision_rect_rect(paddle1.get_x(), paddle1.get_y(), paddle1.get_width(), paddle1.get_height(), ball.get_x(), ball.get_y(), ball.get_width(), ball.get_height()) ||
 			sde::math::collision_rect_rect(paddle2.get_x(), paddle2.get_y(), paddle2.get_width(), paddle2.get_height(), ball.get_x(), ball.get_y(), ball.get_width(), ball.get_height())) {

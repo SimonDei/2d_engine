@@ -213,6 +213,7 @@
     <ClInclude Include="SpriteQueue.hpp" />
     <ClInclude Include="Texture.hpp" />
     <ClInclude Include="TextureSheet.hpp" />
+    <ClInclude Include="Transformable.hpp" />
     <ClInclude Include="Updateable.hpp" />
     <ClInclude Include="Updater.hpp" />
     <ClInclude Include="Vector2.hpp" />

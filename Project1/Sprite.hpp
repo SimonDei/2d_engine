@@ -7,11 +7,12 @@
 
 #include "Texture.hpp"
 #include "Drawable.hpp"
+#include "Transformable.hpp"
 #include "Rectangle.hpp"
 
 
 namespace sde {
-	class Sprite : public Drawable {
+	class Sprite : public Drawable, public Transformable {
 		private:
 			std::shared_ptr<Texture> m_texture = nullptr;
 			float m_rotation = 0.0f;
