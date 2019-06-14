@@ -6,6 +6,8 @@
 
 namespace sde {
 	enum class Event : int {
+		EVENT_NONE = 0,
+
 		EVENT_KEYDOWN = 10,
 		EVENT_KEYUP = 12,
 

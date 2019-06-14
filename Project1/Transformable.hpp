@@ -37,9 +37,10 @@ namespace sde {
 			virtual float get_y() const { return m_y; }
 			virtual float get_center_x() const { return m_x + m_width / 2.0f; }
 			virtual float get_center_y() const { return m_y + m_height / 2.0f; }
-			virtual float get_bottom_left() const { return m_y + m_height; }
-			virtual float get_top_right() const { return m_x + m_width; }
-			virtual float get_bottom_right() const { return m_y + m_height + m_width; }
+			virtual const sde::Vector2<float> get_position() const { return sde::Vector2<float>(m_x, m_y); }
+			virtual const sde::Vector2<float> get_bottom_left() const { return sde::Vector2<float>(m_x, m_y + m_height); }
+			virtual const sde::Vector2<float> get_top_right() const { return sde::Vector2<float>(m_x + m_width, m_height); }
+			virtual const sde::Vector2<float> get_bottom_right() const { return sde::Vector2<float>(m_x + m_width, m_y + m_height); }
 
 			virtual float get_width() const { return m_width; }
 			virtual float get_height() const { return m_height; }

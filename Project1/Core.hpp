@@ -25,8 +25,6 @@
 #include "FileAccess.hpp"
 #include "Keycodes.hpp"
 
-#include "Macros.hpp"
-
 
 namespace sde {
 	class Core {
@@ -107,7 +105,7 @@ namespace sde {
 			}
 			// ===================================
 
-			inline const Event& get_event_type() const {
+			inline const Event get_event_type() const {
 				return static_cast<Event>(m_event.type);
 			}
 
@@ -116,7 +114,7 @@ namespace sde {
 			//}
 
 			Assets& get_assets();
-			const Keycode& get_keycode() const;
+			const Keycode get_keycode() const;
 			const Display& get_display() const;
 			const Disposer& get_disposer() const;
 			const Updater& get_updater() const;

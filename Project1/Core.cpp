@@ -115,7 +115,7 @@ namespace sde {
 		return dis(m_random);
 	}
 
-	const Keycode& Core::get_keycode() const {
+	const Keycode Core::get_keycode() const {
 		return static_cast<Keycode>(m_event.keyboard.keycode);
 	}
 

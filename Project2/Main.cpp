@@ -11,9 +11,9 @@ int main() {
 	const float display_height = core.get_display().get_height();
 
 	sde::Assets assets{ core.get_assets() };
-	assets.load_texture("ball", "res/ball.png");
-	assets.load_texture("paddle1", "res/paddle1.png");
-	assets.load_texture("paddle2", "res/paddle2.png");
+	assets.load_texture("ball", "res/ball.tga");
+	assets.load_texture("paddle1", "res/paddle1.tga");
+	assets.load_texture("paddle2", "res/paddle2.tga");
 	assets.load_font("arial", "res/arial.ttf", 26);
 
 	sde::Sprite ball{ assets.get_texture("ball") };
