@@ -14,7 +14,7 @@
 namespace sde {
 	class Font : public Disposable {
 		private:
-			ALLEGRO_FONT* m_font = nullptr;
+			ALLEGRO_FONT* m_font{ nullptr };
 
 
 		public:

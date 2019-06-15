@@ -14,11 +14,11 @@
 namespace sde {
 	class File : public Disposable {
 		private:
-			ALLEGRO_FILE* m_file = nullptr;
-			std::unordered_map<unsigned int, std::string> m_lines;
-			FileAccess m_access;
-			std::string m_path = "";
-			bool m_closed = false;
+			ALLEGRO_FILE* m_file{ nullptr };
+			std::unordered_map<unsigned int, std::string> m_lines{ };
+			FileAccess m_access{ };
+			std::string m_path{ };
+			bool m_closed{ false };
 
 			void read();
 

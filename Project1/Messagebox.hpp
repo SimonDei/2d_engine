@@ -14,11 +14,11 @@
 namespace sde {
 	class Messagebox {
 		private:
-			std::shared_ptr<Display> m_display;
-			std::string m_message = "";
-			std::string m_caption = "";
-			MessageButtons m_buttons = MessageButtons::MSGBOX_OK_CANCEL;
-			int m_result = 0;
+			std::shared_ptr<Display> m_display{ nullptr };
+			std::string m_message{ };
+			std::string m_caption{ };
+			MessageButtons m_buttons{ MessageButtons::MSGBOX_OK_CANCEL };
+			int m_result{ 0 };
 
 
 		public:
@@ -33,7 +33,7 @@ namespace sde {
 			void set_caption(const std::string& caption);
 			void set_message_type(const MessageButtons& buttons);
 
-			const MessageReturn& show();
+			const MessageReturn show();
 	};
 }
 

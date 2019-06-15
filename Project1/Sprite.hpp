@@ -14,8 +14,8 @@
 namespace sde {
 	class Sprite : public Drawable, public Transformable {
 		private:
-			std::shared_ptr<Texture> m_texture = nullptr;
-			float m_rotation = 0.0f;
+			std::shared_ptr<Texture> m_texture{ nullptr };
+			float m_rotation{ 0.0f };
 
 
 		public:

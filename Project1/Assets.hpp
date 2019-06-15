@@ -16,10 +16,10 @@
 namespace sde {
 	class Assets : public Disposable {
 		private:
-			std::unordered_map<std::string, std::shared_ptr<Texture>> m_textures;
-			std::unordered_map<std::string, std::shared_ptr<Music>> m_music;
-			std::unordered_map<std::string, std::shared_ptr<TextureSheet>> m_texture_sheets;
-			std::unordered_map<std::string, std::shared_ptr<Font>> m_fonts;
+			std::unordered_map<std::string, std::shared_ptr<Texture>> m_textures{ };
+			std::unordered_map<std::string, std::shared_ptr<Music>> m_music{ };
+			std::unordered_map<std::string, std::shared_ptr<TextureSheet>> m_texture_sheets{ };
+			std::unordered_map<std::string, std::shared_ptr<Font>> m_fonts{ };
 
 
 		public:

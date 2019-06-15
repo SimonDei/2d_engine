@@ -17,7 +17,7 @@ namespace sde {
 	class Renderer {
 		private:
 			ALLEGRO_COLOR m_base_color{ 255, 255, 255, 255 };
-			float m_thickness = 1.0f;
+			float m_thickness{ 1.0f };
 
 
 		public:

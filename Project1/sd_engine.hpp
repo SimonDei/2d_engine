@@ -29,6 +29,8 @@
 #include "Rectangle.hpp"
 #include "NullException.hpp"
 #include "Math.hpp"
+#include "Macros.hpp"
+#include "Messagebox.hpp"
 
 #include "Disposable.hpp"
 #include "Drawable.hpp"
@@ -37,9 +39,8 @@
 
 #include "Updater.hpp"
 #include "Disposer.hpp"
-
-#include "Messagebox.hpp"
 #include "Logger.hpp"
+#include "Timer.hpp"
 
 
 #endif

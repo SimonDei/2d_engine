@@ -10,7 +10,7 @@
 namespace sde {
 	class SpriteQueue {
 		private:
-			std::unordered_map<unsigned int, std::shared_ptr<Sprite>> m_sprite_map;
+			std::unordered_map<unsigned int, std::shared_ptr<Sprite>> m_sprite_map{ };
 
 
 		public:

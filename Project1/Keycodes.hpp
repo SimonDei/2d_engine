@@ -31,7 +31,12 @@ namespace sde {
 		KEYCODE_Y = 25,
 		KEYCODE_Z = 26,
 
-		KEYCODE_ESCAPE = 59
+		KEYCODE_ESCAPE = 59,
+		KEYCODE_TAB	   = 64,
+		KEYCODE_ENTER  = 67,
+		KEYCODE_COMMA  = 72,
+		KEYCODE_DOT    = 73,
+		KEYCODE_SPACE  = 75
 	};
 }
 

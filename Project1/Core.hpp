@@ -29,22 +29,22 @@
 namespace sde {
 	class Core {
 		private:
-			Display m_display;
-			ALLEGRO_EVENT_QUEUE* m_queue = nullptr;
-			ALLEGRO_TIMER* m_timer = nullptr;
-			ALLEGRO_EVENT m_event;
-			ALLEGRO_TIMEOUT m_timeout;
-			Disposer m_disposer;
-			Updater m_updater;
-			Assets m_assets;
-			std::default_random_engine m_random;
-			bool m_running = false;
-			bool m_has_event = false;
-			double m_fps = 60.0;
-			double m_old_frame_time = 0.0;
-			double m_new_frame_time = 0.0;
-			double m_delta_frame_time = 0.0;
-			double m_current_fps = 0.0;
+			Display m_display{ };
+			ALLEGRO_EVENT_QUEUE* m_queue{ nullptr };
+			ALLEGRO_TIMER* m_timer{ nullptr };
+			ALLEGRO_EVENT m_event{ };
+			ALLEGRO_TIMEOUT m_timeout{ };
+			Disposer m_disposer{ };
+			Updater m_updater{ };
+			Assets m_assets{ };
+			std::default_random_engine m_random{ };
+			bool m_running{ false };
+			bool m_has_event{ false };
+			double m_fps{ 60.0 };
+			double m_old_frame_time{ 0.0 };
+			double m_new_frame_time{ 0.0 };
+			double m_delta_frame_time{ 0.0 };
+			double m_current_fps{ 0.0 };
 
 
 		public:
@@ -62,6 +62,15 @@ namespace sde {
 			void start_event_timer();
 			void stop_event_timer() const;
 
+			void set_mouse_visible(bool visible) const;
+			void set_mouse_grabbed(bool grabbed) const;
+			
+			double get_game_time() const;
+			double get_frame_time() const;
+			double get_fps() const;
+
+			int get_random_number(int min, int max);
+
 			template<typename T>
 			void add_updateable(const T& updateable) {
 				m_updater.add_updateable(std::make_shared<T>(updateable));
@@ -71,15 +80,6 @@ namespace sde {
 			void add_disposable(const T& disposable) {
 				m_disposer.add_disposable(std::make_shared<T>(disposable));
 			}
-
-			void set_mouse_visible(bool visible) const;
-			void set_mouse_grabbed(bool grabbed) const;
-			
-			double get_game_time() const;
-			double get_frame_time() const;
-			double get_fps() const;
-
-			int get_random_number(int min, int max);
 
 			inline bool is_running() {
 				m_new_frame_time = al_get_time();

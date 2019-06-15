@@ -117,6 +117,9 @@
     <ClCompile Include="TextureSheet.cpp">
       <Filter>Quelldateien</Filter>
     </ClCompile>
+    <ClCompile Include="Timer.cpp">
+      <Filter>Quelldateien</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Music.hpp">
@@ -241,6 +244,9 @@
     </ClInclude>
     <ClInclude Include="Transformable.hpp">
       <Filter>Headerdateien\template\interface</Filter>
+    </ClInclude>
+    <ClInclude Include="Timer.hpp">
+      <Filter>Headerdateien\util</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

@@ -12,7 +12,7 @@
 namespace sde {
 	class Updater : public Updateable {
 		private:
-			std::vector<std::shared_ptr<Updateable>> m_update_vector;
+			std::vector<std::shared_ptr<Updateable>> m_update_vector{ };
 			
 
 		public:

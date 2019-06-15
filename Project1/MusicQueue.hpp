@@ -10,11 +10,11 @@
 namespace sde {
 	class MusicQueue : public Updateable {
 		private:
-			std::unordered_map<unsigned int, std::shared_ptr<Music>> m_music_map;
-			std::shared_ptr<Music> m_playing_music = nullptr;
-			unsigned int m_playing_index = 0;
-			unsigned int m_current_position = 0;
-			bool m_paused = false;
+			std::unordered_map<unsigned int, std::shared_ptr<Music>> m_music_map{ };
+			std::shared_ptr<Music> m_playing_music{ nullptr };
+			unsigned int m_playing_index{ 0 };
+			unsigned int m_current_position{ 0 };
+			bool m_paused{ false };
 
 
 		public:

@@ -14,9 +14,9 @@
 namespace sde {
 	class Music : public Disposable {
 		private:
-			ALLEGRO_SAMPLE* m_sample = nullptr;
-			ALLEGRO_SAMPLE_INSTANCE* m_instance = nullptr;
-			bool m_started = false;
+			ALLEGRO_SAMPLE* m_sample{ nullptr };
+			ALLEGRO_SAMPLE_INSTANCE* m_instance{ nullptr };
+			bool m_started{ false };
 
 
 		public:

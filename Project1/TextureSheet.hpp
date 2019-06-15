@@ -13,9 +13,9 @@
 namespace sde {
 	class TextureSheet : public Texture {
 		private:
-			std::unordered_map<std::string, Texture> m_sub_bitmaps;
-			float m_tile_width = 0.0f;
-			float m_tile_height = 0.0f;
+			std::unordered_map<std::string, Texture> m_sub_bitmaps{ };
+			float m_tile_width{ 0.0f };
+			float m_tile_height{ 0.0f };
 
 
 		public:

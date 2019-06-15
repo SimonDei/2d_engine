@@ -12,13 +12,13 @@
 namespace sde {
 	class ConfigFile : public Disposable {
 		private:
-			ALLEGRO_FILE* m_config_file = nullptr;
-			std::unordered_map<std::string, std::unordered_map<std::string, std::string>> m_config_map;
-			std::string m_section_name;
-			std::string m_entry_name;
-			std::string m_entry_value;
-			std::string m_path;
-			bool m_closed = false;
+			ALLEGRO_FILE* m_config_file{ nullptr };
+			std::unordered_map<std::string, std::unordered_map<std::string, std::string>> m_config_map{ };
+			std::string m_section_name{ };
+			std::string m_entry_name{ };
+			std::string m_entry_value{ };
+			std::string m_path{ };
+			bool m_closed{ false };
 
 		public:
 			ConfigFile() = default;

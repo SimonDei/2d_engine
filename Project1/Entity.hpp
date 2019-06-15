@@ -10,8 +10,8 @@
 namespace sde {
 	class Entity {
 		private:
-			std::unordered_map<std::string, Component> m_components;
-			unsigned int m_id = 0;
+			std::unordered_map<std::string, Component> m_components{ };
+			unsigned int m_id{ 0 };
 
 
 		public:
