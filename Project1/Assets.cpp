@@ -17,8 +17,8 @@ namespace sde {
 		m_textures.insert(std::make_pair(name, std::move(std::make_shared<Texture>(path))));
 	}
 
-	void Assets::load_texture_sheet(const std::string& name, const std::string& path) {
-		m_texture_sheets.insert(std::make_pair(name, std::move(std::make_shared<TextureSheet>(path))));
+	void Assets::load_texture_sheet(const std::string& name, const std::string& path, unsigned int tile_width, unsigned int tile_height) {
+		m_texture_sheets.insert(std::make_pair(name, std::move(std::make_shared<TextureSheet>(path, tile_width, tile_height))));
 	}
 
 	void Assets::load_font(const std::string& name, const std::string& path) {

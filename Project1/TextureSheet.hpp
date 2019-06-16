@@ -13,22 +13,26 @@
 namespace sde {
 	class TextureSheet : public Texture {
 		private:
-			std::unordered_map<std::string, Texture> m_sub_bitmaps{ };
-			float m_tile_width{ 0.0f };
-			float m_tile_height{ 0.0f };
+			std::unordered_map<unsigned int, Texture> m_sub_bitmaps{ };
+			unsigned int m_tile_width{ 0 };
+			unsigned int m_tile_height{ 0 };
+
+			void load();
 
 
 		public:
 			TextureSheet() = default;
-			explicit TextureSheet(const std::string& path);
-			explicit TextureSheet(ALLEGRO_BITMAP* al_bitmap);
+			TextureSheet(const std::string& path, unsigned int tile_width, unsigned int tile_height);
 			~TextureSheet();
 
 			void set_tile_width(float width);
 			void set_tile_height(float height);
 			void set_tile_size(float width, float height);
 
-			const Texture& get_texture_rect(float x, float y, float width, float height);
+			float get_tile_width() const;
+			float get_tile_height() const;
+
+			const Texture& get_texture_rect(unsigned int index);
 
 			ALLEGRO_BITMAP* get_texture_sheet() const;
 

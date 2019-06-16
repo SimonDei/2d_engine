@@ -29,7 +29,7 @@ namespace sde {
 
 			void load_music(const std::string& name, const std::string& path);
 			void load_texture(const std::string& name, const std::string& path);
-			void load_texture_sheet(const std::string& name, const std::string& path);
+			void load_texture_sheet(const std::string& name, const std::string& path, unsigned int tile_width, unsigned int tile_height);
 			void load_font(const std::string& name, const std::string& path);
 			void load_font(const std::string& name, const std::string& path, unsigned int size);
 

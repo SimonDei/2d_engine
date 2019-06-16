@@ -114,9 +114,9 @@ int main_2() {
 		renderer.draw_text(std::to_string(player_1_score), assets.get_font("arial"), 50.0f, 20.0f);
 		renderer.draw_text(std::to_string(player_2_score), assets.get_font("arial"), display_width - 100.0f, 20.0f);
 		
-		renderer.draw_sprite(ball);
-		renderer.draw_sprite(paddle1);
-		renderer.draw_sprite(paddle2);
+		renderer.draw_object(ball);
+		renderer.draw_object(paddle1);
+		renderer.draw_object(paddle2);
 		
 		renderer.display();
 	}

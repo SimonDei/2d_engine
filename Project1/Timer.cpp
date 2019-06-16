@@ -7,9 +7,14 @@ namespace sde {
 		m_created = true;
 	}
 
+	void Timer::set_ticks_per_sec(double ticks_per_sec) const {
+		al_set_timer_speed(m_timer, 1.0 / ticks_per_sec);
+	}
+
 	void Timer::start_timer() {
 		if (!m_created) {
 			m_timer = al_create_timer(1.0);
+			m_created = true;
 		}
 		al_start_timer(m_timer);
 		m_started = true;
@@ -34,6 +39,10 @@ namespace sde {
 		al_set_timer_count(m_timer, 0);
 	}
 	
+	double Timer::get_one_second() const {
+		return al_get_timer_speed(m_timer);
+	}
+
 	long Timer::get_elapsed_ticks() const {
 		return static_cast<long>(al_get_timer_count(m_timer));
 	}

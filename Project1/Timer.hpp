@@ -22,12 +22,15 @@ namespace sde {
 			explicit Timer(double ticks_per_sec);
 			~Timer();
 
+			void set_ticks_per_sec(double ticks_per_sec) const;
+
 			void start_timer();
 			void stop_timer();
 			void resume_timer();
 
 			void reset() const;
 
+			double get_one_second() const;
 			long get_elapsed_ticks() const;
 
 			bool is_started() const;

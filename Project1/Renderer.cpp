@@ -72,30 +72,8 @@ namespace sde {
 		al_draw_filled_circle(x, y, radius, color.get_al_color());
 	}
 
-	void Renderer::draw_sprite(const Sprite& sprite) {
-		al_draw_rotated_bitmap(sprite.get_texture().get_texture(), sprite.get_width() / 2.0f, sprite.get_height() / 2.0f, sprite.get_x() + sprite.get_width() / 2.0f, sprite.get_y() + sprite.get_height() / 2.0f, sprite.get_rotation(), 0);
-	}
-
-	void Renderer::draw_sprite(const Sprite& sprite, float x, float y) {
-		al_draw_rotated_bitmap(sprite.get_texture().get_texture(), x + sprite.get_width() / 2.0f, y + sprite.get_height() / 2.0, x, y, sprite.get_rotation(), 0);
-	}
-
-	void Renderer::draw_sprite_queue(const SpriteQueue& sprite_queue) {
-		for (auto& sprite : sprite_queue.get_sprite_map()) {
-			al_draw_rotated_bitmap((*sprite.second).get_texture().get_texture(), sprite.second->get_width() / 2.0f, sprite.second->get_height() / 2.0f, sprite.second->get_x() + sprite.second->get_width() / 2.0f, sprite.second->get_y() + sprite.second->get_height() / 2.0f, sprite.second->get_rotation(), 0);
-		}
-	}
-
-	void Renderer::draw_drawable_object(const Drawable& drawable) {
-		drawable.draw();
-	}
-
-	void Renderer::draw_drawable_object(const Drawable& drawable, float x, float y) {
-		drawable.draw(x, y);
-	}
-
 	void Renderer::draw_text(const std::string& text, const Font& font, float x, float y) {
-		al_draw_text(font.get_font(), al_map_rgb(255, 255, 255), x, y, 0, text.c_str());
+		al_draw_text(font.get_font(), m_base_color, x, y, 0, text.c_str());
 	}
 
 	void Renderer::draw_colored_text(const std::string& text, const Font& font, const Color3<unsigned char>& color, float x, float y) {
@@ -104,6 +82,20 @@ namespace sde {
 
 	void Renderer::draw_colored_text(const std::string& text, const Font& font, unsigned char red, unsigned char green, unsigned char blue, float x, float y) {
 		al_draw_text(font.get_font(), al_map_rgb(red, green, blue), x, y, 0, text.c_str());
+	}
+
+	void Renderer::draw_sprite_queue(const SpriteQueue& sprite_queue) {
+		for (auto& sprite : sprite_queue.get_sprite_map()) {
+			al_draw_rotated_bitmap((*sprite.second).get_texture().get_texture(), sprite.second->get_width() / 2.0f, sprite.second->get_height() / 2.0f, sprite.second->get_x() + sprite.second->get_width() / 2.0f, sprite.second->get_y() + sprite.second->get_height() / 2.0f, sprite.second->get_rotation(), 0);
+		}
+	}
+
+	void Renderer::draw_object(const Drawable& drawable) {
+		drawable.draw();
+	}
+
+	void Renderer::draw_object(const Drawable& drawable, float x, float y) {
+		drawable.draw(x, y);
 	}
 
 	Renderer::~Renderer() {

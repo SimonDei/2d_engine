@@ -12,13 +12,18 @@ int main() {
 	assets.load_texture("level_2", "res/level_2.tga");
 	assets.load_texture("level_3", "res/level_3.tga");
 
-	sde::Parallax parallax_back{ };
-	parallax_back.add_parallax_sprite(0, 0.0f, 0.0f, 1.0f, 0.0f, assets.get_texture("level_0"));
-	parallax_back.add_parallax_sprite(1, 0.0f, 128.0f, 2.0f, 0.0f, assets.get_texture("level_1"));
-	parallax_back.add_parallax_sprite(2, 0.0f, 384.0f, 4.0f, 0.0f, assets.get_texture("level_2"));
-	parallax_back.add_parallax_sprite(3, 0.0f, 512.0f, 8.0f, 0.0f, assets.get_texture("level_3"));
+	assets.load_texture_sheet("sheet", "res/sheet.tga", 64, 64);
+
+	//sde::Parallax parallax_back{ };
+	//parallax_back.add_parallax_sprite(0, 0.0f, 0.0f, 1.0f, 0.0f, assets.get_texture("level_0"));
+	//parallax_back.add_parallax_sprite(1, 0.0f, 128.0f, 2.0f, 0.0f, assets.get_texture("level_1"));
+	//parallax_back.add_parallax_sprite(2, 0.0f, 384.0f, 4.0f, 0.0f, assets.get_texture("level_2"));
+	//parallax_back.add_parallax_sprite(3, 0.0f, 512.0f, 8.0f, 0.0f, assets.get_texture("level_3"));
 	
-	core.add_updateable(&parallax_back);
+	sde::Animation animation{ 4, assets.get_texture_sheet("sheet") };
+	
+	//core.add_updateable(&parallax_back);
+	core.add_updateable(&animation);
 
 	while (core.is_running()) {
 		core.update();
@@ -30,7 +35,8 @@ int main() {
 		}
 		renderer.clear(0, 0, 0);
 
-		renderer.draw_drawable_object(parallax_back);
+		//renderer.draw_object(parallax_back);
+		renderer.draw_object(animation);
 
 		renderer.display();
 	}

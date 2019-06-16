@@ -21,7 +21,7 @@ namespace sde {
 			Texture() = default;
 			explicit Texture(const std::string& path);
 			explicit Texture(ALLEGRO_BITMAP* al_bitmap);
-			Texture(ALLEGRO_BITMAP* al_bitmap, float width, float height, float x, float y);
+			Texture(ALLEGRO_BITMAP* al_bitmap, float x, float y, float width, float height);
 			~Texture();
 			
 			void load_texture(const std::string& path);

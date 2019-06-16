@@ -49,18 +49,15 @@ namespace sde {
 			void draw_filled_circle(float x, float y, float radius, const Color3<unsigned char>& color);
 			void draw_filled_circle(float x, float y, float radius, const Color4<unsigned char>& color);
 
-			void draw_sprite(const Sprite& sprite);
-			void draw_sprite(const Sprite& sprite, float x, float y);
+			void draw_text(const std::string& text, const Font& font, float x, float y);
+
+			void draw_colored_text(const std::string& text, const Font& font, const Color3<unsigned char>& color, float x, float y);
+			void draw_colored_text(const std::string& text, const Font& font, unsigned char red, unsigned char green, unsigned char blue, float x, float y);
 
 			void draw_sprite_queue(const SpriteQueue& sprite_queue);
 			
-			void draw_drawable_object(const Drawable& drawable);
-			void draw_drawable_object(const Drawable& drawable, float x, float y);
-
-			void draw_text(const std::string& text, const Font& font, float x, float y);
-			
-			void draw_colored_text(const std::string& text, const Font& font, const Color3<unsigned char>& color, float x, float y);
-			void draw_colored_text(const std::string& text, const Font& font, unsigned char red, unsigned char green, unsigned char blue, float x, float y);
+			void draw_object(const Drawable& drawable);
+			void draw_object(const Drawable& drawable, float x, float y);
 
 			inline void clear(unsigned char red, unsigned char green, unsigned char blue) const {
 				al_clear_to_color(al_map_rgb(red, green, blue));
