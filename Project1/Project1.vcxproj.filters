@@ -120,6 +120,9 @@
     <ClCompile Include="Timer.cpp">
       <Filter>Quelldateien</Filter>
     </ClCompile>
+    <ClCompile Include="Parallax.cpp">
+      <Filter>Quelldateien</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Music.hpp">
@@ -247,6 +250,9 @@
     </ClInclude>
     <ClInclude Include="Timer.hpp">
       <Filter>Headerdateien\util</Filter>
+    </ClInclude>
+    <ClInclude Include="Parallax.hpp">
+      <Filter>Headerdateien\graphic</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

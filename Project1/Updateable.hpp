@@ -11,7 +11,7 @@ namespace sde {
 			Updateable() = default;
 			~Updateable() { };
 			
-			virtual void update() = 0;
+			virtual void update(double delta) = 0;
 	};
 }
 

@@ -25,7 +25,7 @@ namespace sde {
 			void set_texture_sheet(const TextureSheet& texture_sheet);
 			void set_frame_time(float frame_time);
 
-			void update() override;
+			void update(double delta) override;
 	};
 }
 

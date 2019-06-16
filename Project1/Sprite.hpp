@@ -6,8 +6,8 @@
 #include <string>
 
 #include "Texture.hpp"
-#include "Drawable.hpp"
 #include "Transformable.hpp"
+#include "Drawable.hpp"
 #include "Rectangle.hpp"
 
 

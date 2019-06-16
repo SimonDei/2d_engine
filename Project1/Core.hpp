@@ -39,6 +39,7 @@ namespace sde {
 			Assets m_assets{ };
 			std::default_random_engine m_random{ };
 			bool m_running{ false };
+			bool m_paused{ false };
 			bool m_has_event{ false };
 			double m_fps{ 60.0 };
 			double m_old_frame_time{ 0.0 };
@@ -65,21 +66,26 @@ namespace sde {
 			void set_mouse_visible(bool visible) const;
 			void set_mouse_grabbed(bool grabbed) const;
 			
+			void set_paused(bool paused);
+			void toggle_paused();
+
 			double get_game_time() const;
 			double get_frame_time() const;
 			double get_fps() const;
 
 			int get_random_number(int min, int max);
 
-			template<typename T>
-			void add_updateable(const T& updateable) {
-				m_updater.add_updateable(std::make_shared<T>(updateable));
+			void add_updateable(Updateable* updateable) {
+				m_updater.add_updateable(updateable);
 			}
 
-			template<typename T>
-			void add_disposable(const T& disposable) {
-				m_disposer.add_disposable(std::make_shared<T>(disposable));
+			void add_disposable(Disposable* disposable) {
+				m_disposer.add_disposable(disposable);
 			}
+
+			inline bool is_paused() const { 
+				return m_paused;
+			};
 
 			inline bool is_running() {
 				m_new_frame_time = al_get_time();
@@ -105,19 +111,19 @@ namespace sde {
 			}
 			// ===================================
 
+			inline void update() {
+				m_updater.update(m_delta_frame_time);
+			}
+
 			inline const Event get_event_type() const {
 				return static_cast<Event>(m_event.type);
 			}
 
-			//inline void update() {
-			//	m_updater.update();
-			//}
-
 			Assets& get_assets();
+			Updater& get_updater();
 			const Keycode get_keycode() const;
 			const Display& get_display() const;
 			const Disposer& get_disposer() const;
-			const Updater& get_updater() const;
 
 			void wait(int ms) const;
 	

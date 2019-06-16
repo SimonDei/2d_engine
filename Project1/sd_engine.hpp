@@ -12,6 +12,7 @@
 #include "Animation.hpp"
 #include "Sprite.hpp"
 #include "SpriteQueue.hpp"
+#include "Parallax.hpp"
 
 #include "Music.hpp"
 #include "MusicQueue.hpp"

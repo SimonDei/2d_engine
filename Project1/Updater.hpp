@@ -3,7 +3,6 @@
 
 #include <vector>
 #include <memory>
-#include <type_traits>
 
 #include "Updateable.hpp"
 #include "NullException.hpp"
@@ -12,18 +11,18 @@
 namespace sde {
 	class Updater : public Updateable {
 		private:
-			std::vector<std::shared_ptr<Updateable>> m_update_vector{ };
+			std::vector<Updateable*> m_update_vector{ };
 			
 
 		public:
 			Updater() = default;
 			~Updater();
 
-			void add_updateable(std::shared_ptr<Updateable> updateable);
+			void add_updateable(Updateable* updateable);
 			
 			unsigned int get_size() const;
 
-			void update() override;
+			void update(double delta) override;
 	};
 }
 

@@ -1,7 +1,7 @@
 #include <sd_engine.hpp>
 
 
-int main() {
+int main_2() {
 	sde::Core core{ "sde window", 1024, 768 };
 	//core.set_fps(60.0f);
 	
@@ -25,7 +25,8 @@ int main() {
 	sde::Sprite paddle2{ assets.get_texture("paddle2") };
 	paddle2.set_position(display_width - 50.0f - paddle2.get_width(), display_height / 2.0f - paddle2.get_half_height());
 
-	bool paused{ true };
+	core.set_paused(true);
+
 	bool reset_ball{ false };
 	bool paddle_up{ false };
 	bool paddle_down{ false };
@@ -33,11 +34,11 @@ int main() {
 	unsigned int player_1_score{ 0 };
 	unsigned int player_2_score{ 0 };
 
-	const float paddle_velocity{ 7.5f };
+	const float paddle_velocity{ 10.0f };
 
 	sde::Vector2<float> ball_velocity{ 12.5f, 12.5f };
-	if (core.get_random_number(0, 1) == 0) { ball_velocity.invert_x(); }
-	if (core.get_random_number(0, 1) == 0) { ball_velocity.invert_y(); }
+	if (core.get_random_number(0, 1) == 0) ball_velocity.invert_x();
+	if (core.get_random_number(0, 1) == 0) ball_velocity.invert_y();
 	
 	while (core.is_running()) {
 		if (core.poll_events_timed()) {
@@ -51,7 +52,7 @@ int main() {
 							paddle_up = true;
 							break;
 						case sde::Keycode::KEYCODE_SPACE:
-							paused = !paused;
+							core.toggle_paused();
 							break;
 					}
 					break;
@@ -67,7 +68,7 @@ int main() {
 					break;
 			}
 		}
-		if (!paused) {
+		if (!core.is_paused()) {
 			if (ball.get_y() < paddle2.get_y()) {
 				paddle2.add_y(-paddle_velocity * core.get_frame_time() * 25.0f);
 			} else if (ball.get_bottom_right().get_y() > paddle2.get_bottom_left().get_y()) {
@@ -83,17 +84,17 @@ int main() {
 			if (ball.get_x() > display_width) {
 				player_1_score++;
 				reset_ball = true;
-				paused = true;
+				core.toggle_paused();
 			}
 			if (ball.get_top_right().get_x() < 0.0f) {
 				player_2_score++;
 				reset_ball = true;
-				paused = true;
+				core.toggle_paused();
 			}
 			if (reset_ball) {
 				ball.set_position(display_width / 2.0f - ball.get_half_width(), display_height / 2.0f - ball.get_half_height());
-				if (core.get_random_number(0, 1) == 0) { ball_velocity.invert_x(); }
-				if (core.get_random_number(0, 1) == 0) { ball_velocity.invert_y(); }
+				if (core.get_random_number(0, 1) == 0) ball_velocity.invert_x();
+				if (core.get_random_number(0, 1) == 0) ball_velocity.invert_y();
 				reset_ball = false;
 			}
 			ball.add_position(ball_velocity.get_x() * core.get_frame_time() * 25.0f, ball_velocity.get_y() * core.get_frame_time() * 25.0f);

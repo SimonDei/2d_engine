@@ -10,7 +10,7 @@ namespace sde {
 		m_frame_time = frame_time;
 	}
 	
-	void Animation::update() {
+	void Animation::update(double delta) {
 
 	}
 	

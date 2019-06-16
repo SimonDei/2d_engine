@@ -3,7 +3,7 @@
 
 namespace sde {
 	Timer::Timer(double ticks_per_sec) {
-		m_timer = al_create_timer(ticks_per_sec);
+		m_timer = al_create_timer(1.0 / ticks_per_sec);
 		m_created = true;
 	}
 
@@ -30,6 +30,10 @@ namespace sde {
 		}
 	}
 
+	void Timer::reset() const {
+		al_set_timer_count(m_timer, 0);
+	}
+	
 	long Timer::get_elapsed_ticks() const {
 		return static_cast<long>(al_get_timer_count(m_timer));
 	}

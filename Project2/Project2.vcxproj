@@ -134,6 +134,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Main.cpp" />
+    <ClCompile Include="Main_2.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

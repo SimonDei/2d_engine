@@ -27,12 +27,14 @@ namespace sde {
 		
 		m_old_frame_time = al_get_time();
 		m_random.seed(std::chrono::system_clock::now().time_since_epoch().count());
-		
+
 		m_running = true;
 	}
 
 	Core::Core(const std::string& name, unsigned int width, unsigned int height) : Core(name) {
 		m_display.create_display(width, height);
+
+		al_set_clipping_rectangle(0, 0, width, height);
 
 		al_register_event_source(m_queue, al_get_display_event_source(m_display.get_display()));
 		al_register_event_source(m_queue, al_get_keyboard_event_source());
@@ -98,6 +100,14 @@ namespace sde {
 		}
 	}
 
+	void Core::set_paused(bool paused) {
+		m_paused = paused;
+	}
+
+	void Core::toggle_paused() {
+		m_paused = !m_paused;
+	}
+
 	double Core::get_game_time() const {
 		return al_get_time();
 	}
@@ -131,7 +141,7 @@ namespace sde {
 		return m_disposer;
 	}
 
-	const Updater& Core::get_updater() const {
+	Updater& Core::get_updater() {
 		return m_updater;
 	}
 
@@ -144,8 +154,8 @@ namespace sde {
 	}
 
 	Core::~Core() {
-		m_assets.dispose();
 		m_disposer.dispose();
+		m_assets.dispose();
 		m_display.dispose();
 		al_destroy_timer(m_timer);
 		al_destroy_event_queue(m_queue);

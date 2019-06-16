@@ -18,7 +18,7 @@ namespace sde {
 			~SpriteQueue();
 
 			void push_sprite(const Sprite& sprite);
-			void push_sprite(const std::string& path, float x, float y);
+			void push_sprite(const Sprite& sprite, unsigned int index);
 
 			const std::unordered_map<unsigned int, std::shared_ptr<Sprite>>& get_sprite_map() const;
 	};

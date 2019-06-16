@@ -26,6 +26,8 @@ namespace sde {
 			void stop_timer();
 			void resume_timer();
 
+			void reset() const;
+
 			long get_elapsed_ticks() const;
 
 			bool is_started() const;

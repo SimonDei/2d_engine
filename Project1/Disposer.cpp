@@ -2,7 +2,7 @@
 
 
 namespace sde {
-	void Disposer::add_disposable(std::shared_ptr<Disposable> disposable) {
+	void Disposer::add_disposable(Disposable* disposable) {
 		m_dispose_vector.push_back(disposable);
 	}
 

@@ -31,7 +31,7 @@ namespace sde {
 			void stop();
 			void reset();
 
-			void update() override;
+			void update(double delta) override;
 
 			const std::unordered_map<unsigned int, std::shared_ptr<Music>>& get_music_map() const;
 		

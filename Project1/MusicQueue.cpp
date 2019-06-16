@@ -39,7 +39,7 @@ namespace sde {
 		play();
 	}
 
-	void MusicQueue::update() {
+	void MusicQueue::update(double delta) {
 		if (!m_paused && m_playing_music != nullptr) {
 			if (!al_get_sample_instance_playing(m_playing_music->get_sample_instance()) && m_playing_music->get_started()) {
 				m_playing_music->set_started(false);
