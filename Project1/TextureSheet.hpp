@@ -7,13 +7,14 @@
 #include <unordered_map>
 
 #include "Texture.hpp"
+#include "Rectangle.hpp"
 #include "NullException.hpp"
 
 
 namespace sde {
 	class TextureSheet : public Texture {
 		private:
-			std::unordered_map<unsigned int, Texture> m_sub_bitmaps{ };
+			std::unordered_map<unsigned int, Rectangle<float>> m_sub_rects{ };
 			unsigned int m_tile_width{ 0 };
 			unsigned int m_tile_height{ 0 };
 
@@ -32,9 +33,9 @@ namespace sde {
 			float get_tile_width() const;
 			float get_tile_height() const;
 
-			const Texture& get_texture_rect(unsigned int index);
+			void draw_texture_rect(unsigned int index, float x, float y);
 
-			ALLEGRO_BITMAP* get_texture_sheet() const;
+			const Rectangle<float>& get_texture_rect(unsigned int index);
 
 			void dispose() override;
 	};

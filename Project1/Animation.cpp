@@ -31,11 +31,11 @@ namespace sde {
 	}
 
 	void Animation::draw() const {
-		al_draw_bitmap(m_texture_sheet->get_texture_rect(m_frame).get_texture(), m_x, m_y, 0);
+		m_texture_sheet->draw_texture_rect(m_frame, m_x, m_y);
 	}
 
 	void Animation::draw(float x, float y) const {
-		al_draw_bitmap(m_texture_sheet->get_texture_rect(m_frame).get_texture(), x, y, 0);
+		m_texture_sheet->draw_texture_rect(m_frame, x, y);
 	}
 
 	Animation::~Animation() {

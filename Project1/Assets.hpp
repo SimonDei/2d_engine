@@ -35,8 +35,11 @@ namespace sde {
 
 			const Music& get_music(const std::string& name) const;
 			const Texture& get_texture(const std::string& name) const;
-			TextureSheet& get_texture_sheet(const std::string& name);
+			const TextureSheet& get_texture_sheet(const std::string& name) const;
 			const Font& get_font(const std::string& name) const;
+
+			void dispose_music(const std::string& name);
+			void dispose_texture(const std::string& name);
 
 			void dispose() override;
 	};

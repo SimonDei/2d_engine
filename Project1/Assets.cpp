@@ -45,7 +45,7 @@ namespace sde {
 		}
 	}
 
-	TextureSheet& Assets::get_texture_sheet(const std::string& name) {
+	const TextureSheet& Assets::get_texture_sheet(const std::string& name) const {
 		if (m_texture_sheets.at(name) != nullptr) {
 			return *m_texture_sheets.at(name);
 		} else {
@@ -59,6 +59,16 @@ namespace sde {
 		} else {
 			throw NullException("Font " + name + " does not exist.");
 		}
+	}
+
+	void Assets::dispose_music(const std::string& name) {
+		m_music.at(name)->dispose();
+		m_music.erase(name);
+	}
+
+	void Assets::dispose_texture(const std::string& name) {
+		m_textures.at(name)->dispose();
+		m_textures.erase(name);
 	}
 
 	void Assets::dispose() {

@@ -7,10 +7,10 @@ int main() {
 	sde::Renderer renderer{ };
 	
 	sde::Assets assets{ core.get_assets() };
-	assets.load_texture("level_0", "res/level_0.tga");
-	assets.load_texture("level_1", "res/level_1.tga");
-	assets.load_texture("level_2", "res/level_2.tga");
-	assets.load_texture("level_3", "res/level_3.tga");
+	//assets.load_texture("level_0", "res/level_0.tga");
+	//assets.load_texture("level_1", "res/level_1.tga");
+	//assets.load_texture("level_2", "res/level_2.tga");
+	//assets.load_texture("level_3", "res/level_3.tga");
 
 	assets.load_texture_sheet("sheet", "res/sheet.tga", 64, 64);
 
