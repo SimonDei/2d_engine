@@ -27,12 +27,11 @@ namespace sde {
 			Sprite(const Texture& texture, float x, float y, float rotation);
 			~Sprite();
 
+			void set_rotation(float rotation);
+			void add_rotation(float rotation);
+
 			void draw() const override;
 			void draw(float x, float y) const override;
-
-			void set_rotation(float rotation);
-
-			void add_rotation(float rotation);
 
 			float get_rotation() const;
 			const Texture& get_texture() const;

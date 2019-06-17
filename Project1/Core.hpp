@@ -34,6 +34,7 @@ namespace sde {
 			ALLEGRO_TIMER* m_timer{ nullptr };
 			ALLEGRO_EVENT m_event{ };
 			ALLEGRO_TIMEOUT m_timeout{ };
+			ALLEGRO_MOUSE_STATE m_mouse_info{ };
 			Disposer m_disposer{ };
 			Updater m_updater{ };
 			Assets m_assets{ };
@@ -69,11 +70,17 @@ namespace sde {
 			void set_paused(bool paused);
 			void toggle_paused();
 
+			float get_mouse_x();
+			float get_mouse_y();
+			const Vector2<float> get_mouse_position();
+
 			double get_game_time() const;
 			double get_frame_time() const;
 			double get_fps() const;
 
 			int get_random_number(int min, int max);
+
+			void wait(int ms) const;
 
 			void add_updateable(Updateable* updateable) {
 				m_updater.add_updateable(updateable);
@@ -124,8 +131,6 @@ namespace sde {
 			const Keycode get_keycode() const;
 			const Display& get_display() const;
 			const Disposer& get_disposer() const;
-
-			void wait(int ms) const;
 	
 			void close();
 	};

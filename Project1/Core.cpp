@@ -18,6 +18,7 @@ namespace sde {
 		al_init_primitives_addon();
 
 		al_install_keyboard();
+		al_install_mouse();
 		al_install_audio();
 
 		al_reserve_samples(1);
@@ -106,6 +107,21 @@ namespace sde {
 
 	void Core::toggle_paused() {
 		m_paused = !m_paused;
+	}
+
+	float Core::get_mouse_x() {
+		al_get_mouse_state(&m_mouse_info);
+		return m_mouse_info.x;
+	}
+
+	float Core::get_mouse_y() {
+		al_get_mouse_state(&m_mouse_info);
+		return m_mouse_info.y;
+	}
+
+	const Vector2<float> Core::get_mouse_position() {
+		al_get_mouse_state(&m_mouse_info);
+		return Vector2<float>{ static_cast<float>(m_mouse_info.x), static_cast<float>(m_mouse_info.y) };
 	}
 
 	double Core::get_game_time() const {

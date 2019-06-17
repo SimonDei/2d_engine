@@ -1,19 +1,24 @@
 #ifndef _BUTTON_HPP_
 #define _BUTTON_HPP_
 
+#include <functional>
+
 #include "Texture.hpp"
 #include "Drawable.hpp"
+#include "Transformable.hpp"
+#include "Math.hpp"
 
 
 namespace sde {
-	class Button : public Drawable {
+	class Button : public Drawable, public Transformable {
 		private:
 			std::shared_ptr<Texture> m_button_up{ nullptr };
 			std::shared_ptr<Texture> m_button_down{ nullptr };
-			float m_x{ 0.0f };
-			float m_y{ 0.0f };
-			float m_width{ 0.0f };
-			float m_height{ 0.0f };
+			ALLEGRO_MOUSE_STATE m_mouse_state{ };
+			ALLEGRO_MOUSE_STATE m_old_mouse_state{ };
+			std::function<void()> m_press_function{ };
+			bool m_pressed{ false };
+			bool m_state_change{ false };
 
 
 		public:
@@ -22,9 +27,13 @@ namespace sde {
 			Button(const Texture& button_up, const Texture& button_down, float x, float y, float width, float height);
 			~Button();
 
-			void set_position(float x, float y);
-			void set_size(float width, float height);
-			
+			void set_handle_function(const std::function<void()>& function);
+
+			bool is_pressed();
+			bool is_pressed_and_handle();
+
+			void handle();
+
 			void draw() const override;
 			void draw(float x, float y) const override;
 	};
