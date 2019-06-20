@@ -7,7 +7,7 @@
 #include <string>
 #include <unordered_map>
 
-#include "NullException.hpp"
+#include "SdeException.hpp"
 #include "Disposable.hpp"
 
 

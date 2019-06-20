@@ -7,7 +7,7 @@ namespace sde {
 			m_instance = al_create_sample_instance(m_sample);
 			al_attach_sample_instance_to_mixer(m_instance, al_get_default_mixer());
 		} else {
-			throw NullException("Sample at " + path + " does not exist.");
+			throw SdeException("Sample at " + path + " does not exist.");
 		}
 		m_auto_disposed = true;
 	}

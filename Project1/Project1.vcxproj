@@ -171,8 +171,10 @@
     <ClCompile Include="MusicQueue.cpp" />
     <ClCompile Include="Parallax.cpp" />
     <ClCompile Include="Renderer.cpp" />
+    <ClCompile Include="Screen.cpp" />
     <ClCompile Include="Sprite.cpp" />
     <ClCompile Include="SpriteQueue.cpp" />
+    <ClCompile Include="Textbox.cpp" />
     <ClCompile Include="Texture.cpp" />
     <ClCompile Include="TextureSheet.cpp" />
     <ClCompile Include="Timer.cpp" />
@@ -207,13 +209,15 @@
     <ClInclude Include="MessageReturn.hpp" />
     <ClInclude Include="Music.hpp" />
     <ClInclude Include="MusicQueue.hpp" />
-    <ClInclude Include="NullException.hpp" />
+    <ClInclude Include="Screen.hpp" />
+    <ClInclude Include="SdeException.hpp" />
     <ClInclude Include="Parallax.hpp" />
     <ClInclude Include="Rectangle.hpp" />
     <ClInclude Include="Renderer.hpp" />
     <ClInclude Include="sd_engine.hpp" />
     <ClInclude Include="Sprite.hpp" />
     <ClInclude Include="SpriteQueue.hpp" />
+    <ClInclude Include="Textbox.hpp" />
     <ClInclude Include="Texture.hpp" />
     <ClInclude Include="TextureSheet.hpp" />
     <ClInclude Include="Timer.hpp" />

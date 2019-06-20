@@ -8,7 +8,7 @@
 
 #include "Texture.hpp"
 #include "Rectangle.hpp"
-#include "NullException.hpp"
+#include "SdeException.hpp"
 
 
 namespace sde {

@@ -98,6 +98,10 @@ namespace sde {
 		drawable.draw(x, y);
 	}
 
+	void Renderer::draw_screen(const Screen& screen) {
+		
+	}
+
 	Renderer::~Renderer() {
 	}
 }

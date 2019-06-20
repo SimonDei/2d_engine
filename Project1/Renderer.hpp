@@ -4,6 +4,7 @@
 #include <allegro5/allegro.h>
 #include <allegro5/allegro_primitives.h>
 
+#include "Screen.hpp"
 #include "Sprite.hpp"
 #include "SpriteQueue.hpp"
 #include "Drawable.hpp"
@@ -58,6 +59,8 @@ namespace sde {
 			
 			void draw_object(const Drawable& drawable);
 			void draw_object(const Drawable& drawable, float x, float y);
+
+			void draw_screen(const Screen& screen);
 
 			inline void clear(unsigned char red, unsigned char green, unsigned char blue) const {
 				al_clear_to_color(al_map_rgb(red, green, blue));

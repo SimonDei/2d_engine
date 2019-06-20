@@ -55,6 +55,9 @@
     <Filter Include="Headerdateien\core\math">
       <UniqueIdentifier>{f40c125e-2ff3-470f-8a85-24cb7d13b6ba}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Headerdateien\core\screen_system">
+      <UniqueIdentifier>{78947cf0-4bf9-4c05-aa4d-1fd497dba42e}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
@@ -121,6 +124,12 @@
       <Filter>Quelldateien</Filter>
     </ClCompile>
     <ClCompile Include="Parallax.cpp">
+      <Filter>Quelldateien</Filter>
+    </ClCompile>
+    <ClCompile Include="Screen.cpp">
+      <Filter>Quelldateien</Filter>
+    </ClCompile>
+    <ClCompile Include="Textbox.cpp">
       <Filter>Quelldateien</Filter>
     </ClCompile>
   </ItemGroup>
@@ -215,9 +224,6 @@
     <ClInclude Include="Color4.hpp">
       <Filter>Headerdateien\template</Filter>
     </ClInclude>
-    <ClInclude Include="NullException.hpp">
-      <Filter>Headerdateien\template</Filter>
-    </ClInclude>
     <ClInclude Include="Rectangle.hpp">
       <Filter>Headerdateien\template</Filter>
     </ClInclude>
@@ -253,6 +259,15 @@
     </ClInclude>
     <ClInclude Include="Parallax.hpp">
       <Filter>Headerdateien\graphic</Filter>
+    </ClInclude>
+    <ClInclude Include="SdeException.hpp">
+      <Filter>Headerdateien\template</Filter>
+    </ClInclude>
+    <ClInclude Include="Screen.hpp">
+      <Filter>Headerdateien\core\screen_system</Filter>
+    </ClInclude>
+    <ClInclude Include="Textbox.hpp">
+      <Filter>Headerdateien\graphic\gui</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

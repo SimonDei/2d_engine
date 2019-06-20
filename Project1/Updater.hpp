@@ -5,7 +5,7 @@
 #include <memory>
 
 #include "Updateable.hpp"
-#include "NullException.hpp"
+#include "SdeException.hpp"
 
 
 namespace sde {

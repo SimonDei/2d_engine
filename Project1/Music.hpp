@@ -7,7 +7,7 @@
 
 #include <string>
 
-#include "NullException.hpp"
+#include "SdeException.hpp"
 #include "Disposable.hpp"
 
 

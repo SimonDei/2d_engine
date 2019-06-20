@@ -7,7 +7,7 @@ namespace sde {
 			m_width = static_cast<float>(al_get_bitmap_width(m_bitmap));
 			m_height = static_cast<float>(al_get_bitmap_height(m_bitmap));
 		} else {
-			throw NullException("Texture at " + path + " does not exist.");
+			throw SdeException("Texture at " + path + " does not exist.");
 		}
 		m_tile_width = tile_width;
 		m_tile_height = tile_height;

@@ -9,6 +9,8 @@
 #include "Component.hpp"
 #include "Entity.hpp"
 
+#include "Screen.hpp"
+
 #include "Animation.hpp"
 #include "Sprite.hpp"
 #include "SpriteQueue.hpp"
@@ -18,6 +20,7 @@
 #include "MusicQueue.hpp"
 
 #include "Button.hpp"
+#include "Textbox.hpp"
 
 #include "File.hpp"
 #include "ConfigFile.hpp"
@@ -28,7 +31,7 @@
 #include "Color4.hpp"
 #include "Circle.hpp"
 #include "Rectangle.hpp"
-#include "NullException.hpp"
+#include "SdeException.hpp"
 #include "Math.hpp"
 #include "Macros.hpp"
 #include "Messagebox.hpp"
