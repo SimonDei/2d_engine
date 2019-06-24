@@ -63,9 +63,6 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Logger.cpp">
-      <Filter>Quelldateien</Filter>
-    </ClCompile>
     <ClCompile Include="File.cpp">
       <Filter>Quelldateien</Filter>
     </ClCompile>
@@ -268,6 +265,9 @@
     </ClInclude>
     <ClInclude Include="Textbox.hpp">
       <Filter>Headerdateien\graphic\gui</Filter>
+    </ClInclude>
+    <ClInclude Include="Initialisable.hpp">
+      <Filter>Headerdateien\template\interface</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

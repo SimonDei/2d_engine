@@ -99,7 +99,7 @@ namespace sde {
 	}
 
 	void Renderer::draw_screen(const Screen& screen) {
-		
+		screen.draw();
 	}
 
 	Renderer::~Renderer() {

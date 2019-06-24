@@ -22,9 +22,12 @@ namespace sde {
 
 			virtual void set_x(float x) { m_x = x; };
 			virtual void set_y(float y) { m_y = y; }
+			virtual void set_width(float width) { m_width = width; }
+			virtual void set_height(float height) { m_height = height; }
 
 			virtual void set_position(float x, float y) { m_x = x; m_y = y; }
 			virtual void set_position(const Vector2<float>& position) { m_x = position.get_x(); m_y = position.get_y(); }
+			virtual void set_size(float width, float height) { m_width = width; m_height = height; }
 
 			virtual void add_x(float x) { m_x += x; }
 			virtual void add_y(float y) { m_y += y; }

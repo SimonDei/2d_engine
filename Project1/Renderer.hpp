@@ -65,6 +65,9 @@ namespace sde {
 			inline void clear(unsigned char red, unsigned char green, unsigned char blue) const {
 				al_clear_to_color(al_map_rgb(red, green, blue));
 			}
+			inline void clear(int color) const {
+				al_clear_to_color(al_map_rgb(color >> 16 & 0xFF, color >> 8 & 0xFF, color & 0xFF));
+			}
 			inline void clear(const Color3<unsigned char>& color) const {
 				al_clear_to_color(color.get_al_color());
 			}

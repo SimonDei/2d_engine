@@ -165,7 +165,6 @@
     <ClCompile Include="Disposer.cpp" />
     <ClCompile Include="File.cpp" />
     <ClCompile Include="Font.cpp" />
-    <ClCompile Include="Logger.cpp" />
     <ClCompile Include="Messagebox.cpp" />
     <ClCompile Include="Music.cpp" />
     <ClCompile Include="MusicQueue.cpp" />
@@ -185,6 +184,7 @@
     <ClInclude Include="Assets.hpp" />
     <ClInclude Include="Button.hpp" />
     <ClInclude Include="Circle.hpp" />
+    <ClInclude Include="Initialisable.hpp" />
     <ClInclude Include="Macros.hpp" />
     <ClInclude Include="Disposable.hpp" />
     <ClInclude Include="Color3.hpp" />

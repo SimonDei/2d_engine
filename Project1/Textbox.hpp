@@ -21,15 +21,17 @@ namespace sde {
 			ALLEGRO_MOUSE_STATE m_mouse_state{ };
 			ALLEGRO_COLOR m_text_color{ 0, 0, 0, 255 };
 			std::string m_text{ };
-			bool m_focused{ false };
-
+			unsigned char m_max_char{ 255 };
+			
 
 		public:
 			Textbox() = default;
 			explicit Textbox(const Texture& texture);
+			Textbox(const Texture& texture, const Font& font);
 			~Textbox();
 
 			void set_text_color(unsigned char red, unsigned char green, unsigned char blue);
+			void set_max_size(unsigned char max_size);
 
 			bool is_focused();
 			bool is_focused_and_handle(const Keycode& new_char);
