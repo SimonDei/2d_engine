@@ -6,7 +6,7 @@
 
 namespace sde {
 	template<typename T>
-	class __declspec(dllexport) Color4 {
+	class Color4 {
 		private:
 			T m_red;
 			T m_green;
@@ -48,7 +48,13 @@ namespace sde {
 			}
 
 			const ALLEGRO_COLOR get_al_color() const {
-				return al_map_rgba(m_red, m_green, m_blue, m_alpha);
+				if (std::is_same<T, unsigned char>::value) {
+					return al_map_rgba(m_red, m_green, m_blue, m_alpha);
+				}
+				if (std::is_same<T, float>::value) {
+					return al_map_rgba_f(m_red, m_green, m_blue, m_alpha);
+				}
+				return al_map_rgba(255, 255, 255, 255);
 			}
 	};
 }

@@ -39,6 +39,9 @@ namespace sde {
 			Updater m_updater{ };
 			Assets m_assets{ };
 			std::default_random_engine m_random{ };
+			std::function<void()> m_keyboard_func{ nullptr };
+			std::function<void()> m_update_func{ nullptr };
+			std::function<void()> m_render_func{ nullptr };
 			bool m_running{ false };
 			bool m_paused{ false };
 			bool m_has_event{ false };
@@ -58,6 +61,11 @@ namespace sde {
 			void set_window_title(const std::string& name) const;
 			void set_window_position(unsigned int x, unsigned int y) const;
 			void create_window(unsigned int width, unsigned int height);
+
+			void set_keyboard_function(const std::function<void()>& keyboard_function);
+			void set_update_function(const std::function<void()>& update_function);
+			void set_render_function(const std::function<void()>& render_function);
+			void start_game();
 
 			void set_fps(float fps);
 
@@ -128,9 +136,9 @@ namespace sde {
 
 			Assets& get_assets();
 			Updater& get_updater();
+			Disposer& get_disposer();
 			const Keycode get_keycode() const;
 			const Display& get_display() const;
-			const Disposer& get_disposer() const;
 	
 			void close();
 	};

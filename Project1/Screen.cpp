@@ -8,6 +8,10 @@ namespace sde {
 		m_bitmap = al_create_bitmap(static_cast<int>(display.get_width()), static_cast<int>(display.get_height()));
 	}
 	
+	void Screen::set_display(const Display& display) {
+		m_display = display.get_display();
+	}
+
 	void Screen::draw_to_screen(const Texture& texture) {
 		al_set_target_bitmap(m_bitmap);
 

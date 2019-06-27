@@ -6,7 +6,7 @@
 
 namespace sde {
 	template<typename T>
-	class __declspec(dllexport) Circle {
+	class Circle {
 		private:
 			T m_center_x;
 			T m_center_y;

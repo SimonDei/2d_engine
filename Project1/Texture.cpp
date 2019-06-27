@@ -7,7 +7,7 @@ namespace sde {
 			m_width = static_cast<float>(al_get_bitmap_width(m_bitmap));
 			m_height = static_cast<float>(al_get_bitmap_height(m_bitmap));
 		} else {
-			throw SdeException("Texture at " + path + " does not exist.");
+			throw SdeException{ "Texture at " + path + " does not exist." };
 		}
 		m_auto_disposed = true;
 	}
@@ -31,7 +31,7 @@ namespace sde {
 			m_width = static_cast<float>(al_get_bitmap_width(m_bitmap));
 			m_height = static_cast<float>(al_get_bitmap_height(m_bitmap));
 		} else {
-			throw SdeException("Texture at " + path + " does not exist.");
+			throw SdeException{ "Texture at " + path + " does not exist." };
 		}
 	}
 

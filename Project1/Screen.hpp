@@ -17,9 +17,11 @@ namespace sde {
 
 
 		public:
-			Screen() = delete;
+			Screen() = default;
 			Screen(const Display& display);
 			~Screen();
+
+			void set_display(const Display& display);
 
 			void draw_to_screen(const Texture& texture);
 			void draw_to_screen(const Texture& texture, float x, float y);

@@ -6,7 +6,7 @@
 
 namespace sde {
 	template<typename T>
-	class __declspec(dllexport) Vector2 {
+	class Vector2 {
 		private:
 			T m_x;
 			T m_y;

@@ -19,9 +19,10 @@ namespace sde {
 			std::shared_ptr<Texture> m_texture{ nullptr };
 			std::shared_ptr<Font> m_font{ nullptr };
 			ALLEGRO_MOUSE_STATE m_mouse_state{ };
-			ALLEGRO_COLOR m_text_color{ 0, 0, 0, 255 };
+			ALLEGRO_COLOR m_text_color{ 1.0f, 1.0f, 1.0f, 1.0f };
 			std::string m_text{ };
 			unsigned char m_max_char{ 255 };
+			bool m_focused{ false };
 			
 
 		public:
@@ -33,8 +34,8 @@ namespace sde {
 			void set_text_color(unsigned char red, unsigned char green, unsigned char blue);
 			void set_max_size(unsigned char max_size);
 
-			bool is_focused();
-			bool is_focused_and_handle(const Keycode& new_char);
+			bool check_focus();
+			void add_key(const Keycode& new_char);
 
 			void draw() const override;
 			void draw(float x, float y) const override;

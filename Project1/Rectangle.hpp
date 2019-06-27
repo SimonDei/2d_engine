@@ -8,7 +8,7 @@
 
 namespace sde {
 	template<typename T>
-	class __declspec(dllexport) Rectangle {
+	class Rectangle {
 		private:
 			T m_x;
 			T m_y;

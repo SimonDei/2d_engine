@@ -269,5 +269,8 @@
     <ClInclude Include="Initialisable.hpp">
       <Filter>Headerdateien\template\interface</Filter>
     </ClInclude>
+    <ClInclude Include="Game.hpp">
+      <Filter>Headerdateien\template\interface</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

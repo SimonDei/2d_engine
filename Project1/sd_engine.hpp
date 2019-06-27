@@ -36,6 +36,7 @@
 #include "Macros.hpp"
 #include "Messagebox.hpp"
 
+#include "Game.hpp"
 #include "Disposable.hpp"
 #include "Drawable.hpp"
 #include "Updateable.hpp"

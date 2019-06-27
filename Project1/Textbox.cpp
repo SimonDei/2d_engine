@@ -19,23 +19,22 @@ namespace sde {
 		m_max_char = max_size;
 	}
 
-	bool Textbox::is_focused() {
+	bool Textbox::check_focus() {
 		al_get_mouse_state(&m_mouse_state);
-		if (math::collision_rect_vec(m_x, m_y, m_width, m_height, static_cast<float>(m_mouse_state.x), static_cast<float>(m_mouse_state.y))) {
-			return true;
+		if (al_mouse_button_down(&m_mouse_state, 1)) {
+			if (math::collision_rect_vec(m_x, m_y, m_width, m_height, static_cast<float>(m_mouse_state.x), static_cast<float>(m_mouse_state.y))) {
+				m_focused = true;
+			} else {
+				m_focused = false;
+			}
 		}
-		return false;
+		return m_focused;
 	}
 
-	bool Textbox::is_focused_and_handle(const Keycode& new_char) {
-		al_get_mouse_state(&m_mouse_state);
-		if (math::collision_rect_vec(m_x, m_y, m_width, m_height, static_cast<float>(m_mouse_state.x), static_cast<float>(m_mouse_state.y))) {
-			if (m_text.size() < m_max_char) {
-				m_text += static_cast<char>(static_cast<char>(new_char) + 96);
-			}
-			return true;
+	void Textbox::add_key(const Keycode& new_char) {
+		if (m_focused && m_text.size() < m_max_char) {
+			m_text += static_cast<char>(static_cast<char>(new_char) + 96);
 		}
-		return false;
 	}
 
 	void Textbox::draw() const {

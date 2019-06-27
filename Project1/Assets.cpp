@@ -4,7 +4,7 @@
 namespace sde {
 	Assets::Assets(Assets& assets) {
 		if (!(m_textures.size() == 0 && m_music.size() == 0 && m_texture_sheets.size() == 0)) {
-			throw sde::SdeException("Assets konnte nicht zugewiesen werden. Es sind bereits Werte vorhanden.");
+			throw SdeException{ "Assets konnte nicht zugewiesen werden. Es sind bereits Werte vorhanden." };
 		}
 		*this = assets;
 	}
@@ -33,7 +33,7 @@ namespace sde {
 		if (m_music.at(name) != nullptr) {
 			return *m_music.at(name);
 		} else {
-			throw SdeException("Music " + name + " does not exist.");
+			throw SdeException{ "Music " + name + " does not exist." };
 		}
 	}
 
@@ -41,7 +41,7 @@ namespace sde {
 		if (m_textures.at(name) != nullptr) {
 			return *m_textures.at(name);
 		} else {
-			throw SdeException("Texture " + name + " does not exist.");
+			throw SdeException{ "Texture " + name + " does not exist." };
 		}
 	}
 
@@ -49,7 +49,7 @@ namespace sde {
 		if (m_texture_sheets.at(name) != nullptr) {
 			return *m_texture_sheets.at(name);
 		} else {
-			throw SdeException("Texture sheet " + name + " does not exist.");
+			throw SdeException{ "Texture sheet " + name + " does not exist." };
 		}
 	}
 
@@ -57,7 +57,7 @@ namespace sde {
 		if (m_fonts.at(name) != nullptr) {
 			return *m_fonts.at(name);
 		} else {
-			throw SdeException("Font " + name + " does not exist.");
+			throw SdeException{ "Font " + name + " does not exist." };
 		}
 	}
 

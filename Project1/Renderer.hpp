@@ -17,7 +17,7 @@
 namespace sde {
 	class Renderer {
 		private:
-			ALLEGRO_COLOR m_base_color{ 255, 255, 255, 255 };
+			ALLEGRO_COLOR m_base_color{ 1.0f, 1.0f, 1.0f, 1.0f };
 			float m_thickness{ 1.0f };
 
 
@@ -37,28 +37,28 @@ namespace sde {
 
 			void draw_filled_rectangle(float x, float y, float width, float height, const Color3<unsigned char>& color);
 			void draw_filled_rectangle(float x, float y, float width, float height, const Color4<unsigned char>& color);			
-			template<typename T>
-			void draw_filled_rectangle(const Rectangle<T>& rectangle, const Color3<unsigned char>& color);			
-			template<typename T>
-			void draw_filled_rectangle(const Rectangle<T>& rectangle, const Color4<unsigned char>& color);
+			void draw_filled_rectangle(const Rectangle<float>& rectangle, const Color3<unsigned char>& color);			
+			void draw_filled_rectangle(const Rectangle<float>& rectangle, const Color4<unsigned char>& color);
 
 			void draw_circle(float x, float y, float radius);
-			void draw_circle(float x, float y, float radius, float red, float green, float blue);
+			void draw_circle(float x, float y, float radius, unsigned char red, unsigned char green, unsigned char blue);
 			void draw_circle(float x, float y, float radius, const Color3<unsigned char>& color);
 			void draw_circle(float x, float y, float radius, const Color4<unsigned char>& color);
 
+			void draw_filled_circle(float x, float y, float radius);
+			void draw_filled_circle(float x, float y, float radius, unsigned char red, unsigned char green, unsigned char blue);
 			void draw_filled_circle(float x, float y, float radius, const Color3<unsigned char>& color);
 			void draw_filled_circle(float x, float y, float radius, const Color4<unsigned char>& color);
 
 			void draw_text(const std::string& text, const Font& font, float x, float y);
+			void draw_text(const std::string& text, const Font& font, float x, float y, unsigned char red, unsigned char green, unsigned char blue);
+			void draw_text(const std::string& text, const Font& font, float x, float y, const Color3<unsigned char>& color);
+			void draw_text(const std::string& text, const Font& font, float x, float y, const Color4<unsigned char>& color);
 
-			void draw_colored_text(const std::string& text, const Font& font, const Color3<unsigned char>& color, float x, float y);
-			void draw_colored_text(const std::string& text, const Font& font, unsigned char red, unsigned char green, unsigned char blue, float x, float y);
-
-			void draw_sprite_queue(const SpriteQueue& sprite_queue);
-			
 			void draw_object(const Drawable& drawable);
 			void draw_object(const Drawable& drawable, float x, float y);
+
+			void draw_sprite_queue(const SpriteQueue& sprite_queue);
 
 			void draw_screen(const Screen& screen);
 
