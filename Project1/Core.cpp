@@ -62,32 +62,8 @@ namespace sde {
 
 		al_register_event_source(m_queue, al_get_display_event_source(m_display.get_display()));
 		al_register_event_source(m_queue, al_get_keyboard_event_source());
-	}
-
-	void Core::set_keyboard_function(const std::function<void()>& keyboard_function) {
-		m_keyboard_func = keyboard_function;
-	}
-
-	void Core::set_update_function(const std::function<void()>& update_function) {
-		m_update_func = update_function;
-	}
-
-	void Core::set_render_function(const std::function<void()>& render_function) {
-		m_render_func = render_function;
-	}
-
-	void Core::start_game() {
-		if (m_keyboard_func == nullptr || m_update_func == nullptr || m_render_func == nullptr) {
-			throw SdeException{ "At least one game function is a nullptr." };
-		}
-
+	
 		m_running = true;
-
-		while (m_running) {
-			m_keyboard_func();
-			m_update_func();
-			m_render_func();
-		}
 	}
 
 	void Core::set_fps(float fps) {

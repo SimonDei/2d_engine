@@ -27,6 +27,8 @@ namespace sde {
 			Sprite(const Texture& texture, float x, float y, float rotation);
 			~Sprite();
 
+			void set_texture(const Texture& texture);
+
 			void set_rotation(float rotation);
 			void add_rotation(float rotation);
 

@@ -39,6 +39,12 @@ namespace sde {
 		m_rotation = rotation;
 	}
 
+	void Sprite::set_texture(const Texture& texture) {
+		m_texture = std::make_shared<Texture>(texture);
+		m_width = m_texture->get_width();
+		m_height = m_texture->get_height();
+	}
+
 	void Sprite::set_rotation(float rotation) {
 		m_rotation = rotation;
 	}

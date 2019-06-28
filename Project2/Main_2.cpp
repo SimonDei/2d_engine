@@ -1,27 +1,8 @@
 #include <sd_engine.hpp>
 
 
-void init() {
-	std::cout << "here" << std::endl;
-}
-
-void keyboard() {
-
-}
-
-void update() {
-
-}
-
-void render() {
-
-}
-
 int main2() {
 	sde::Core core{ "sde window", 1024, 768 };
-	core.set_keyboard_function(std::function<void()>(keyboard));
-	core.set_update_function(std::function<void()>(update));
-	core.set_render_function(std::function<void()>(render));
 
 	sde::Renderer renderer{ };
 
