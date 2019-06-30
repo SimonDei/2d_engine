@@ -3,6 +3,8 @@
 
 #include <sd_engine.hpp>
 
+#include "MainScreen.hpp"
+
 
 class Main : public sde::Game {
 	private:
@@ -12,6 +14,8 @@ class Main : public sde::Game {
 
 		float m_display_width{ 0.0f };
 		float m_display_height{ 0.0f };
+
+		MainScreen m_main_screen{ };
 
 		sde::Sprite m_ball{ };
 		sde::Sprite m_paddle1{ };

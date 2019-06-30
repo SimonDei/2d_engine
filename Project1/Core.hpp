@@ -11,7 +11,6 @@
 #include <allegro5/allegro_primitives.h>
 
 #include <string>
-#include <random>
 #include <chrono>
 #include <thread>
 
@@ -22,13 +21,10 @@
 
 #include "Events.hpp"
 #include "DisplayFlags.hpp"
-#include "FileAccess.hpp"
 #include "Keycodes.hpp"
 
 
 namespace sde {
-	using KEYBOARD_FUNC = void(*)();
-
 	class Core {
 		private:
 			Display m_display{ };
@@ -40,7 +36,6 @@ namespace sde {
 			Disposer m_disposer{ };
 			Updater m_updater{ };
 			Assets m_assets{ };
-			std::default_random_engine m_random{ };
 			bool m_running{ false };
 			bool m_paused{ false };
 			bool m_has_event{ false };
@@ -79,9 +74,7 @@ namespace sde {
 			double get_game_time() const;
 			double get_frame_time() const;
 			double get_fps() const;
-
-			int get_random_number(int min, int max);
-
+			
 			void wait(int ms) const;
 
 			void add_updateable(Updateable* updateable) {

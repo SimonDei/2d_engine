@@ -25,6 +25,8 @@ namespace sde {
 			explicit Music(const Music& music);
 			~Music();
 			
+			void load_music(const std::string& path);
+
 			void set_started(bool started);
 
 			bool get_started() const;
@@ -33,6 +35,24 @@ namespace sde {
 			ALLEGRO_SAMPLE_INSTANCE* get_sample_instance() const;
 
 			void dispose() override;
+	};
+
+	struct MusicStruct {
+		std::string m_path{ };
+		Music m_music{ };
+		bool m_loaded{ false };
+
+		void load_music() {
+			m_music.load_music(m_path);
+		}
+
+		MusicStruct() = default;
+		explicit MusicStruct(const std::string& path) {
+			m_path = path;
+		}
+		~MusicStruct() {
+			m_music.dispose();
+		}
 	};
 }
 

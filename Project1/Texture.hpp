@@ -33,6 +33,24 @@ namespace sde {
 
 			void dispose() override;
 	};
+
+	struct TextureStruct {
+		std::string m_path{ };
+		Texture m_texture{ };
+		bool m_loaded{ false };
+
+		void load_texture() {
+			m_texture.load_texture(m_path);
+		}
+
+		TextureStruct() = default;
+		explicit TextureStruct(const std::string& path) {
+			m_path = path;
+		}
+		~TextureStruct() {
+			m_texture.dispose();
+		}
+	};
 }
 
 #endif

@@ -35,6 +35,7 @@
 #include "Math.hpp"
 #include "Macros.hpp"
 #include "Messagebox.hpp"
+#include "Grid.hpp"
 
 #include "Game.hpp"
 #include "Disposable.hpp"
@@ -47,6 +48,7 @@
 #include "Disposer.hpp"
 #include "Logger.hpp"
 #include "Timer.hpp"
+#include "Random.hpp"
 
 
 #endif

@@ -9,15 +9,15 @@ void Main::init() {
 	m_display_width = m_core.get_display().get_width();
 	m_display_height = m_core.get_display().get_height();
 
+	m_assets.load_font("arial", "res/arial.ttf", 36);
 	m_assets.load_texture("ball", "res/ball.tga");
 	m_assets.load_texture("paddle1", "res/paddle1.tga");
 	m_assets.load_texture("paddle2", "res/paddle2.tga");
-	m_assets.load_font("arial", "res/arial.ttf", 36);
 
 	m_ball.set_texture(m_assets.get_texture("ball"));
 	m_ball.set_position(m_display_width / 2.0f - m_ball.get_width() / 2.0f,
 						m_display_height / 2.0f - m_ball.get_height() / 2.0f);
-	   
+	
 	m_paddle1.set_texture(m_assets.get_texture("paddle1"));
 	m_paddle1.set_position(30.0f,
 						   m_display_height / 2.0f - m_paddle1.get_height() / 2.0f);
@@ -26,8 +26,8 @@ void Main::init() {
 	m_paddle2.set_position(m_display_width - m_paddle2.get_width() - 50.0f,
 						   m_display_height / 2.0f - m_paddle2.get_height() / 2.0f);
 
-	if (m_core.get_random_number(0, 1) == 0) m_ball_velocity.invert_x();
-	if (m_core.get_random_number(0, 1) == 0) m_ball_velocity.invert_y();
+	if (sde::rand::get_random_number(0, 1) == 0) m_ball_velocity.invert_x();
+	if (sde::rand::get_random_number(0, 1) == 0) m_ball_velocity.invert_y();
 
 	m_core.set_paused(true);
 	
@@ -119,8 +119,8 @@ void Main::update() {
 		//==========================
 		if (m_ball_reset) {
 			m_ball.set_position(m_display_width / 2.0f - m_ball.get_width() / 2.0f, m_display_height / 2.0 - m_ball.get_height() / 2.0f);
-			if (m_core.get_random_number(0, 1) == 0) m_ball_velocity.invert_x();
-			if (m_core.get_random_number(0, 1) == 0) m_ball_velocity.invert_y();
+			if (sde::rand::get_random_number(0, 1) == 0) m_ball_velocity.invert_x();
+			if (sde::rand::get_random_number(0, 1) == 0) m_ball_velocity.invert_y();
 			m_ball_reset = false;
 		}
 	}

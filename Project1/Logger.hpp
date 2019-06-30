@@ -8,10 +8,11 @@
 
 namespace sde {
 	namespace logger {
-		static bool log_debug{ false };
-		static bool log_to_file{ false };
-		static std::ofstream log_file{ };
-
+		namespace {
+			bool log_debug{ false };
+			bool log_to_file{ false };
+			std::ofstream log_file{ };
+		}
 
 		inline void set_debug_enable(bool debug) {
 			log_debug = debug;

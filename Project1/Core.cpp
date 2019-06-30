@@ -27,7 +27,6 @@ namespace sde {
 		al_init_timeout(&m_timeout, 1.0 / m_fps);
 		
 		m_old_frame_time = al_get_time();
-		m_random.seed(std::chrono::system_clock::now().time_since_epoch().count());
 	}
 
 	Core::Core(const std::string& name, unsigned int width, unsigned int height) : Core(name) {
@@ -134,11 +133,6 @@ namespace sde {
 
 	double Core::get_fps() const {
 		return m_current_fps;
-	}
-
-	int Core::get_random_number(int min, int max) {
-		std::uniform_int_distribution<int> dis(min, max);
-		return dis(m_random);
 	}
 
 	const Keycode Core::get_keycode() const {

@@ -129,6 +129,9 @@
     <ClCompile Include="Textbox.cpp">
       <Filter>Quelldateien</Filter>
     </ClCompile>
+    <ClCompile Include="Grid.cpp">
+      <Filter>Quelldateien</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Music.hpp">
@@ -271,6 +274,12 @@
     </ClInclude>
     <ClInclude Include="Game.hpp">
       <Filter>Headerdateien\template\interface</Filter>
+    </ClInclude>
+    <ClInclude Include="Grid.hpp">
+      <Filter>Headerdateien\util</Filter>
+    </ClInclude>
+    <ClInclude Include="Random.hpp">
+      <Filter>Headerdateien\util</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

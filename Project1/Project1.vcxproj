@@ -165,6 +165,7 @@
     <ClCompile Include="Disposer.cpp" />
     <ClCompile Include="File.cpp" />
     <ClCompile Include="Font.cpp" />
+    <ClCompile Include="Grid.cpp" />
     <ClCompile Include="Messagebox.cpp" />
     <ClCompile Include="Music.cpp" />
     <ClCompile Include="MusicQueue.cpp" />
@@ -185,6 +186,7 @@
     <ClInclude Include="Button.hpp" />
     <ClInclude Include="Circle.hpp" />
     <ClInclude Include="Game.hpp" />
+    <ClInclude Include="Grid.hpp" />
     <ClInclude Include="Initialisable.hpp" />
     <ClInclude Include="Macros.hpp" />
     <ClInclude Include="Disposable.hpp" />
@@ -210,6 +212,7 @@
     <ClInclude Include="MessageReturn.hpp" />
     <ClInclude Include="Music.hpp" />
     <ClInclude Include="MusicQueue.hpp" />
+    <ClInclude Include="Random.hpp" />
     <ClInclude Include="Screen.hpp" />
     <ClInclude Include="SdeException.hpp" />
     <ClInclude Include="Parallax.hpp" />

@@ -3,18 +3,21 @@
 
 namespace sde {
 	Assets::Assets(Assets& assets) {
-		if (!(m_textures.size() == 0 && m_music.size() == 0 && m_texture_sheets.size() == 0)) {
+		if (!(m_textures.size() == 0 &&
+			  m_music.size() == 0 &&
+			  m_texture_sheets.size() == 0 &&
+			  m_fonts.size() == 0)) {
 			throw SdeException{ "Assets konnte nicht zugewiesen werden. Es sind bereits Werte vorhanden." };
 		}
 		*this = assets;
 	}
 
 	void Assets::load_music(const std::string& name, const std::string& path) {
-		m_music.insert(std::make_pair(name, std::move(std::make_shared<Music>(path))));
+		m_music.insert(std::make_pair(name, MusicStruct{ path }));
 	}
 
 	void Assets::load_texture(const std::string& name, const std::string& path) {
-		m_textures.insert(std::make_pair(name, std::move(std::make_shared<Texture>(path))));
+		m_textures.insert(std::make_pair(name, TextureStruct{ path }));
 	}
 
 	void Assets::load_texture_sheet(const std::string& name, const std::string& path, unsigned int tile_width, unsigned int tile_height) {
@@ -29,19 +32,21 @@ namespace sde {
 		m_fonts.insert(std::make_pair(name, std::move(std::make_shared<Font>(path, size))));
 	}
 
-	const Music& Assets::get_music(const std::string& name) const {
-		if (m_music.at(name) != nullptr) {
-			return *m_music.at(name);
+	const Music& Assets::get_music(const std::string& name) {
+		if (m_music.at(name).m_loaded) {
+			return m_music.at(name).m_music;
 		} else {
-			throw SdeException{ "Music " + name + " does not exist." };
+			m_music.at(name).load_music();
+			return m_music.at(name).m_music;
 		}
 	}
 
-	const Texture& Assets::get_texture(const std::string& name) const {
-		if (m_textures.at(name) != nullptr) {
-			return *m_textures.at(name);
+	const Texture& Assets::get_texture(const std::string& name) {
+		if (m_textures.at(name).m_loaded) {
+			return m_textures.at(name).m_texture;
 		} else {
-			throw SdeException{ "Texture " + name + " does not exist." };
+			m_textures.at(name).load_texture();
+			return m_textures.at(name).m_texture;
 		}
 	}
 
@@ -62,27 +67,24 @@ namespace sde {
 	}
 
 	void Assets::dispose_music(const std::string& name) {
-		m_music.at(name)->dispose();
 		m_music.erase(name);
 	}
 
 	void Assets::dispose_texture(const std::string& name) {
-		m_textures.at(name)->dispose();
 		m_textures.erase(name);
 	}
 
+	void Assets::dispose_font(const std::string& name) {
+		m_fonts.at(name)->dispose();
+		m_fonts.erase(name);
+	}
+
 	void Assets::dispose() {
-		for (auto& texture : m_textures) {
-			texture.second->dispose();
+		for (auto& font : m_fonts) {
+			font.second->dispose();
 		}
 		for (auto& texturesheet : m_texture_sheets) {
 			texturesheet.second->dispose();
-		}
-		for (auto& music : m_music) {
-			music.second->dispose();
-		}
-		for (auto& font : m_fonts) {
-			font.second->dispose();
 		}
 	}
 

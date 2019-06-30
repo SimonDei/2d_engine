@@ -37,8 +37,8 @@ int main_3() {
 	const float paddle_velocity{ 10.0f };
 
 	sde::Vector2<float> ball_velocity{ 12.5f, 12.5f };
-	if (core.get_random_number(0, 1) == 0) ball_velocity.invert_x();
-	if (core.get_random_number(0, 1) == 0) ball_velocity.invert_y();
+	if (sde::rand::get_random_number(0, 1) == 0) ball_velocity.invert_x();
+	if (sde::rand::get_random_number(0, 1) == 0) ball_velocity.invert_y();
 	
 	while (core.is_running()) {
 		if (core.poll_events_timed()) {
@@ -93,8 +93,8 @@ int main_3() {
 			}
 			if (reset_ball) {
 				ball.set_position(display_width / 2.0f - ball.get_half_width(), display_height / 2.0f - ball.get_half_height());
-				if (core.get_random_number(0, 1) == 0) ball_velocity.invert_x();
-				if (core.get_random_number(0, 1) == 0) ball_velocity.invert_y();
+				if (sde::rand::get_random_number(0, 1) == 0) ball_velocity.invert_x();
+				if (sde::rand::get_random_number(0, 1) == 0) ball_velocity.invert_y();
 				reset_ball = false;
 			}
 			ball.add_position(ball_velocity.get_x() * core.get_frame_time() * 25.0f, ball_velocity.get_y() * core.get_frame_time() * 25.0f);
