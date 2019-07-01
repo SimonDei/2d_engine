@@ -86,13 +86,11 @@ namespace sde {
 				m_height = other.get_height();
 				return *this;
 			}
+
+			inline const std::string to_string() const {
+				return std::to_string(m_x) + ", " + std::to_string(m_y) + ", " + std::to_string(m_width) + ", " + std::to_string(m_height);
+			}
 	};
 }
-
-/*template<typename T>
-inline std::ostream& operator<<(std::ostream& stream, const sde::Rectangle<T>& other) {
-	stream << other.get_x() << ", " << other.get_y() << ", " << other.get_width() << ", " << other.get_height();
-	return stream;
-}*/
 
 #endif

@@ -2,9 +2,6 @@
 
 
 namespace sde {
-	Core::Core() : Core("sde window") {
-	}
-
 	Core::Core(const std::string& name) {
 		al_set_app_name(name.c_str());
 		al_set_new_window_title(name.c_str());

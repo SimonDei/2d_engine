@@ -56,13 +56,11 @@ namespace sde {
 				}
 				return al_map_rgba(255, 255, 255, 255);
 			}
+
+			inline const std::string to_string() const {
+				return std::to_string(m_red) + ", " + std::to_string(m_green) + ", " + std::to_string(m_blue) + ", " + std::to_string(m_alpha);
+			}
 	};
 }
-
-/*template<typename T>
-inline std::ostream& operator<<(std::ostream& stream, const sde::Color4<T>& other) {
-	stream << other.get_red() << ", " << other.get_green() << ", " << other.get_blue() << ", " << other.get_alpha();
-	return stream;
-}*/
 
 #endif

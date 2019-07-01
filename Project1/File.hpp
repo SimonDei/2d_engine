@@ -35,6 +35,9 @@ namespace sde {
 			void write(const std::string& line);
 			void write(int offset, const std::string& line);
 
+			void writeln(const std::string& line);
+			void writeln(int offset, const std::string& line);
+
 			const std::string& get_line(unsigned int index) const;
 			const std::pair<unsigned int, std::string>& get_line_by_filter(const std::string& filter);
 			const std::pair<unsigned int, std::string>& get_line_by_filter_with_index(const std::string& filter, unsigned int start_index);

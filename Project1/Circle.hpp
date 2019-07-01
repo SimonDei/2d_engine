@@ -58,13 +58,11 @@ namespace sde {
 				m_radius = other.get_radius();
 				return *this;
 			}
+
+			inline const std::string to_string() const {
+				return std::to_string(m_center_x) + ", " + std::to_string(m_center_y) + ", " + std::to_string(m_radius);
+			}
 	};
 }
-
-/*template<typename T>
-inline std::ostream& operator<<(std::ostream& stream, const sde::Circle<T>& other) {
-	stream << other.get_x() << ", " << other.get_y() << ", " << other.get_radius();
-	return stream;
-}*/
 
 #endif

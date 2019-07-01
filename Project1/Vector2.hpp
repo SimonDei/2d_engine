@@ -75,7 +75,7 @@ namespace sde {
 				return *this;
 			}
 
-			inline std::string to_string() const {
+			inline const std::string to_string() const {
 				return std::to_string(m_x) + ", " + std::to_string(m_y);
 			}
 	};

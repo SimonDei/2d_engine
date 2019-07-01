@@ -27,9 +27,9 @@ void Main::init() {
 						   m_display_height / 2.0f - m_paddle2.get_height() / 2.0f);
 
 	sde::File conf_file{ "test.conf", sde::FileAccess::WRITE };
-	conf_file.write(m_ball.get_center_position().to_string() + "\n");
-	conf_file.write(m_paddle1.get_center_position().to_string() + "\n");
-	conf_file.write(m_paddle2.get_center_position().to_string() + "\n");
+	conf_file.writeln(m_ball.get_center_position().to_string());
+	conf_file.writeln(m_paddle1.get_center_position().to_string());
+	conf_file.write(m_paddle2.get_center_position().to_string());
 	conf_file.dispose();
 
 	if (sde::rand::get_random_number(0, 1) == 0) m_ball_velocity.invert_x();

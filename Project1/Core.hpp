@@ -47,7 +47,7 @@ namespace sde {
 
 
 		public:
-			Core();
+			Core() : Core{ "sde window" } { };
 			explicit Core(const std::string& name);
 			Core(const std::string& name, unsigned int width, unsigned int height);
 			~Core();

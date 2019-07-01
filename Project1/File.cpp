@@ -7,6 +7,7 @@ namespace sde {
 		m_access = FileAccess::READ;
 		m_file = al_fopen(path.c_str(), "r");
 		read();
+		al_fclose(m_file);
 		m_closed = true;
 	}
 
@@ -22,15 +23,12 @@ namespace sde {
 				break;
 			case FileAccess::WRITE:
 				m_file = al_fopen(path.c_str(), "w+");
-				m_closed = false;
 				break;
 			case FileAccess::READ_WRITE:
 				m_file = al_fopen(path.c_str(), "r+");
-				m_closed = false;
 				read();
 				break;
 		}
-		sde::logger::debug_log("File at: " + m_path + " opened.");
 	}
 
 	void File::open(const std::string& path) {
@@ -38,6 +36,7 @@ namespace sde {
 		m_access = FileAccess::READ;
 		m_file = al_fopen(path.c_str(), "r");
 		read();
+		al_fclose(m_file);
 		m_closed = true;
 	}
 
@@ -61,7 +60,6 @@ namespace sde {
 				read();
 				break;
 		}
-		sde::logger::debug_log("File at: " + m_path + " opened.");
 	}
 
 	void File::read() {
@@ -96,6 +94,29 @@ namespace sde {
 		}
 	}
 
+	void File::writeln(const std::string& line) {
+		if (!m_closed) {
+			al_fseek(m_file, 0, ALLEGRO_SEEK_END);
+			al_fputs(m_file, (line + "\n").c_str());
+			al_fflush(m_file);
+		}
+	}
+
+	void File::writeln(int offset, const std::string& line) {
+		if (!m_closed) {
+			char buffer[1024];
+			al_fseek(m_file, 0, ALLEGRO_SEEK_SET);
+			for (int i = 0; i <= offset; i++) {
+				if (i == offset) {
+					al_fputs(m_file, (line + "\n").c_str());
+					al_fflush(m_file);
+					break;
+				}
+				al_fgets(m_file, buffer, 1024);
+			}
+		}
+	}
+
 	const std::string& File::get_line(unsigned int index) const {
 		return m_lines.at(index);
 	}
@@ -121,20 +142,18 @@ namespace sde {
 	}
 
 	void File::dispose() {
-		if (!m_closed) {
+		if (!m_closed && m_file != nullptr) {
 			al_fclose(m_file);
 			m_file = nullptr;
 			m_closed = true;
-			sde::logger::debug_log("File at: " + m_path + " closed.");
 		}
 	}
 
 	File::~File() {
-		if (!m_closed) {
+		if (!m_closed && m_file != nullptr) {
 			al_fclose(m_file);
 			m_file = nullptr;
 			m_closed = true;
-			sde::logger::debug_log("File at: " + m_path + " closed.");
 		}
 	}
 }
