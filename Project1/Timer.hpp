@@ -31,10 +31,11 @@ namespace sde {
 			void reset() const;
 
 			double get_one_second() const;
-			long get_elapsed_ticks() const;
+			long get_elapsed_time() const;
 
 			bool is_started() const;
 			bool is_running() const;
+			bool is_one_second_elapsed() const;
 
 			void dispose() override;
 	};

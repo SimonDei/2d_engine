@@ -15,16 +15,13 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Main_3.cpp">
-      <Filter>Quelldateien</Filter>
-    </ClCompile>
     <ClCompile Include="Main.cpp">
       <Filter>Quelldateien</Filter>
     </ClCompile>
     <ClCompile Include="Main_call.cpp">
       <Filter>Quelldateien</Filter>
     </ClCompile>
-    <ClCompile Include="MainScreen.cpp">
+    <ClCompile Include="Main_2.cpp">
       <Filter>Quelldateien</Filter>
     </ClCompile>
   </ItemGroup>
@@ -35,7 +32,7 @@
     <ClInclude Include="Main.hpp">
       <Filter>Headerdateien</Filter>
     </ClInclude>
-    <ClInclude Include="MainScreen.hpp">
+    <ClInclude Include="Main_2.hpp">
       <Filter>Headerdateien</Filter>
     </ClInclude>
   </ItemGroup>

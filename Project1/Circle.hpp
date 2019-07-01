@@ -48,10 +48,6 @@ namespace sde {
 				m_radius = radius;
 			}
 
-			const Circle<T>& get_circle() const {
-				return this;
-			}
-
 			inline Circle<T>& operator=(const Circle<T>& other) {
 				m_center_x = other.get_x();
 				m_center_y = other.get_y();

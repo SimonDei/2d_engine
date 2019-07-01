@@ -43,7 +43,7 @@ namespace sde {
 		return al_get_timer_speed(m_timer);
 	}
 
-	long Timer::get_elapsed_ticks() const {
+	long Timer::get_elapsed_time() const {
 		return static_cast<long>(al_get_timer_count(m_timer));
 	}
 
@@ -53,6 +53,13 @@ namespace sde {
 
 	bool Timer::is_running() const {
 		return !m_stopped;
+	}
+
+	bool Timer::is_one_second_elapsed() const {
+		if (static_cast<double>(al_get_timer_count(m_timer)) >= al_get_timer_speed(m_timer)) {
+			return true;
+		}
+		return false;
 	}
 
 	void Timer::dispose() {

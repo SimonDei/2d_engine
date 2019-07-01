@@ -43,10 +43,6 @@ namespace sde {
 				m_alpha = a;
 			}
 
-			const Color4<T>& get_color() const {
-				return this;
-			}
-
 			const ALLEGRO_COLOR get_al_color() const {
 				if (std::is_same<T, unsigned char>::value) {
 					return al_map_rgba(m_red, m_green, m_blue, m_alpha);

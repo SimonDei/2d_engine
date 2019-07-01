@@ -23,7 +23,7 @@ namespace sde {
 		if (!m_timer.is_started()) {
 			m_timer.start_timer();
 		}
-		if (m_timer.get_elapsed_ticks() >= m_timer.get_one_second()) {
+		if (m_timer.get_elapsed_time() >= m_timer.get_one_second()) {
 			m_frame++;
 			if (m_frame > m_max_frames) m_frame = 0;
 			m_timer.reset();

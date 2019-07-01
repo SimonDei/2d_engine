@@ -20,6 +20,14 @@ namespace sde {
 	//==============================
 	//===     DRAW RECTANGLE     ===
 	//==============================
+	void Renderer::draw_rectangle(float x, float y, float width, float height) {
+		al_draw_rectangle(x, y, width, height, m_base_color, m_thickness);
+	}
+
+	void Renderer::draw_rectangle(const Rectangle<float>& rectangle) {
+		al_draw_rectangle(rectangle.get_x(), rectangle.get_y(), rectangle.get_width() , rectangle.get_height(), m_base_color, m_thickness);
+	}
+
 	void Renderer::draw_rectangle(float x, float y, float width, float height, const Color3<unsigned char>& color) {
 		al_draw_rectangle(x, y, width, height, color.get_al_color(), m_thickness);
 	}
@@ -39,6 +47,14 @@ namespace sde {
 	//=====================================
 	//===     DRAW FILLED RECTANGLE     ===
 	//=====================================
+	void Renderer::draw_filled_rectangle(float x, float y, float width, float height) {
+		al_draw_filled_rectangle(x, y, width, height, m_base_color);
+	}
+
+	void Renderer::draw_filled_rectangle(const Rectangle<float>& rectangle) {
+		al_draw_filled_rectangle(rectangle.get_x(), rectangle.get_y(), rectangle.get_width(), rectangle.get_height(), m_base_color);
+	}
+
 	void Renderer::draw_filled_rectangle(float x, float y, float width, float height, const Color3<unsigned char>& color) {
 		al_draw_filled_rectangle(x, y, width, height, color.get_al_color());
 	}
@@ -48,7 +64,7 @@ namespace sde {
 	}
 
 	void Renderer::draw_filled_rectangle(const Rectangle<float>& rectangle, const Color3<unsigned char>& color) {
-		al_draw_filled_rectangle(rectangle.get_x(), rectangle.get_y(), rectangle.get_width(), rectangle.get_height(), color.get_al_color());
+		al_draw_filled_rectangle(rectangle.get_x(), rectangle.get_y(), rectangle.get_x() + rectangle.get_width(), rectangle.get_y() + rectangle.get_height(), color.get_al_color());
 	}
 
 	void Renderer::draw_filled_rectangle(const Rectangle<float>& rectangle, const Color4<unsigned char>& color) {
@@ -62,8 +78,16 @@ namespace sde {
 		al_draw_circle(x, y, radius, m_base_color, m_thickness);
 	}
 
+	void Renderer::draw_circle(const Circle<float>& circle) {
+		al_draw_circle(circle.get_x(), circle.get_y(), circle.get_radius(), m_base_color, m_thickness);
+	}
+
 	void Renderer::draw_circle(float x, float y, float radius, unsigned char red, unsigned char green, unsigned char blue) {
 		al_draw_circle(x, y, radius, al_map_rgb(red, green, blue), m_thickness);
+	}
+
+	void Renderer::draw_circle(const Circle<float>& circle, unsigned char red, unsigned char green, unsigned char blue) {
+		al_draw_circle(circle.get_x(), circle.get_y(), circle.get_radius(), al_map_rgb(red, green, blue), m_thickness);
 	}
 
 	void Renderer::draw_circle(float x, float y, float radius, const Color3<unsigned char>& color) {
@@ -79,6 +103,10 @@ namespace sde {
 	//==================================
 	void Renderer::draw_filled_circle(float x, float y, float radius) {
 		al_draw_filled_circle(x, y, radius, m_base_color);
+	}
+
+	void Renderer::draw_filled_circle(const Circle<float>& circle) {
+		al_draw_filled_circle(circle.get_x(), circle.get_y(), circle.get_radius(), m_base_color);
 	}
 	
 	void Renderer::draw_filled_circle(float x, float y, float radius, unsigned char red, unsigned char green, unsigned char blue) {

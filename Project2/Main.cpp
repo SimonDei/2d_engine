@@ -26,12 +26,6 @@ void Main::init() {
 	m_paddle2.set_position(m_display_width - m_paddle2.get_width() - 50.0f,
 						   m_display_height / 2.0f - m_paddle2.get_height() / 2.0f);
 
-	sde::File conf_file{ "test.conf", sde::FileAccess::WRITE };
-	conf_file.writeln(m_ball.get_center_position().to_string());
-	conf_file.writeln(m_paddle1.get_center_position().to_string());
-	conf_file.write(m_paddle2.get_center_position().to_string());
-	conf_file.dispose();
-
 	if (sde::rand::get_random_number(0, 1) == 0) m_ball_velocity.invert_x();
 	if (sde::rand::get_random_number(0, 1) == 0) m_ball_velocity.invert_y();
 
@@ -42,6 +36,11 @@ void Main::init() {
 		update();
 		render();
 	}
+
+	sde::File savegame{ "savegame.dat", sde::FileAccess::WRITE };
+	savegame.writeln("Player1: " + m_player1_score);
+	savegame.writeln("Player2: " + m_player2_score);
+	savegame.dispose();
 }
 
 void Main::keyboard() {

@@ -65,10 +65,6 @@ namespace sde {
 				return static_cast<T>(std::sqrt(std::pow(m_x, 2) + std::pow(m_y, 2)));
 			}
 
-			const Vector2<T>& get_vector() const {
-				return this;
-			}
-
 			inline Vector2<T>& operator=(const Vector2<T>& other) {
 				m_x = other.get_x();
 				m_y = other.get_y();

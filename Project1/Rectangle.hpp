@@ -59,7 +59,24 @@ namespace sde {
 				m_height = height;
 			}
 
-			bool intersects(const Rectangle<T>& other) {
+			void add_x(const T& x) {
+				m_x += x;
+			}
+			void add_y(const T& y) {
+				m_y += y;
+			}
+			void add_width(const T& width) {
+				m_width += width;
+			}
+			void add_height(const T& height) {
+				m_height += height;
+			}
+			void add_position(const T& x, const T& y) {
+				m_x += x;
+				m_y += y;
+			}
+
+			bool intersects(const Rectangle<T>& other) const {
 				if ((other.m_x <= m_x + m_width || other.m_x + other.m_width >= m_x) &&
 					(other.m_y <= m_y + m_height || other.m_y + other.m_height >= m_y)) {
 					return true;
@@ -67,16 +84,12 @@ namespace sde {
 				return false;
 			}
 
-			bool contains(const Vector2<T>& other) {
+			bool contains(const Vector2<T>& other) const {
 				if ((other.m_x >= m_x && other.m_x <= m_x + m_width) &&
 					(other.m_y >= m_y && other.m_y <= m_y + m_height)) {
 					return true;
 				}
 				return false;
-			}
-
-			const Rectangle<T>& get_rectangle() const {
-				return this;
 			}
 
 			inline Rectangle<T>& operator=(const Rectangle<T>& other) {
