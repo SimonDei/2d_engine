@@ -9,14 +9,12 @@ namespace sde {
 		} else {
 			throw SdeException{ "Sample at " + path + " does not exist." };
 		}
-		m_auto_disposed = true;
 	}
 
 	Music::Music(const Music& music) {
 		m_sample = music.get_sample();
 		m_instance = music.get_sample_instance();
 		m_started = music.get_started();
-		m_auto_disposed = true;
 	}
 
 	void Music::load_music(const std::string& path) {
@@ -26,7 +24,6 @@ namespace sde {
 		} else {
 			throw SdeException{ "Sample at " + path + " does not exist." };
 		}
-		m_auto_disposed = true;
 	}
 
 	bool Music::get_started() const {
@@ -46,7 +43,7 @@ namespace sde {
 	}
 
 	void Music::dispose() {
-		if (m_sample != nullptr && !m_disposed) {
+		if (!m_disposed && m_sample != nullptr) {
 			al_destroy_sample_instance(m_instance);
 			al_destroy_sample(m_sample);
 			m_sample = nullptr;

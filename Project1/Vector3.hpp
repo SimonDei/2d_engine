@@ -92,13 +92,11 @@ namespace sde {
 				m_z = other.get_z();
 				return *this;
 			}
+
+			inline std::string to_string() const {
+				return std::to_string(m_x) + ", " + std::to_string(m_y) + ", " + std::to_string(m_z);
+			}
 	};
 }
-
-/*template<typename T>
-inline std::ostream& operator<<(std::ostream& stream, const sde::Vector3<T>& other) {
-	stream << other.get_x() << ", " << other.get_y() << ", " << other.get_z();
-	return stream;
-}*/
 
 #endif

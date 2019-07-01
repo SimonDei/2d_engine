@@ -3,6 +3,7 @@
 
 #include <allegro5/allegro.h>
 
+#include <iostream>
 #include <string>
 
 #include "Texture.hpp"

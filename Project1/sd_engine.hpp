@@ -33,7 +33,6 @@
 #include "Rectangle.hpp"
 #include "SdeException.hpp"
 #include "Math.hpp"
-#include "Macros.hpp"
 #include "Messagebox.hpp"
 #include "Grid.hpp"
 

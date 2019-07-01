@@ -6,7 +6,7 @@ namespace sde {
 		m_path = path;
 		m_config_file = al_fopen(m_path.c_str(), "r+");
 		char buffer[1024];
-		std::string line;
+		std::string line{ };
 		while ((al_fgets(m_config_file, buffer, 1024)) != 0) {
 			line = std::string(buffer);
 			line = line.substr(0, line.find_first_of('\n', 0));
@@ -36,18 +36,18 @@ namespace sde {
 	}
 
 	void ConfigFile::dispose() {
-		if (!m_closed && m_config_file != nullptr) {
+		if (!m_disposed && m_config_file != nullptr) {
 			al_fclose(m_config_file);
 			m_config_file = nullptr;
-			m_closed = true;
+			m_disposed = true;
 		}
 	}
 
 	ConfigFile::~ConfigFile() {
-		if (!m_closed && m_config_file != nullptr) {
+		if (!m_disposed && m_config_file != nullptr) {
 			al_fclose(m_config_file);
 			m_config_file = nullptr;
-			m_closed = true;
+			m_disposed = true;
 		}
 	}
 }

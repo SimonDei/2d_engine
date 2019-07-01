@@ -18,7 +18,7 @@ namespace sde {
 			std::string m_entry_name{ };
 			std::string m_entry_value{ };
 			std::string m_path{ };
-			bool m_closed{ false };
+
 
 		public:
 			ConfigFile() = default;

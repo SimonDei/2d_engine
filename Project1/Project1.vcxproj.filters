@@ -31,14 +31,8 @@
     <Filter Include="Headerdateien\core">
       <UniqueIdentifier>{c7c6559c-1c57-4cba-bcd3-c6514847b4d7}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Headerdateien\template\interface">
-      <UniqueIdentifier>{f6c6e3ca-2044-43dc-b5e2-8a750a78ea7e}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Headerdateien\core\enums">
       <UniqueIdentifier>{33fab96e-aa21-4710-9cf2-49fd0df44579}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Headerdateien\audio\wrapper">
-      <UniqueIdentifier>{7aef87b4-6cae-4ed3-bd08-91efc8e8a61a}</UniqueIdentifier>
     </Filter>
     <Filter Include="Headerdateien\graphic\wrapper">
       <UniqueIdentifier>{e7fa03ff-e1c7-4acf-b91c-d141087a3e4b}</UniqueIdentifier>
@@ -49,14 +43,8 @@
     <Filter Include="Headerdateien\io">
       <UniqueIdentifier>{6c233e3b-dd34-4441-a469-e16537eb4171}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Headerdateien\util\macro">
-      <UniqueIdentifier>{688af559-2514-4c93-a22c-28a4cc3ae805}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Headerdateien\core\math">
-      <UniqueIdentifier>{f40c125e-2ff3-470f-8a85-24cb7d13b6ba}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Headerdateien\core\screen_system">
-      <UniqueIdentifier>{78947cf0-4bf9-4c05-aa4d-1fd497dba42e}</UniqueIdentifier>
+    <Filter Include="Headerdateien\interface">
+      <UniqueIdentifier>{f6c6e3ca-2044-43dc-b5e2-8a750a78ea7e}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -134,9 +122,6 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Music.hpp">
-      <Filter>Headerdateien\audio\wrapper</Filter>
-    </ClInclude>
     <ClInclude Include="MusicQueue.hpp">
       <Filter>Headerdateien\audio</Filter>
     </ClInclude>
@@ -157,9 +142,6 @@
     </ClInclude>
     <ClInclude Include="MessageReturn.hpp">
       <Filter>Headerdateien\core\enums</Filter>
-    </ClInclude>
-    <ClInclude Include="Math.hpp">
-      <Filter>Headerdateien\core\math</Filter>
     </ClInclude>
     <ClInclude Include="Assets.hpp">
       <Filter>Headerdateien\core</Filter>
@@ -207,13 +189,13 @@
       <Filter>Headerdateien\io</Filter>
     </ClInclude>
     <ClInclude Include="Disposable.hpp">
-      <Filter>Headerdateien\template\interface</Filter>
+      <Filter>Headerdateien\interface</Filter>
     </ClInclude>
     <ClInclude Include="Drawable.hpp">
-      <Filter>Headerdateien\template\interface</Filter>
+      <Filter>Headerdateien\interface</Filter>
     </ClInclude>
     <ClInclude Include="Updateable.hpp">
-      <Filter>Headerdateien\template\interface</Filter>
+      <Filter>Headerdateien\interface</Filter>
     </ClInclude>
     <ClInclude Include="Circle.hpp">
       <Filter>Headerdateien\template</Filter>
@@ -233,9 +215,6 @@
     <ClInclude Include="Vector3.hpp">
       <Filter>Headerdateien\template</Filter>
     </ClInclude>
-    <ClInclude Include="Macros.hpp">
-      <Filter>Headerdateien\util\macro</Filter>
-    </ClInclude>
     <ClInclude Include="Disposer.hpp">
       <Filter>Headerdateien\util</Filter>
     </ClInclude>
@@ -252,7 +231,7 @@
       <Filter>Headerdateien</Filter>
     </ClInclude>
     <ClInclude Include="Transformable.hpp">
-      <Filter>Headerdateien\template\interface</Filter>
+      <Filter>Headerdateien\interface</Filter>
     </ClInclude>
     <ClInclude Include="Timer.hpp">
       <Filter>Headerdateien\util</Filter>
@@ -263,23 +242,29 @@
     <ClInclude Include="SdeException.hpp">
       <Filter>Headerdateien\template</Filter>
     </ClInclude>
-    <ClInclude Include="Screen.hpp">
-      <Filter>Headerdateien\core\screen_system</Filter>
-    </ClInclude>
     <ClInclude Include="Textbox.hpp">
       <Filter>Headerdateien\graphic\gui</Filter>
     </ClInclude>
     <ClInclude Include="Initialisable.hpp">
-      <Filter>Headerdateien\template\interface</Filter>
+      <Filter>Headerdateien\interface</Filter>
     </ClInclude>
     <ClInclude Include="Game.hpp">
-      <Filter>Headerdateien\template\interface</Filter>
+      <Filter>Headerdateien\interface</Filter>
     </ClInclude>
     <ClInclude Include="Grid.hpp">
       <Filter>Headerdateien\util</Filter>
     </ClInclude>
     <ClInclude Include="Random.hpp">
       <Filter>Headerdateien\util</Filter>
+    </ClInclude>
+    <ClInclude Include="Screen.hpp">
+      <Filter>Headerdateien\graphic</Filter>
+    </ClInclude>
+    <ClInclude Include="Math.hpp">
+      <Filter>Headerdateien\util</Filter>
+    </ClInclude>
+    <ClInclude Include="Music.hpp">
+      <Filter>Headerdateien\audio</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

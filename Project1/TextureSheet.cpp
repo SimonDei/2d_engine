@@ -12,7 +12,6 @@ namespace sde {
 		m_tile_width = tile_width;
 		m_tile_height = tile_height;
 		load();
-		m_auto_disposed = true;
 	}
 
 	void TextureSheet::load() {
@@ -57,7 +56,7 @@ namespace sde {
 	}
 	
 	void TextureSheet::dispose() {
-		if (m_bitmap != nullptr && !m_disposed) {
+		if (!m_disposed && m_bitmap != nullptr) {
 			al_destroy_bitmap(m_bitmap);
 			m_bitmap = nullptr;
 			m_disposed = true;

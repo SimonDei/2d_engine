@@ -188,7 +188,6 @@
     <ClInclude Include="Game.hpp" />
     <ClInclude Include="Grid.hpp" />
     <ClInclude Include="Initialisable.hpp" />
-    <ClInclude Include="Macros.hpp" />
     <ClInclude Include="Disposable.hpp" />
     <ClInclude Include="Color3.hpp" />
     <ClInclude Include="Color4.hpp" />

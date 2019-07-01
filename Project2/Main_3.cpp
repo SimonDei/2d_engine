@@ -121,5 +121,5 @@ int main_3() {
 		renderer.display();
 	}
 
-	return SDE_SUCCESS;
+	return 0;
 }
