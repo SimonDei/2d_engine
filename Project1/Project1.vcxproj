@@ -185,6 +185,7 @@
     <ClInclude Include="Assets.hpp" />
     <ClInclude Include="Button.hpp" />
     <ClInclude Include="Circle.hpp" />
+    <ClInclude Include="Color.hpp" />
     <ClInclude Include="Game.hpp" />
     <ClInclude Include="Grid.hpp" />
     <ClInclude Include="Initialisable.hpp" />

@@ -63,7 +63,7 @@ namespace sde {
 	}
 
 	void Timer::dispose() {
-		if (m_timer != nullptr && !m_disposed) {
+		if (!m_disposed && m_timer != nullptr) {
 			al_destroy_timer(m_timer);
 			m_timer = nullptr;
 			m_disposed = true;

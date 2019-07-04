@@ -10,6 +10,38 @@
 
 namespace sde {
 	namespace math {
+		static const float PI = 3.14159265359;
+
+		template<typename T>
+		static T deg_to_rad(T degree) {
+			return degree * static_cast<T>(PI) / static_cast<T>(180.0f);
+		}
+
+		template<typename T>
+		static T rad_to_deg(T radians) {
+			return radians * static_cast<T>(180.0f) / static_cast<T>(PI);
+		}
+
+		template<typename T>
+		static T sin(T x) {
+			return static_cast<T>(std::sin(x));
+		}
+
+		template<typename T>
+		static T cos(T x) {
+			return static_cast<T>(std::cos(x));
+		}
+
+		template<typename T>
+		static T tan(T x) {
+			return static_cast<T>(std::tan(x));
+		}
+
+		template<typename T>
+		static T sqrt(T x) {
+			return static_cast<T>(std::sqrt(x));
+		}
+
 		template<typename T>
 		static bool collision_rect_rect(const Rectangle<T>& rect_1, const Rectangle<T>& rect_2) {
 			if (rect_1.get_x()						 < rect_2.get_x() + rect_2.get_width() &&

@@ -266,5 +266,8 @@
     <ClInclude Include="Music.hpp">
       <Filter>Headerdateien\audio</Filter>
     </ClInclude>
+    <ClInclude Include="Color.hpp">
+      <Filter>Headerdateien\template</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
