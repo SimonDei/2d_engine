@@ -23,6 +23,7 @@
     <ProjectGuid>{B6781816-4136-4363-B69A-08CFFB9ADFEE}</ProjectGuid>
     <RootNamespace>Project1</RootNamespace>
     <WindowsTargetPlatformVersion>10.0.17763.0</WindowsTargetPlatformVersion>
+    <ProjectName>sd_engine</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
@@ -116,7 +117,7 @@
       <LinkLibraryDependencies>true</LinkLibraryDependencies>
     </ProjectReference>
     <Lib>
-      <AdditionalDependencies>%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>opengl32.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Lib>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
@@ -169,7 +170,7 @@
     <ClCompile Include="Disposer.cpp" />
     <ClCompile Include="File.cpp" />
     <ClCompile Include="Font.cpp" />
-    <ClCompile Include="Grid.cpp" />
+    <ClCompile Include="TextureGrid.cpp" />
     <ClCompile Include="Messagebox.cpp" />
     <ClCompile Include="Music.cpp" />
     <ClCompile Include="MusicQueue.cpp" />
@@ -192,7 +193,8 @@
     <ClInclude Include="Circle.hpp" />
     <ClInclude Include="Color.hpp" />
     <ClInclude Include="Game.hpp" />
-    <ClInclude Include="Grid.hpp" />
+    <ClInclude Include="Mouse.hpp" />
+    <ClInclude Include="TextureGrid.hpp" />
     <ClInclude Include="Initialisable.hpp" />
     <ClInclude Include="Disposable.hpp" />
     <ClInclude Include="Color3.hpp" />
@@ -229,6 +231,7 @@
     <ClInclude Include="Textbox.hpp" />
     <ClInclude Include="Texture.hpp" />
     <ClInclude Include="TextureSheet.hpp" />
+    <ClInclude Include="Time.hpp" />
     <ClInclude Include="Timer.hpp" />
     <ClInclude Include="Transformable.hpp" />
     <ClInclude Include="Updateable.hpp" />

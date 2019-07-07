@@ -6,7 +6,7 @@ namespace sde {
 		m_scroll_sprites.insert(m_scroll_sprites.begin() + level, ScrollSprite{ level, pos_x, pos_y, speed_x, speed_y, texture });
 	}
 
-	void Parallax::update(double delta) {
+	void Parallax::update(float delta) {
 		for (auto& sprite : m_scroll_sprites) {
 			sprite.m_offset_x += sprite.m_speed_x * delta * 25.0f;
 			sprite.m_offset_y += sprite.m_speed_y * delta * 25.0f;

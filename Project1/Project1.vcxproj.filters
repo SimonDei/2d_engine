@@ -117,10 +117,10 @@
     <ClCompile Include="Textbox.cpp">
       <Filter>Quelldateien</Filter>
     </ClCompile>
-    <ClCompile Include="Grid.cpp">
+    <ClCompile Include="Camera.cpp">
       <Filter>Quelldateien</Filter>
     </ClCompile>
-    <ClCompile Include="Camera.cpp">
+    <ClCompile Include="TextureGrid.cpp">
       <Filter>Quelldateien</Filter>
     </ClCompile>
   </ItemGroup>
@@ -230,9 +230,6 @@
     <ClInclude Include="Updater.hpp">
       <Filter>Headerdateien\util</Filter>
     </ClInclude>
-    <ClInclude Include="sd_engine.hpp">
-      <Filter>Headerdateien</Filter>
-    </ClInclude>
     <ClInclude Include="Transformable.hpp">
       <Filter>Headerdateien\interface</Filter>
     </ClInclude>
@@ -254,9 +251,6 @@
     <ClInclude Include="Game.hpp">
       <Filter>Headerdateien\interface</Filter>
     </ClInclude>
-    <ClInclude Include="Grid.hpp">
-      <Filter>Headerdateien\util</Filter>
-    </ClInclude>
     <ClInclude Include="Random.hpp">
       <Filter>Headerdateien\util</Filter>
     </ClInclude>
@@ -274,6 +268,18 @@
     </ClInclude>
     <ClInclude Include="Camera.hpp">
       <Filter>Headerdateien\graphic</Filter>
+    </ClInclude>
+    <ClInclude Include="TextureGrid.hpp">
+      <Filter>Headerdateien\graphic</Filter>
+    </ClInclude>
+    <ClInclude Include="Time.hpp">
+      <Filter>Headerdateien\util</Filter>
+    </ClInclude>
+    <ClInclude Include="Mouse.hpp">
+      <Filter>Headerdateien\util</Filter>
+    </ClInclude>
+    <ClInclude Include="sd_engine.hpp">
+      <Filter>Headerdateien</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

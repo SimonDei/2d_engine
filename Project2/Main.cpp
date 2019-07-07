@@ -77,18 +77,18 @@ void Main::update() {
 		//===     MOVEMENT     ===
 		//========================
 		if (m_paddle_up) {
-			m_paddle1.add_y(m_paddle_velocity * m_core.get_frame_time() * 25.0f);
+			m_paddle1.add_y(m_paddle_velocity * sde::time::get_frame_time() * 25.0f);
 		}
 		if (m_paddle_down) {
-			m_paddle1.add_y(-m_paddle_velocity * m_core.get_frame_time() * 25.0f);
+			m_paddle1.add_y(-m_paddle_velocity * sde::time::get_frame_time() * 25.0f);
 		}
-		m_ball.add_position(m_ball_velocity.get_x() * m_core.get_frame_time() * 25.0f,
-							m_ball_velocity.get_y() * m_core.get_frame_time() * 25.0f);
+		m_ball.add_position(m_ball_velocity.get_x() * sde::time::get_frame_time() * 25.0f,
+							m_ball_velocity.get_y() * sde::time::get_frame_time() * 25.0f);
 		if (m_ball.get_y() < m_paddle2.get_y()) {
-			m_paddle2.add_y(-m_paddle_velocity * m_core.get_frame_time() * 25.0f);
+			m_paddle2.add_y(-m_paddle_velocity * sde::time::get_frame_time() * 25.0f);
 		}
 		if (m_ball.get_y() > m_paddle2.get_y() + m_paddle2.get_height()) {
-			m_paddle2.add_y(m_paddle_velocity * m_core.get_frame_time() * 25.0f);
+			m_paddle2.add_y(m_paddle_velocity * sde::time::get_frame_time() * 25.0f);
 		}
 		//=========================
 		//===     COLLISION     ===

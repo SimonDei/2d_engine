@@ -19,7 +19,7 @@ namespace sde {
 		m_timer.set_ticks_per_sec(frames_per_sec);
 	}
 	
-	void Animation::update(double delta) {
+	void Animation::update(float delta) {
 		if (!m_timer.is_started()) {
 			m_timer.start_timer();
 		}

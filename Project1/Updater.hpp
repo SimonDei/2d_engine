@@ -22,7 +22,7 @@ namespace sde {
 			
 			unsigned int get_size() const;
 
-			void update(double delta) override;
+			void update(float delta) override;
 	};
 }
 

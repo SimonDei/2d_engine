@@ -22,8 +22,6 @@ namespace sde {
 
 		m_queue = al_create_event_queue();
 		al_init_timeout(&m_timeout, 1.0 / m_fps);
-		
-		m_old_frame_time = al_get_time();
 	}
 
 	Core::Core(const std::string& name, unsigned int width, unsigned int height) : Core(name) {
@@ -69,12 +67,6 @@ namespace sde {
 		m_running = true;
 	}
 
-	void Core::set_fps(float fps) {
-		m_fps = static_cast<double>(fps);
-
-		al_init_timeout(&m_timeout, 1.0 / m_fps);
-	}
-
 	void Core::init_opengl() {
 		if ((al_get_display_flags(m_display.get_display()) ^ ALLEGRO_OPENGL) != 0) {
 			glMatrixMode(GL_PROJECTION);
@@ -83,6 +75,11 @@ namespace sde {
 			glMatrixMode(GL_MODELVIEW);
 			glLoadIdentity();
 		}
+	}
+
+	void Core::set_fps(float fps) {
+		m_fps = fps;
+		al_init_timeout(&m_timeout, 1.0 / static_cast<double>(m_fps));
 	}
 
 	void Core::start_event_timer() {
@@ -118,37 +115,6 @@ namespace sde {
 		m_paused = paused;
 	}
 
-	void Core::toggle_paused() {
-		m_paused = !m_paused;
-	}
-
-	float Core::get_mouse_x() {
-		al_get_mouse_state(&m_mouse_info);
-		return m_mouse_info.x;
-	}
-
-	float Core::get_mouse_y() {
-		al_get_mouse_state(&m_mouse_info);
-		return m_mouse_info.y;
-	}
-
-	const Vector2<float> Core::get_mouse_position() {
-		al_get_mouse_state(&m_mouse_info);
-		return Vector2<float>{ static_cast<float>(m_mouse_info.x), static_cast<float>(m_mouse_info.y) };
-	}
-
-	double Core::get_game_time() const {
-		return al_get_time();
-	}
-
-	double Core::get_frame_time() const {
-		return m_delta_frame_time;
-	}
-
-	double Core::get_fps() const {
-		return m_current_fps;
-	}
-
 	const Keycode Core::get_keycode() const {
 		return static_cast<Keycode>(m_event.keyboard.keycode);
 	}
@@ -167,10 +133,6 @@ namespace sde {
 	
 	const Display& Core::get_display() const {
 		return m_display;
-	}
-
-	void Core::wait(int ms) const {
-		std::this_thread::sleep_for(std::chrono::milliseconds(ms));
 	}
 
 	void Core::close() {

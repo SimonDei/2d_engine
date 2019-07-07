@@ -10,7 +10,7 @@ namespace sde {
 		return static_cast<unsigned int>(m_update_vector.size());
 	}
 	
-	void Updater::update(double delta) {
+	void Updater::update(float delta) {
 		for (auto& it : m_update_vector) {
 			it->update(delta);
 		}

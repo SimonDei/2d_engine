@@ -44,7 +44,7 @@ namespace sde {
 			
 			void add_parallax_sprite(unsigned int level, float pos_x, float pos_y, float speed_x, float speed_y, const Texture& texture);
 
-			void update(double delta) override;
+			void update(float delta) override;
 
 			void draw() const override;
 			void draw(float x, float y) const override;

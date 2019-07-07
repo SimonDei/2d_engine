@@ -53,8 +53,8 @@ void Main_2::keyboard() {
 }
 
 void Main_2::update() {
-	m_snake.add_position(m_snake_velocity.get_x() * m_core.get_frame_time(),
-						 m_snake_velocity.get_y() * m_core.get_frame_time());
+	m_snake.add_position(m_snake_velocity.get_x() * sde::time::get_frame_time(),
+						 m_snake_velocity.get_y() * sde::time::get_frame_time());
 	if (sde::math::collision_rect_rect(m_snake, m_food)) {
 		m_food.set_rectangle(sde::rand::get_random_number(0.0f, m_grid_width) * m_cell_size,
 							 sde::rand::get_random_number(0.0f, m_grid_height) * m_cell_size,

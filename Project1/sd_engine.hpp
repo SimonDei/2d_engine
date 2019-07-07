@@ -16,6 +16,7 @@
 #include "SpriteQueue.hpp"
 #include "Parallax.hpp"
 #include "Camera.hpp"
+#include "TextureGrid.hpp"
 
 #include "Music.hpp"
 #include "MusicQueue.hpp"
@@ -36,7 +37,6 @@
 #include "SdeException.hpp"
 #include "Math.hpp"
 #include "Messagebox.hpp"
-//#include "Grid.hpp"
 
 #include "Game.hpp"
 #include "Disposable.hpp"

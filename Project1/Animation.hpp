@@ -30,7 +30,7 @@ namespace sde {
 			void set_texture_sheet(const TextureSheet& texture_sheet);
 			void set_frame_time(double frames_per_sec);
 
-			void update(double delta) override;
+			void update(float delta) override;
 
 			void draw() const override;
 			void draw(float x, float y) const override;
