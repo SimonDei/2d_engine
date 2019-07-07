@@ -50,6 +50,13 @@ namespace sde {
 		m_display.set_position(x, y);
 	}
 
+	void Core::set_opengl_enable() const {
+		if (m_running) {
+			throw SdeException{ "Game is already running." };
+		}
+		al_set_new_display_flags(ALLEGRO_OPENGL);
+	}
+
 	void Core::create_window(unsigned int width, unsigned int height) {
 		if (m_running) {
 			throw SdeException{ "Game is already running." };
@@ -66,6 +73,16 @@ namespace sde {
 		m_fps = static_cast<double>(fps);
 
 		al_init_timeout(&m_timeout, 1.0 / m_fps);
+	}
+
+	void Core::init_opengl() {
+		if ((al_get_display_flags(m_display.get_display()) ^ ALLEGRO_OPENGL) != 0) {
+			glMatrixMode(GL_PROJECTION);
+			glLoadIdentity();
+			glOrtho(0.0, m_display.get_width(), m_display.get_height(), 0.0, 1.0, -1.0);
+			glMatrixMode(GL_MODELVIEW);
+			glLoadIdentity();
+		}
 	}
 
 	void Core::start_event_timer() {

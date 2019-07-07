@@ -66,7 +66,7 @@ void Main_2::update() {
 
 void Main_2::render() {
 	m_renderer.clear(sde::color::BLACK);
-
+	
 	m_renderer.draw_filled_rectangle(m_snake, sde::Color3<unsigned char>{ 255, 0, 0 });
 	m_renderer.draw_filled_rectangle(m_food, sde::Color3<unsigned char>{ 255, 255, 0 });
 

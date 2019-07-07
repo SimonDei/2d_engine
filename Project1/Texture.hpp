@@ -2,6 +2,7 @@
 #define _TEXTURE_HPP_
 
 #include <allegro5/allegro.h>
+#include <allegro5/allegro_opengl.h>
 
 #include <string>
 
@@ -30,6 +31,7 @@ namespace sde {
 			float get_height() const;
 
 			ALLEGRO_BITMAP* get_texture() const;
+			unsigned int get_gl_texture() const;
 
 			void dispose() override;
 	};

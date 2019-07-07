@@ -6,6 +6,10 @@ namespace sde {
 		m_thickness = thickness;
 	}
 
+	void Renderer::set_camera(Camera* camera) {
+		m_camera = camera;
+	}
+
 	//==========================
 	//===     DRAW LINES     ===
 	//==========================
@@ -25,42 +29,42 @@ namespace sde {
 	}
 
 	void Renderer::draw_rectangle(const Rectangle<float>& rectangle) {
-		al_draw_rectangle(rectangle.get_x(), rectangle.get_y(), rectangle.get_width() , rectangle.get_height(), m_base_color, m_thickness);
+		al_draw_rectangle(rectangle.get_x(), rectangle.get_y(), rectangle.get_x() + rectangle.get_width() , rectangle.get_y() + rectangle.get_height(), m_base_color, m_thickness);
 	}
 
 	void Renderer::draw_rectangle(float x, float y, float width, float height, const Color3<unsigned char>& color) {
-		al_draw_rectangle(x, y, width, height, color.get_al_color(), m_thickness);
+		al_draw_rectangle(x, y, x + width, y + height, color.get_al_color(), m_thickness);
 	}
 
 	void Renderer::draw_rectangle(float x, float y, float width, float height, const Color4<unsigned char>& color) {
-		al_draw_rectangle(x, y, width, height, color.get_al_color(), m_thickness);
+		al_draw_rectangle(x, y, x + width, y + height, color.get_al_color(), m_thickness);
 	}
 
 	void Renderer::draw_rectangle(const Rectangle<float>& rectangle, const Color3<unsigned char>& color) {
-		al_draw_rectangle(rectangle.get_x(), rectangle.get_y(), rectangle.get_width(), rectangle.get_height(), color.get_al_color(), m_thickness);
+		al_draw_rectangle(rectangle.get_x(), rectangle.get_y(), rectangle.get_x() + rectangle.get_width(), rectangle.get_y() + rectangle.get_height(), color.get_al_color(), m_thickness);
 	}
 
 	void Renderer::draw_rectangle(const Rectangle<float>& rectangle, const Color4<unsigned char>& color) {
-		al_draw_rectangle(rectangle.get_x(), rectangle.get_y(), rectangle.get_width(), rectangle.get_height(), color.get_al_color(), m_thickness);
+		al_draw_rectangle(rectangle.get_x(), rectangle.get_y(), rectangle.get_x() + rectangle.get_width(), rectangle.get_y() + rectangle.get_height(), color.get_al_color(), m_thickness);
 	}
 
 	//=====================================
 	//===     DRAW FILLED RECTANGLE     ===
 	//=====================================
 	void Renderer::draw_filled_rectangle(float x, float y, float width, float height) {
-		al_draw_filled_rectangle(x, y, width, height, m_base_color);
+		al_draw_filled_rectangle(x, y, x + width, y + height, m_base_color);
 	}
 
 	void Renderer::draw_filled_rectangle(const Rectangle<float>& rectangle) {
-		al_draw_filled_rectangle(rectangle.get_x(), rectangle.get_y(), rectangle.get_width(), rectangle.get_height(), m_base_color);
+		al_draw_filled_rectangle(rectangle.get_x(), rectangle.get_y(), rectangle.get_x() + rectangle.get_width(), rectangle.get_y() + rectangle.get_height(), m_base_color);
 	}
 
 	void Renderer::draw_filled_rectangle(float x, float y, float width, float height, const Color3<unsigned char>& color) {
-		al_draw_filled_rectangle(x, y, width, height, color.get_al_color());
+		al_draw_filled_rectangle(x, y, x + width, y + height, color.get_al_color());
 	}
 
 	void Renderer::draw_filled_rectangle(float x, float y, float width, float height, const Color4<unsigned char>& color) {
-		al_draw_filled_rectangle(x, y, width, height, color.get_al_color());
+		al_draw_filled_rectangle(x, y, x + width, y + height, color.get_al_color());
 	}
 
 	void Renderer::draw_filled_rectangle(const Rectangle<float>& rectangle, const Color3<unsigned char>& color) {
@@ -68,7 +72,7 @@ namespace sde {
 	}
 
 	void Renderer::draw_filled_rectangle(const Rectangle<float>& rectangle, const Color4<unsigned char>& color) {
-		al_draw_filled_rectangle(rectangle.get_x(), rectangle.get_y(), rectangle.get_width(), rectangle.get_height(), color.get_al_color());
+		al_draw_filled_rectangle(rectangle.get_x(), rectangle.get_y(), rectangle.get_x() + rectangle.get_width(), rectangle.get_y() + rectangle.get_height(), color.get_al_color());
 	}
 
 	//===========================

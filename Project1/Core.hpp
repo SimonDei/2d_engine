@@ -54,9 +54,11 @@ namespace sde {
 
 			void set_window_title(const std::string& name) const;
 			void set_window_position(unsigned int x, unsigned int y) const;
+			void set_opengl_enable() const;
 			void create_window(unsigned int width, unsigned int height);
 
 			void set_fps(float fps);
+			void init_opengl();
 
 			void start_event_timer();
 			void stop_event_timer() const;

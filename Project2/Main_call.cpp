@@ -1,8 +1,8 @@
-#include "Main_2.hpp"
+#include "Main.hpp"
 
 
 int main() {
-	Main_2 m{ };
+	Main m{ };
 
 	return 0;
 }

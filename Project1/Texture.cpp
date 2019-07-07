@@ -47,6 +47,10 @@ namespace sde {
 		return nullptr;
 	}
 
+	unsigned int Texture::get_gl_texture() const {
+		return al_get_opengl_texture(m_bitmap);
+	}
+
 	void Texture::dispose() {
 		if (!m_disposed && m_bitmap != nullptr) {
 			al_destroy_bitmap(m_bitmap);

@@ -29,18 +29,16 @@ void Main::init() {
 	if (sde::rand::get_random_number(0, 1) == 0) m_ball_velocity.invert_x();
 	if (sde::rand::get_random_number(0, 1) == 0) m_ball_velocity.invert_y();
 
+	//m_camera.set_auto_apply(true);
+	//m_renderer.set_camera(&m_camera);
+
 	m_core.set_paused(true);
-	
+
 	while (m_core.is_running()) {
 		keyboard();
 		update();
 		render();
 	}
-
-	sde::File savegame{ "savegame.dat", sde::FileAccess::WRITE };
-	savegame.writeln("Player1: " + m_player1_score);
-	savegame.writeln("Player2: " + m_player2_score);
-	savegame.dispose();
 }
 
 void Main::keyboard() {
@@ -129,12 +127,16 @@ void Main::update() {
 			m_ball_reset = false;
 		}
 	}
+
+	//m_camera.add_offset_x(0.01f);
 }
 
 void Main::render() {
 	m_renderer.clear(0, 0, 0);
 
-	m_renderer.draw_line(m_display_width / 2.0f, 0.0f, m_display_width / 2.0f, m_display_height);
+	m_renderer.draw_circle(100.0f, 100.0f, 50.0f);
+	
+	/*m_renderer.draw_line(m_display_width / 2.0f, 0.0f, m_display_width / 2.0f, m_display_height);
 	m_renderer.draw_circle(m_display_width / 2.0f, m_display_height / 2.0f, 50.0f);
 
 	m_renderer.draw_text(std::to_string(m_player1_score), m_assets.get_font("arial"), 50.0f, 20.0f);
@@ -142,7 +144,10 @@ void Main::render() {
 
 	m_renderer.draw_object(m_paddle1);
 	m_renderer.draw_object(m_paddle2);
-	m_renderer.draw_object(m_ball);
+	m_renderer.draw_object(m_ball);*/
 
 	m_renderer.display();
+}
+
+void Main::dispose() {
 }

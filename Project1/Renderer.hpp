@@ -9,6 +9,7 @@
 #include "SpriteQueue.hpp"
 #include "Drawable.hpp"
 #include "Font.hpp"
+#include "Camera.hpp"
 #include "Rectangle.hpp"
 #include "Circle.hpp"
 #include "Color3.hpp"
@@ -18,6 +19,7 @@
 namespace sde {
 	class Renderer {
 		private:
+			Camera* m_camera{ nullptr };
 			ALLEGRO_COLOR m_base_color{ 1.0f, 1.0f, 1.0f, 1.0f };
 			float m_thickness{ 1.0f };
 
@@ -27,6 +29,7 @@ namespace sde {
 			~Renderer();
 
 			void set_thickness(float thickness);
+			void set_camera(Camera* camera);
 
 			void draw_line(float x1, float y1, float x2, float y2);
 			void draw_line(float x1, float y1, float x2, float y2, const Color3<unsigned char>& color);
@@ -70,13 +73,19 @@ namespace sde {
 
 			void draw_screen(const Screen& screen);
 
-			inline void clear(unsigned char red, unsigned char green, unsigned char blue) const {
-				al_clear_to_color(al_map_rgb(red, green, blue));
-			}
 			inline void clear(int color) const {
 				al_clear_to_color(al_map_rgb(color >> 16 & 0xFF, color >> 8 & 0xFF, color & 0xFF));
 			}
+			inline void clear(unsigned char red, unsigned char green, unsigned char blue) const {
+				al_clear_to_color(al_map_rgb(red, green, blue));
+			}
+			inline void clear(unsigned char red, unsigned char green, unsigned char blue, unsigned char alpha) {
+				al_clear_to_color(al_map_rgba(red, green, blue, alpha));
+			}
 			inline void clear(const Color3<unsigned char>& color) const {
+				al_clear_to_color(color.get_al_color());
+			}
+			inline void clear(const Color4<unsigned char>& color) const {
 				al_clear_to_color(color.get_al_color());
 			}
 			
