@@ -8,7 +8,7 @@ void Main::init() {
 	
 	m_display_width = m_core.get_display().get_width();
 	m_display_height = m_core.get_display().get_height();
-
+	
 	m_assets.load_font("arial", "res/arial.ttf", 36);
 	m_assets.load_texture("ball", "res/ball.tga");
 	m_assets.load_texture("paddle1", "res/paddle1.tga");

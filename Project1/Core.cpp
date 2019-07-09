@@ -27,8 +27,6 @@ namespace sde {
 	Core::Core(const std::string& name, unsigned int width, unsigned int height) : Core(name) {
 		m_display.create_display(width, height);
 
-		al_set_clipping_rectangle(0, 0, width, height);
-
 		al_register_event_source(m_queue, al_get_display_event_source(m_display.get_display()));
 		al_register_event_source(m_queue, al_get_keyboard_event_source());
 	}

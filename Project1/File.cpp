@@ -7,8 +7,7 @@ namespace sde {
 		m_access = FileAccess::READ;
 		m_file = al_fopen(path.c_str(), "r");
 		read();
-		al_fclose(m_file);
-		m_closed = true;
+		dispose();
 	}
 
 	File::File(const std::string& path, const FileAccess& access) {
@@ -18,8 +17,7 @@ namespace sde {
 			case FileAccess::READ:
 				m_file = al_fopen(path.c_str(), "r");
 				read();
-				al_fclose(m_file);
-				m_closed = true;
+				dispose();
 				break;
 			case FileAccess::WRITE:
 				m_file = al_fopen(path.c_str(), "w+");
@@ -36,8 +34,7 @@ namespace sde {
 		m_access = FileAccess::READ;
 		m_file = al_fopen(path.c_str(), "r");
 		read();
-		al_fclose(m_file);
-		m_closed = true;
+		dispose();
 	}
 
 	void File::open(const std::string& path, const FileAccess& access) {
@@ -47,16 +44,13 @@ namespace sde {
 			case FileAccess::READ:
 				m_file = al_fopen(path.c_str(), "r");
 				read();
-				al_fclose(m_file);
-				m_closed = true;
+				dispose();
 				break;
 			case FileAccess::WRITE:
 				m_file = al_fopen(path.c_str(), "w+");
-				m_closed = false;
 				break;
 			case FileAccess::READ_WRITE:
 				m_file = al_fopen(path.c_str(), "r+");
-				m_closed = false;
 				read();
 				break;
 		}
@@ -72,7 +66,7 @@ namespace sde {
 	}
 	
 	void File::write(const std::string& line) {
-		if (!m_closed) {
+		if (!m_disposed) {
 			al_fseek(m_file, 0, ALLEGRO_SEEK_END);
 			al_fputs(m_file, line.c_str());
 			al_fflush(m_file);
@@ -80,7 +74,7 @@ namespace sde {
 	}
 
 	void File::write(int offset, const std::string& line) {
-		if (!m_closed) {
+		if (!m_disposed) {
 			char buffer[1024];
 			al_fseek(m_file, 0, ALLEGRO_SEEK_SET);
 			for (int i = 0; i <= offset; i++) {
@@ -95,7 +89,7 @@ namespace sde {
 	}
 
 	void File::writeln(const std::string& line) {
-		if (!m_closed) {
+		if (!m_disposed) {
 			al_fseek(m_file, 0, ALLEGRO_SEEK_END);
 			al_fputs(m_file, (line + "\n").c_str());
 			al_fflush(m_file);
@@ -103,7 +97,7 @@ namespace sde {
 	}
 
 	void File::writeln(int offset, const std::string& line) {
-		if (!m_closed) {
+		if (!m_disposed) {
 			char buffer[1024];
 			al_fseek(m_file, 0, ALLEGRO_SEEK_SET);
 			for (int i = 0; i <= offset; i++) {
@@ -142,18 +136,18 @@ namespace sde {
 	}
 
 	void File::dispose() {
-		if (!m_closed && m_file != nullptr) {
+		if (!m_disposed && m_file != nullptr) {
 			al_fclose(m_file);
 			m_file = nullptr;
-			m_closed = true;
+			m_disposed = true;
 		}
 	}
 
 	File::~File() {
-		if (!m_closed && m_file != nullptr) {
+		if (!m_disposed && m_file != nullptr) {
 			al_fclose(m_file);
 			m_file = nullptr;
-			m_closed = true;
+			m_disposed = true;
 		}
 	}
 }

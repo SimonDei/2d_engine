@@ -25,7 +25,7 @@
 #include "Textbox.hpp"
 
 #include "File.hpp"
-#include "ConfigFile.hpp"
+#include "Savegame.hpp"
 
 #include "Vector2.hpp"
 #include "Vector3.hpp"
@@ -36,6 +36,7 @@
 #include "Rectangle.hpp"
 #include "SdeException.hpp"
 #include "Math.hpp"
+#include "IOUtil.hpp"
 #include "Messagebox.hpp"
 
 #include "Game.hpp"

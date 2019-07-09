@@ -31,9 +31,9 @@ namespace sde {
 			void set_auto_apply(bool enabled);
 
 			/**
-			  * Sets the zoom member
-			  * A value greater than 1.0 zooms in, a value less than 1.0 zooms out
-			  * @param zoom - the new value for the camera zoom
+			  * Sets the zoom for the 2D camera.
+			  * A value greater than 1.0 zooms in, a value less than 1.0 zooms out.
+			  * @param zoom - the new value for the camera zoom.
 			**/
 			void set_zoom(float zoom);
 			void add_rotation(float rotation);

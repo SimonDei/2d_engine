@@ -18,7 +18,6 @@ namespace sde {
 			std::unordered_map<unsigned int, std::string> m_lines{ };
 			FileAccess m_access{ };
 			std::string m_path{ };
-			bool m_closed{ false };
 
 			void read();
 
@@ -29,7 +28,19 @@ namespace sde {
 			File(const std::string& path, const FileAccess& access);
 			~File();
 
+			/**
+			  * Opens the file only for reading from it.
+			  * The file will be disposed after reading.
+			  * @param path - The path to the file to be red.
+			**/
 			void open(const std::string& path);
+
+			/**
+			  * Opens the file for the access specified.
+			  * If the access is not read only it has to be disposed to prevent memory leaks.
+			  * @param path - The path to the file to be red.
+			  * @param access - The access to be used for the file.
+			**/
 			void open(const std::string& path, const FileAccess& access);
 
 			void write(const std::string& line);

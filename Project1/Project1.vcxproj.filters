@@ -78,9 +78,6 @@
     <ClCompile Include="Updater.cpp">
       <Filter>Quelldateien</Filter>
     </ClCompile>
-    <ClCompile Include="ConfigFile.cpp">
-      <Filter>Quelldateien</Filter>
-    </ClCompile>
     <ClCompile Include="Animation.cpp">
       <Filter>Quelldateien</Filter>
     </ClCompile>
@@ -121,6 +118,9 @@
       <Filter>Quelldateien</Filter>
     </ClCompile>
     <ClCompile Include="TextureGrid.cpp">
+      <Filter>Quelldateien</Filter>
+    </ClCompile>
+    <ClCompile Include="Savegame.cpp">
       <Filter>Quelldateien</Filter>
     </ClCompile>
   </ItemGroup>
@@ -184,9 +184,6 @@
     </ClInclude>
     <ClInclude Include="SpriteQueue.hpp">
       <Filter>Headerdateien\graphic</Filter>
-    </ClInclude>
-    <ClInclude Include="ConfigFile.hpp">
-      <Filter>Headerdateien\io</Filter>
     </ClInclude>
     <ClInclude Include="File.hpp">
       <Filter>Headerdateien\io</Filter>
@@ -280,6 +277,12 @@
     </ClInclude>
     <ClInclude Include="sd_engine.hpp">
       <Filter>Headerdateien</Filter>
+    </ClInclude>
+    <ClInclude Include="Savegame.hpp">
+      <Filter>Headerdateien\io</Filter>
+    </ClInclude>
+    <ClInclude Include="IOUtil.hpp">
+      <Filter>Headerdateien\io</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
