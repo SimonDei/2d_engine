@@ -9,14 +9,13 @@
 #include "Component.hpp"
 #include "Entity.hpp"
 
-#include "Screen.hpp"
-
 #include "Animation.hpp"
 #include "Sprite.hpp"
 #include "SpriteQueue.hpp"
 #include "Parallax.hpp"
 #include "Camera.hpp"
 #include "TextureGrid.hpp"
+#include "RenderTexture.hpp"
 
 #include "Music.hpp"
 #include "MusicQueue.hpp"

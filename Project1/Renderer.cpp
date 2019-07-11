@@ -25,7 +25,7 @@ namespace sde {
 	//===     DRAW RECTANGLE     ===
 	//==============================
 	void Renderer::draw_rectangle(float x, float y, float width, float height) {
-		al_draw_rectangle(x, y, width, height, m_base_color, m_thickness);
+		al_draw_rectangle(x, y, x + width, y + height, m_base_color, m_thickness);
 	}
 
 	void Renderer::draw_rectangle(const Rectangle<float>& rectangle) {
@@ -57,6 +57,10 @@ namespace sde {
 
 	void Renderer::draw_filled_rectangle(const Rectangle<float>& rectangle) {
 		al_draw_filled_rectangle(rectangle.get_x(), rectangle.get_y(), rectangle.get_x() + rectangle.get_width(), rectangle.get_y() + rectangle.get_height(), m_base_color);
+	}
+
+	void Renderer::draw_filled_rectangle(float x, float y, float width, float height, unsigned char red, unsigned char green, unsigned char blue) {
+		al_draw_filled_rectangle(x, y, x + width, y + height, al_map_rgb(red, green, blue));
 	}
 
 	void Renderer::draw_filled_rectangle(float x, float y, float width, float height, const Color3<unsigned char>& color) {
@@ -164,10 +168,7 @@ namespace sde {
 		}
 	}
 
-	void Renderer::draw_screen(const Screen& screen) {
-		screen.draw();
-	}
-
 	Renderer::~Renderer() {
+		m_camera = nullptr;
 	}
 }

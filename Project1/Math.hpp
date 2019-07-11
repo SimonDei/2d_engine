@@ -3,6 +3,13 @@
 
 #include <cmath>
 
+#ifdef min
+	#undef min
+#endif
+#ifdef max
+	#undef max
+#endif
+
 #include "Vector2.hpp"
 #include "Rectangle.hpp"
 #include "Circle.hpp"
@@ -40,6 +47,34 @@ namespace sde {
 		template<typename T>
 		static T sqrt(T x) {
 			return static_cast<T>(std::sqrt(x));
+		}
+
+		template<typename T>
+		static T min(T x, T y) {
+			if (x < y) {
+				return x;
+			} else {
+				return y;
+			}
+		}
+
+		template<typename T>
+		static T max(T x, T y) {
+			if (x > y) {
+				return x;
+			} else {
+				return y;
+			}
+		}
+
+		template<typename T>
+		static T clamp(T x, T min, T max) {
+			if (x < min) {
+				x = min;
+			} else if (x > max) {
+				x = max;
+			}
+			return x;
 		}
 
 		template<typename T>

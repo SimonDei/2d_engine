@@ -1,8 +1,6 @@
 #ifndef _DISPLAYFLAGS_HPP_
 #define _DISPLAYFLAGS_HPP_
 
-#include <allegro5/allegro.h>
-
 
 namespace sde {
 	enum class DisplayFlags : int {

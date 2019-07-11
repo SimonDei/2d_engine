@@ -4,7 +4,7 @@
 #include <allegro5/allegro.h>
 #include <allegro5/allegro_primitives.h>
 
-#include "Screen.hpp"
+#include "RenderTexture.hpp"
 #include "Sprite.hpp"
 #include "SpriteQueue.hpp"
 #include "Drawable.hpp"
@@ -43,6 +43,7 @@ namespace sde {
 
 			void draw_filled_rectangle(float x, float y, float width, float height);
 			void draw_filled_rectangle(const Rectangle<float>& rectangle);
+			void draw_filled_rectangle(float x, float y, float width, float height, unsigned char red, unsigned char green, unsigned char blue);
 			void draw_filled_rectangle(float x, float y, float width, float height, const Color3<unsigned char>& color);
 			void draw_filled_rectangle(float x, float y, float width, float height, const Color4<unsigned char>& color);			
 			void draw_filled_rectangle(const Rectangle<float>& rectangle, const Color3<unsigned char>& color);			
@@ -68,10 +69,8 @@ namespace sde {
 
 			void draw_object(const Drawable& drawable);
 			void draw_object(const Drawable& drawable, float x, float y);
-
+			
 			void draw_sprite_queue(const SpriteQueue& sprite_queue);
-
-			void draw_screen(const Screen& screen);
 
 			inline void clear(int color) const {
 				al_clear_to_color(al_map_rgb(color >> 16 & 0xFF, color >> 8 & 0xFF, color & 0xFF));
@@ -79,7 +78,7 @@ namespace sde {
 			inline void clear(unsigned char red, unsigned char green, unsigned char blue) const {
 				al_clear_to_color(al_map_rgb(red, green, blue));
 			}
-			inline void clear(unsigned char red, unsigned char green, unsigned char blue, unsigned char alpha) {
+			inline void clear(unsigned char red, unsigned char green, unsigned char blue, unsigned char alpha) const {
 				al_clear_to_color(al_map_rgba(red, green, blue, alpha));
 			}
 			inline void clear(const Color3<unsigned char>& color) const {

@@ -1,8 +1,8 @@
-#include "Main.hpp"
+#include "Main_WorldGen.hpp"
 
 
 int main() {
-	Main m{ };
+	Main_WorldGen m{ };
 
 	return 0;
 }

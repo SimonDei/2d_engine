@@ -10,7 +10,7 @@ namespace sde {
 		public:
 			Game() { }
 			~Game() { }
-
+			
 			virtual void init() = 0;
 			virtual void keyboard() = 0;
 			virtual void update() = 0;

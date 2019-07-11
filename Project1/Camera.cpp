@@ -21,8 +21,27 @@ namespace sde {
 		m_zoom = 1.0f;
 	}
 
+	void Camera::set_camera_bounds(float width, float height) {
+		m_width = width;
+		m_height = height;
+	}
+
 	void Camera::set_auto_apply(bool enabled) {
 		m_auto_apply = enabled;
+	}
+
+	void Camera::set_offset_x(float x) {
+		m_offset_x = x;
+		if (m_auto_apply) {
+			build_transform();
+		}
+	}
+
+	void Camera::set_offset_y(float y) {
+		m_offset_y = y;
+		if (m_auto_apply) {
+			build_transform();
+		}
 	}
 
 	void Camera::set_zoom(float zoom) {
@@ -75,6 +94,13 @@ namespace sde {
 
 	float Camera::get_offset_y() const {
 		return m_offset_y;
+	}
+
+	const Rectangle<float> Camera::get_camera_rect() const {
+		if (m_width <= 0.0f || m_height <= 0.0f) {
+			throw SdeException{ "Camera bounds not set." };
+		}
+		return Rectangle<float>{ -m_offset_x, -m_offset_y, m_width, m_height };
 	}
 
 	Camera::~Camera() {

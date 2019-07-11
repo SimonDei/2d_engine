@@ -81,14 +81,12 @@ namespace sde {
 
 			// ===================================	
 			inline bool poll_events() {
-				time::update();
 				al_wait_for_event(m_queue, &m_event);
 				if (m_event.type == ALLEGRO_EVENT_DISPLAY_CLOSE) { m_running = false; }
 				return al_is_event_queue_empty(m_queue);
 			}
 			// =========== ODER ==================
 			inline bool poll_events_timed() {
-				time::update();
 				m_has_event = al_wait_for_event_until(m_queue, &m_event, &m_timeout);
 				if (m_event.type == ALLEGRO_EVENT_DISPLAY_CLOSE) { m_running = false; }
 				return m_has_event;

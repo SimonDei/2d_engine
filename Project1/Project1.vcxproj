@@ -176,7 +176,7 @@
     <ClCompile Include="MusicQueue.cpp" />
     <ClCompile Include="Parallax.cpp" />
     <ClCompile Include="Renderer.cpp" />
-    <ClCompile Include="Screen.cpp" />
+    <ClCompile Include="RenderTexture.cpp" />
     <ClCompile Include="Sprite.cpp" />
     <ClCompile Include="SpriteQueue.cpp" />
     <ClCompile Include="Textbox.cpp" />
@@ -196,6 +196,7 @@
     <ClInclude Include="Game.hpp" />
     <ClInclude Include="Mouse.hpp" />
     <ClInclude Include="Savegame.hpp" />
+    <ClInclude Include="TextureFlags.hpp" />
     <ClInclude Include="TextureGrid.hpp" />
     <ClInclude Include="Initialisable.hpp" />
     <ClInclude Include="Disposable.hpp" />
@@ -221,7 +222,7 @@
     <ClInclude Include="Music.hpp" />
     <ClInclude Include="MusicQueue.hpp" />
     <ClInclude Include="Random.hpp" />
-    <ClInclude Include="Screen.hpp" />
+    <ClInclude Include="RenderTexture.hpp" />
     <ClInclude Include="SdeException.hpp" />
     <ClInclude Include="Parallax.hpp" />
     <ClInclude Include="Rectangle.hpp" />
