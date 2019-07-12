@@ -194,6 +194,7 @@
     <ClInclude Include="Color.hpp" />
     <ClInclude Include="IOUtil.hpp" />
     <ClInclude Include="Game.hpp" />
+    <ClInclude Include="Keyboard.hpp" />
     <ClInclude Include="Mouse.hpp" />
     <ClInclude Include="Savegame.hpp" />
     <ClInclude Include="TextureFlags.hpp" />

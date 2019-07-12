@@ -37,6 +37,7 @@
 #include "Math.hpp"
 #include "IOUtil.hpp"
 #include "Messagebox.hpp"
+#include "Keyboard.hpp"
 
 #include "Game.hpp"
 #include "Disposable.hpp"

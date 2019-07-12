@@ -26,6 +26,8 @@ namespace sde {
 			TextureSheet(const std::string& path, unsigned int tile_width, unsigned int tile_height);
 			~TextureSheet();
 
+			void load_texture(const std::string& path, unsigned int tile_width, unsigned int tile_height);
+
 			void set_tile_width(float width);
 			void set_tile_height(float height);
 			void set_tile_size(float width, float height);
@@ -33,7 +35,9 @@ namespace sde {
 			float get_tile_width() const;
 			float get_tile_height() const;
 
-			void draw_texture_rect(unsigned int index, float x, float y);
+			void draw_texture_rect(unsigned int index, float dst_x, float dst_y);
+			void draw_texture_rect(float src_x, float src_y, float dst_x, float dst_y);
+			void draw_texture_rect(float src_x, float src_y, float dst_x, float dst_y, float dst_w, float dst_h);
 
 			const Rectangle<float>& get_texture_rect(unsigned int index);
 

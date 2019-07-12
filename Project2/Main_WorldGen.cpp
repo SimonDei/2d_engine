@@ -33,19 +33,19 @@ void Main_WorldGen::update() {
 	al_get_keyboard_state(&state);
 
 	if (al_key_down(&state, (int) sde::Keycode::KEYCODE_W)) {
-		m_camera.add_offset_y(200.0f * sde::time::get_frame_time());
+		m_camera.add_y(200.0f * sde::time::get_frame_time());
 	}
 	if (al_key_down(&state, (int)sde::Keycode::KEYCODE_S)) {
-		m_camera.add_offset_y(-200.0f * sde::time::get_frame_time());
+		m_camera.add_y(-200.0f * sde::time::get_frame_time());
 		//if (m_camera.get_offset_y() >= 0.0f) {
 		//	m_camera.set_offset_y(0.0f);
 		//}
 	}
 	if (al_key_down(&state, (int)sde::Keycode::KEYCODE_A)) {
-		m_camera.add_offset_x(200.0f * sde::time::get_frame_time());
+		m_camera.add_x(200.0f * sde::time::get_frame_time());
 	}
 	if (al_key_down(&state, (int)sde::Keycode::KEYCODE_D)) {
-		m_camera.add_offset_x(-200.0f * sde::time::get_frame_time());
+		m_camera.add_x(-200.0f * sde::time::get_frame_time());
 		//if (m_camera.get_offset_x() >= 0.0f) {
 		//	m_camera.set_offset_x(0.0f);
 		//}
@@ -57,8 +57,8 @@ void Main_WorldGen::render() {
 
 	m_renderer.clear(0, 0, 0, 255);
 	
-	for (int y = -m_camera.get_offset_y() / 16; y < 768 / 16; y++) {
-		for (int x = -m_camera.get_offset_x() / 16; x < 1024 / 16; x++) {
+	for (int y = -m_camera.get_y() / 16; y < 768 / 16; y++) {
+		for (int x = -m_camera.get_x() / 16; x < 1024 / 16; x++) {
 			if (sde::math::collision_rect_rect(sde::Rectangle<float>{ x * 16.0f, y * 16.0f, 16.0f, 16.0f },
 											   m_camera.get_camera_rect())) {
 				switch (m_map.get_pixel_color(x, y)) {

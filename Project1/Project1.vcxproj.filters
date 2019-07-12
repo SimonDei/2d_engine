@@ -287,6 +287,9 @@
     <ClInclude Include="TextureFlags.hpp">
       <Filter>Headerdateien\core\enums</Filter>
     </ClInclude>
+    <ClInclude Include="Keyboard.hpp">
+      <Filter>Headerdateien\core</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Text Include="TODO.txt" />
