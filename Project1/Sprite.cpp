@@ -68,7 +68,4 @@ namespace sde {
 	const Texture& Sprite::get_texture() const {
 		return *m_texture;
 	}
-
-	Sprite::~Sprite() {
-	}
 }

@@ -15,7 +15,4 @@ namespace sde {
 			it->update(delta);
 		}
 	}
-
-	Updater::~Updater() {
-	}
 }

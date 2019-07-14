@@ -1,8 +1,6 @@
 #ifndef _CIRCLE_HPP_
 #define _CIRCLE_HPP_
 
-#include <iostream>
-
 
 namespace sde {
 	template<typename T>
@@ -48,14 +46,14 @@ namespace sde {
 				m_radius = radius;
 			}
 
-			inline Circle<T>& operator=(const Circle<T>& other) {
+			Circle<T>& operator=(const Circle<T>& other) {
 				m_center_x = other.get_x();
 				m_center_y = other.get_y();
 				m_radius = other.get_radius();
 				return *this;
 			}
 
-			inline const std::string to_string() const {
+			std::string to_string() const {
 				return std::to_string(m_center_x) + ", " + std::to_string(m_center_y) + ", " + std::to_string(m_radius);
 			}
 	};

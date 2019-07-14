@@ -1,8 +1,6 @@
 #ifndef _RECTANGLE_HPP_
 #define _RECTANGLE_HPP_
 
-#include <iostream>
-
 #include "Vector2.hpp"
 
 
@@ -24,7 +22,7 @@ namespace sde {
 				m_width = width;
 				m_height = height;
 			}
-			~Rectangle() { }
+			~Rectangle() = default;
 
 			const T& get_x() const {
 				return m_x;
@@ -92,7 +90,7 @@ namespace sde {
 				return false;
 			}
 
-			inline Rectangle<T>& operator=(const Rectangle<T>& other) {
+			Rectangle<T>& operator=(const Rectangle<T>& other) {
 				m_x = other.get_x();
 				m_y = other.get_y();
 				m_width = other.get_width();
@@ -100,7 +98,7 @@ namespace sde {
 				return *this;
 			}
 
-			inline const std::string to_string() const {
+			std::string to_string() const {
 				return std::to_string(m_x) + ", " + std::to_string(m_y) + ", " + std::to_string(m_width) + ", " + std::to_string(m_height);
 			}
 	};

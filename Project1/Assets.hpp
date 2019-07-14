@@ -1,8 +1,6 @@
 #ifndef _ASSETS_HPP_
 #define _ASSETS_HPP_
 
-#include <allegro5/allegro.h>
-
 #include <string>
 #include <unordered_map>
 
@@ -25,7 +23,7 @@ namespace sde {
 		public:
 			Assets() = default;
 			explicit Assets(Assets& assets);
-			~Assets();
+			~Assets() = default;
 
 			void load_music(const std::string& name, const std::string& path);
 			void load_texture(const std::string& name, const std::string& path);

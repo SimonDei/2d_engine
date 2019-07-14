@@ -2,14 +2,16 @@
 
 
 namespace sde {
-	Assets::Assets(Assets& assets) {
-		if (!(m_textures.size() == 0 &&
-			  m_music.size() == 0 &&
-			  m_texture_sheets.size() == 0 &&
-			  m_fonts.size() == 0)) {
+	Assets::Assets(Assets& assets)
+	{
+		if (m_textures.empty() &&
+			m_music.empty() &&
+			m_texture_sheets.empty() &&
+			m_fonts.empty()) {
+			*this = assets;
+		} else {
 			throw SdeException{ "Assets konnte nicht zugewiesen werden. Es sind bereits Werte vorhanden." };
-		}
-		*this = assets;
+		}		
 	}
 
 	void Assets::load_music(const std::string& name, const std::string& path) {
@@ -21,49 +23,45 @@ namespace sde {
 	}
 
 	void Assets::load_texture_sheet(const std::string& name, const std::string& path, unsigned int tile_width, unsigned int tile_height) {
-		m_texture_sheets.insert(std::make_pair(name, std::move(std::make_shared<TextureSheet>(path, tile_width, tile_height))));
+		m_texture_sheets.insert(std::make_pair(name, std::make_shared<TextureSheet>(path, tile_width, tile_height)));
 	}
 
 	void Assets::load_font(const std::string& name, const std::string& path) {
-		m_fonts.insert(std::make_pair(name, std::move(std::make_shared<Font>(path, 12))));
+		m_fonts.insert(std::make_pair(name, std::make_shared<Font>(path, 12)));
 	}
 
 	void Assets::load_font(const std::string& name, const std::string& path, unsigned int size) {
-		m_fonts.insert(std::make_pair(name, std::move(std::make_shared<Font>(path, size))));
+		m_fonts.insert(std::make_pair(name, std::make_shared<Font>(path, size)));
 	}
 
 	const Music& Assets::get_music(const std::string& name) {
 		if (m_music.at(name).m_loaded) {
 			return m_music.at(name).m_music;
-		} else {
-			m_music.at(name).load_music();
-			return m_music.at(name).m_music;
 		}
+		m_music.at(name).load_music();
+		return m_music.at(name).m_music;
 	}
 
 	const Texture& Assets::get_texture(const std::string& name) {
 		if (m_textures.at(name).m_loaded) {
 			return m_textures.at(name).m_texture;
-		} else {
-			m_textures.at(name).load_texture();
-			return m_textures.at(name).m_texture;
 		}
+		m_textures.at(name).load_texture();
+		return m_textures.at(name).m_texture;
 	}
 
 	const TextureSheet& Assets::get_texture_sheet(const std::string& name) const {
 		if (m_texture_sheets.at(name) != nullptr) {
 			return *m_texture_sheets.at(name);
-		} else {
-			throw SdeException{ "Texture sheet " + name + " does not exist." };
 		}
+		throw SdeException{ "Texture sheet " + name + " does not exist." };
 	}
 
 	const Font& Assets::get_font(const std::string& name) const {
 		if (m_fonts.at(name) != nullptr) {
 			return *m_fonts.at(name);
-		} else {
-			throw SdeException{ "Font " + name + " does not exist." };
 		}
+		throw SdeException{ "Font " + name + " does not exist." };
 	}
 
 	void Assets::dispose_music(const std::string& name) {
@@ -86,8 +84,5 @@ namespace sde {
 		for (auto& texturesheet : m_texture_sheets) {
 			texturesheet.second->dispose();
 		}
-	}
-
-	Assets::~Assets() {
 	}
 }

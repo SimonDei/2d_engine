@@ -1,8 +1,6 @@
 #ifndef _VECTOR3_HPP_
 #define _VECTOR3_HPP_
 
-#include <iostream>
-
 
 namespace sde {
 	template<typename T>
@@ -20,7 +18,7 @@ namespace sde {
 				m_y = val2;
 				m_z = val3;
 			}
-			~Vector3() { }
+			~Vector3() = default;
 
 			const T& get_x() const {
 				return m_x;
@@ -82,14 +80,14 @@ namespace sde {
 				return static_cast<T>(std::sqrt(std::pow(m_x, 2) + std::pow(m_y, 2) + std::pow(m_z, 2)));
 			}
 
-			inline Vector3<T>& operator=(const Vector3<T>& other) {
+			Vector3<T>& operator=(const Vector3<T>& other) {
 				m_x = other.get_x();
 				m_y = other.get_y();
 				m_z = other.get_z();
 				return *this;
 			}
 
-			inline const std::string to_string() const {
+			std::string to_string() const {
 				return std::to_string(m_x) + ", " + std::to_string(m_y) + ", " + std::to_string(m_z);
 			}
 	};

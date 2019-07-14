@@ -1,8 +1,6 @@
 #ifndef _COLOR4_HPP_
 #define _COLOR4_HPP_
 
-#include <iostream>
-
 
 namespace sde {
 	template<typename T>
@@ -21,7 +19,7 @@ namespace sde {
 				m_blue = blue;
 				m_alpha = alpha;
 			}
-			~Color4() { }
+			~Color4() = default;
 
 			const T& get_red() const {
 				return m_red;
@@ -43,7 +41,7 @@ namespace sde {
 				m_alpha = a;
 			}
 
-			const ALLEGRO_COLOR get_al_color() const {
+			ALLEGRO_COLOR get_al_color() const {
 				if (std::is_same<T, unsigned char>::value) {
 					return al_map_rgba(m_red, m_green, m_blue, m_alpha);
 				}
@@ -53,7 +51,7 @@ namespace sde {
 				return al_map_rgba(255, 255, 255, 255);
 			}
 
-			inline const std::string to_string() const {
+			istd::string to_string() const {
 				return std::to_string(m_red) + ", " + std::to_string(m_green) + ", " + std::to_string(m_blue) + ", " + std::to_string(m_alpha);
 			}
 	};

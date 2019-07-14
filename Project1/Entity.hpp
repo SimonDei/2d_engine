@@ -16,7 +16,7 @@ namespace sde {
 
 		public:
 			Entity() = default;
-			~Entity() { };
+			~Entity() = default;;
 
 			virtual void add_component(const Component& component) {
 				m_components.insert(std::make_pair(std::string(typeid(component).name()), component));

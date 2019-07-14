@@ -168,6 +168,30 @@ namespace sde {
 		}
 	}
 
+	void Renderer::clear(int color) const {
+		al_clear_to_color(al_map_rgb(color >> 16 & 0xFF, color >> 8 & 0xFF, color & 0xFF));
+	}
+
+	void Renderer::clear(unsigned char red, unsigned char green, unsigned char blue) const {
+		al_clear_to_color(al_map_rgb(red, green, blue));
+	}
+
+	void Renderer::clear(unsigned char red, unsigned char green, unsigned char blue, unsigned char alpha) const {
+		al_clear_to_color(al_map_rgba(red, green, blue, alpha));
+	}
+
+	void Renderer::clear(const Color3<unsigned char>& color) const {
+		al_clear_to_color(color.get_al_color());
+	}
+
+	void Renderer::clear(const Color4<unsigned char>& color) const {
+		al_clear_to_color(color.get_al_color());
+	}
+
+	void Renderer::display() const {
+		al_flip_display();
+	}
+
 	Renderer::~Renderer() {
 		m_camera = nullptr;
 	}

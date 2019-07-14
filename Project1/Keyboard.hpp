@@ -1,5 +1,5 @@
 #ifndef _KEYBOARD_HPP_
-#define _KEYBOARD_HPP-
+#define _KEYBOARD_HPP_
 
 #include <allegro5/allegro.h>
 
@@ -14,10 +14,7 @@ namespace sde {
 
 		static bool is_key_down(const Keycode& keycode) {
 			al_get_keyboard_state(&m_keystate);
-			if (al_key_down(&m_keystate, static_cast<int>(keycode))) {
-				return true;
-			}
-			return false;
+			return al_key_down(&m_keystate, static_cast<int>(keycode));
 		}
 	}
 }

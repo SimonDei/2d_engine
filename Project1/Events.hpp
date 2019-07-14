@@ -1,8 +1,6 @@
 #ifndef _EVENTS_HPP_
 #define _EVENTS_HPP_
 
-#include <allegro5/allegro.h>
-
 
 namespace sde {
 	enum class Event : int {

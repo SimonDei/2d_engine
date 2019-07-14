@@ -7,7 +7,6 @@
 #include <string>
 #include <vector>
 
-#include "Color4.hpp"
 #include "TextureFlags.hpp"
 #include "SdeException.hpp"
 #include "Disposable.hpp"
@@ -29,14 +28,14 @@ namespace sde {
 			explicit Texture(ALLEGRO_BITMAP* al_bitmap);
 			explicit Texture(const std::initializer_list<TextureFlags>& flag_list);
 			Texture(ALLEGRO_BITMAP* al_bitmap, float x, float y, float width, float height);
-			~Texture();
+			~Texture() = default;
 			
 			void load_texture(const std::string& path);
 
 			void lock();
 			void lock(int x, int y, int width, int height);
 			
-			int get_pixel_color(int x, int y);
+			int get_pixel_color(int x, int y) const;
 
 			void unlock();
 

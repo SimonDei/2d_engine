@@ -39,7 +39,4 @@ namespace sde {
 		m_result = static_cast<MessageReturn>(al_show_native_message_box(m_display->get_display(), m_caption.c_str(), "", m_message.c_str(), "", static_cast<int>(m_buttons)));
 		return m_result;
 	}
-
-	Messagebox::~Messagebox() {
-	}
 }

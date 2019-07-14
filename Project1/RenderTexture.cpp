@@ -2,15 +2,15 @@
 
 
 namespace sde {
-	RenderTexture::RenderTexture(unsigned int width, unsigned int height) {
-		al_set_new_bitmap_flags(ALLEGRO_VIDEO_BITMAP);
-		m_bitmap = al_create_bitmap(static_cast<int>(width), static_cast<int>(height));
-		al_set_new_bitmap_flags(0);
-	}
-
 	RenderTexture::RenderTexture(const Vector2<unsigned int>& size) {
 		al_set_new_bitmap_flags(ALLEGRO_VIDEO_BITMAP);
 		m_bitmap = al_create_bitmap(static_cast<int>(size.get_x()), static_cast<int>(size.get_y()));
+		al_set_new_bitmap_flags(0);
+	}
+	
+	RenderTexture::RenderTexture(unsigned int width, unsigned int height) {
+		al_set_new_bitmap_flags(ALLEGRO_VIDEO_BITMAP);
+		m_bitmap = al_create_bitmap(static_cast<int>(width), static_cast<int>(height));
 		al_set_new_bitmap_flags(0);
 	}
 
@@ -115,8 +115,5 @@ namespace sde {
 			m_display = nullptr;
 			m_disposed = true;
 		}
-	}
-
-	RenderTexture::~RenderTexture() {
 	}
 }

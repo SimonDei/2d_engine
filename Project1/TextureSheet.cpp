@@ -63,11 +63,11 @@ namespace sde {
 		al_draw_bitmap_region(m_bitmap, index_rect.get_x(), index_rect.get_y(), index_rect.get_width(), index_rect.get_height(), x, y, 0);
 	}
 
-	void TextureSheet::draw_texture_rect(float src_x, float src_y, float dst_x, float dst_y) {
+	void TextureSheet::draw_texture_rect(float src_x, float src_y, float dst_x, float dst_y) const {
 		al_draw_bitmap_region(m_bitmap, src_x, src_y, m_tile_width, m_tile_height, dst_x, dst_y, 0);
 	}
 
-	void TextureSheet::draw_texture_rect(float src_x, float src_y, float dst_x, float dst_y, float dst_w, float dst_h) {
+	void TextureSheet::draw_texture_rect(float src_x, float src_y, float dst_x, float dst_y, float dst_w, float dst_h) const {
 		al_draw_scaled_bitmap(m_bitmap, src_x, src_y, m_tile_width, m_tile_height, dst_x, dst_y, dst_w, dst_h, 0);
 	}
 
@@ -81,8 +81,5 @@ namespace sde {
 			m_bitmap = nullptr;
 			m_disposed = true;
 		}
-	}
-
-	TextureSheet::~TextureSheet() {
 	}
 }

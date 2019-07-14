@@ -112,13 +112,10 @@ namespace sde {
 		return m_height;
 	}
 
-	const Rectangle<float> Camera::get_camera_rect() const {
+	Rectangle<float> Camera::get_camera_rect() const {
 		if (m_width <= 0.0f || m_height <= 0.0f) {
 			throw SdeException{ "Camera bounds not set." };
 		}
 		return Rectangle<float>{ m_offset_x, m_offset_y, m_width, m_height };
-	}
-
-	Camera::~Camera() {
 	}
 }

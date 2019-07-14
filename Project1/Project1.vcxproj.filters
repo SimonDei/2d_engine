@@ -257,9 +257,6 @@
     <ClInclude Include="Music.hpp">
       <Filter>Headerdateien\audio</Filter>
     </ClInclude>
-    <ClInclude Include="Color.hpp">
-      <Filter>Headerdateien\template</Filter>
-    </ClInclude>
     <ClInclude Include="Camera.hpp">
       <Filter>Headerdateien\graphic</Filter>
     </ClInclude>
@@ -289,6 +286,9 @@
     </ClInclude>
     <ClInclude Include="Keyboard.hpp">
       <Filter>Headerdateien\core</Filter>
+    </ClInclude>
+    <ClInclude Include="Color.hpp">
+      <Filter>Headerdateien\core\enums</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

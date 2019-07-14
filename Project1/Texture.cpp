@@ -32,8 +32,8 @@ namespace sde {
 	void Texture::load_texture(const std::string& path) {
 		if (!m_flags.empty()) {
 			int flag = 0;
-			for (unsigned int i = 0; i < m_flags.size(); i++) {
-				flag |= static_cast<int>(m_flags.at(i));
+			for (auto& m_flag : m_flags) {
+				flag |= static_cast<int>(m_flag);
 			}
 			al_set_new_bitmap_flags(flag);
 		}
@@ -53,8 +53,8 @@ namespace sde {
 		m_region_data = al_lock_bitmap_region(m_bitmap, x, y, width, height, ALLEGRO_PIXEL_FORMAT_RGBA_8888, ALLEGRO_LOCK_READONLY);
 	}
 
-	int Texture::get_pixel_color(int x, int y) {
-		return *((int*)m_region_data->data + x + y * (m_region_data->pitch / m_region_data->pixel_size));
+	int Texture::get_pixel_color(int x, int y) const {
+		return *(static_cast<int*>(m_region_data->data) + x + y * (m_region_data->pitch / m_region_data->pixel_size));
 	}
 
 	void Texture::unlock() {
@@ -87,8 +87,5 @@ namespace sde {
 			m_bitmap = nullptr;
 			m_disposed = true;
 		}
-	}
-
-	Texture::~Texture() {
 	}
 }

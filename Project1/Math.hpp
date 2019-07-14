@@ -78,6 +78,16 @@ namespace sde {
 		}
 
 		template<typename T>
+		static T floor(T x) {
+			return static_cast<T>(std::floor(x));
+		}
+
+		template<typename T>
+		static T round(T x) {
+			return static_cast<T>(std::round(x));
+		}
+
+		template<typename T>
 		static bool collision_rect_rect(const Rectangle<T>& rect_1, const Rectangle<T>& rect_2) {
 			if (rect_1.get_x()						 < rect_2.get_x() + rect_2.get_width() &&
 				rect_1.get_x() + rect_1.get_width()  > rect_2.get_x() &&

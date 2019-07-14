@@ -15,7 +15,7 @@ namespace sde {
 
 		public:
 			SpriteQueue() = default;
-			~SpriteQueue();
+			~SpriteQueue() = default;
 
 			void push_sprite(const Sprite& sprite);
 			void push_sprite(const Sprite& sprite, unsigned int index);

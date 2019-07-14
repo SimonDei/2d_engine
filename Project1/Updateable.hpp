@@ -4,12 +4,9 @@
 
 namespace sde {
 	class Updateable {
-		private:
-
-
 		public:
 			Updateable() = default;
-			~Updateable() { };
+			virtual ~Updateable() = default;
 			
 			virtual void update(float delta) = 0;
 	};

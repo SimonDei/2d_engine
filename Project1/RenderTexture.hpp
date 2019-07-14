@@ -3,12 +3,12 @@
 
 #include <allegro5/allegro.h>
 
-#include "Display.hpp"
 #include "Texture.hpp"
 #include "Color3.hpp"
 #include "Color4.hpp"
 #include "Drawable.hpp"
 #include "Disposable.hpp"
+#include "Vector2.hpp"
 
 
 namespace sde {
@@ -20,9 +20,9 @@ namespace sde {
 
 		public:
 			RenderTexture() = default;
+			explicit RenderTexture(const Vector2<unsigned int>& size);
 			RenderTexture(unsigned int width, unsigned int height);
-			RenderTexture(const Vector2<unsigned int>& size);
-			~RenderTexture();
+			~RenderTexture() = default;
 
 			void create(unsigned int width, unsigned int height);
 

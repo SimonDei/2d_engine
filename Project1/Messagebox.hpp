@@ -1,7 +1,6 @@
 #ifndef _MESSAGEBOX_HPP_
 #define _MESSAGEBOX_HPP_
 
-#include <allegro5/allegro.h>
 #include <allegro5/allegro_native_dialog.h>
 
 #include <string>
@@ -26,7 +25,7 @@ namespace sde {
 			explicit Messagebox(const Display& display);
 			Messagebox(const Display& display, const std::string& caption, const std::string& message);
 			Messagebox(const Display& display, const std::string& caption, const std::string& message, const MessageButtons& buttons);
-			~Messagebox();
+			~Messagebox() = default;
 
 			void set_display(const Display& display);
 			void set_message(const std::string& message);

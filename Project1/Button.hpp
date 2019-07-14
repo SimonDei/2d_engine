@@ -25,7 +25,7 @@ namespace sde {
 			Button() = default;
 			Button(const Texture& button_up, const Texture& button_down);
 			Button(const Texture& button_up, const Texture& button_down, float x, float y, float width, float height);
-			~Button();
+			~Button() = default;
 
 			void set_handle_function(const std::function<void()>& function);
 

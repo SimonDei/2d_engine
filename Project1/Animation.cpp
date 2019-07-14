@@ -15,7 +15,7 @@ namespace sde {
 		m_texture_sheet = std::make_shared<TextureSheet>(texture_sheet);
 	}
 
-	void Animation::set_frame_time(double frames_per_sec) {
+	void Animation::set_frame_time(double frames_per_sec) const {
 		m_timer.set_ticks_per_sec(frames_per_sec);
 	}
 	

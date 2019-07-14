@@ -36,7 +36,4 @@ namespace sde {
 			//al_draw_scaled_bitmap(sprite.m_texture->get_texture(), 0.0f, 0.0f, sprite.m_texture->get_width(), sprite.m_texture->get_height(), x + sprite.m_pos_x, y + sprite.m_pos_y, m_width, m_height, 0);
 		}
 	}
-
-	Parallax::~Parallax() {
-	}
 }

@@ -1,14 +1,12 @@
 #ifndef _MUSIC_HPP_
 #define _MUSIC_HPP_
 
-#include <allegro5/allegro.h>
 #include <allegro5/allegro_audio.h>
-#include <allegro5/allegro_acodec.h>
 
 #include <string>
 
-#include "SdeException.hpp"
 #include "Disposable.hpp"
+#include "SdeException.hpp"
 
 
 namespace sde {
@@ -23,7 +21,7 @@ namespace sde {
 			Music() = default;
 			explicit Music(const std::string& path);
 			explicit Music(const Music& music);
-			~Music();
+			~Music() = default;
 			
 			void load_music(const std::string& path);
 

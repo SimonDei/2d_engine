@@ -6,10 +6,8 @@
 
 namespace sde {
 	class SdeException : public std::exception {
-		private:
-		
 		public:
-			SdeException(const std::string& message) : std::exception(message.c_str()) { }
+			explicit SdeException(const std::string& message) : std::exception(message.c_str()) { }
 	};
 }
 

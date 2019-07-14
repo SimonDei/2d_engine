@@ -46,7 +46,4 @@ namespace sde {
 		al_draw_scaled_bitmap(m_texture->get_texture(), 0.0f, 0.0f, m_texture->get_width(), m_texture->get_height(), x, y, m_width, m_height, 0);
 		al_draw_text(m_font->get_font(), m_text_color, x + m_width / 33.0f, y + m_height / 3.0f, 0, m_text.c_str());
 	}
-
-	Textbox::~Textbox() {
-	}
 }

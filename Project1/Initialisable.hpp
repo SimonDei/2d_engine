@@ -4,12 +4,9 @@
 
 namespace sde {
 	class Initialisable {
-		private:
-
-
 		public:
 			Initialisable() = default;
-			~Initialisable() { };
+			virtual ~Initialisable() = default;;
 
 			virtual void initialise() = 0;
 	};

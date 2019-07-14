@@ -20,7 +20,7 @@ namespace sde {
 		public:
 			Font() = default;
 			Font(const std::string& path, unsigned int size);
-			~Font();
+			~Font() = default;
 
 			void load_font(const std::string& path, unsigned int size);
 

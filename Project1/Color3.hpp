@@ -1,8 +1,6 @@
 #ifndef _COLOR3_HPP_
 #define _COLOR3_HPP_
 
-#include <iostream>
-
 
 namespace sde {
 	template<typename T>
@@ -19,7 +17,7 @@ namespace sde {
 				m_green = green;
 				m_blue = blue;
 			}
-			~Color3() { }
+			~Color3() = default;
 
 			const T& get_red() const {
 				return m_red;
@@ -37,7 +35,7 @@ namespace sde {
 				m_blue = b;
 			}
 
-			const ALLEGRO_COLOR get_al_color() const {
+			ALLEGRO_COLOR get_al_color() const {
 				if (std::is_same<T, unsigned char>::value) {
 					return al_map_rgb(m_red, m_green, m_blue);
 				}
@@ -47,7 +45,7 @@ namespace sde {
 				return al_map_rgb(255, 255, 255);
 			}
 
-			inline const std::string to_string() const {
+			std::string to_string() const {
 				return std::to_string(m_red) + ", " + std::to_string(m_green) + ", " + std::to_string(m_blue);
 			}
 	};

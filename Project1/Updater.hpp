@@ -2,10 +2,8 @@
 #define _UPDATER_HPP_
 
 #include <vector>
-#include <memory>
 
 #include "Updateable.hpp"
-#include "SdeException.hpp"
 
 
 namespace sde {
@@ -16,7 +14,7 @@ namespace sde {
 
 		public:
 			Updater() = default;
-			~Updater();
+			~Updater() = default;
 
 			void add_updateable(Updateable* updateable);
 			

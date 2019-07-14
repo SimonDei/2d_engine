@@ -38,6 +38,7 @@
 #include "IOUtil.hpp"
 #include "Messagebox.hpp"
 #include "Keyboard.hpp"
+#include "Time.hpp"
 
 #include "Game.hpp"
 #include "Disposable.hpp"

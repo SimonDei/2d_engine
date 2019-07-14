@@ -14,12 +14,12 @@ namespace sde {
 		}
 
 		static int get_random_number(int min, int max) {
-			std::uniform_int_distribution<int> dist(min, max);
+			const std::uniform_int_distribution<int> dist(min, max);
 			return dist(rand_engine);
 		}
 
 		static float get_random_number(float min, float max) {
-			std::uniform_real_distribution<float> dist(min, max);
+			const std::uniform_real_distribution<float> dist(min, max);
 			return dist(rand_engine);
 		}
 	}

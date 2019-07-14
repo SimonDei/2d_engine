@@ -1,7 +1,6 @@
 #ifndef _TEXTUREGRID_HPP_
 #define _TEXTUREGRID_HPP_
 
-#include <unordered_map>
 #include <vector>
 
 #include "Texture.hpp"
@@ -19,7 +18,7 @@ namespace sde {
 		public:
 			TextureGrid() = default;
 			TextureGrid(int width, int height, int tile_size);
-			~TextureGrid();
+			~TextureGrid() = default;
 
 			void set_rect_texture(int x, int y, const Texture& texture);
 

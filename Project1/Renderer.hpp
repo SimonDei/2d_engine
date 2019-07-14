@@ -4,8 +4,6 @@
 #include <allegro5/allegro.h>
 #include <allegro5/allegro_primitives.h>
 
-#include "RenderTexture.hpp"
-#include "Sprite.hpp"
 #include "SpriteQueue.hpp"
 #include "Drawable.hpp"
 #include "Font.hpp"
@@ -72,25 +70,13 @@ namespace sde {
 			
 			void draw_sprite_queue(const SpriteQueue& sprite_queue);
 
-			inline void clear(int color) const {
-				al_clear_to_color(al_map_rgb(color >> 16 & 0xFF, color >> 8 & 0xFF, color & 0xFF));
-			}
-			inline void clear(unsigned char red, unsigned char green, unsigned char blue) const {
-				al_clear_to_color(al_map_rgb(red, green, blue));
-			}
-			inline void clear(unsigned char red, unsigned char green, unsigned char blue, unsigned char alpha) const {
-				al_clear_to_color(al_map_rgba(red, green, blue, alpha));
-			}
-			inline void clear(const Color3<unsigned char>& color) const {
-				al_clear_to_color(color.get_al_color());
-			}
-			inline void clear(const Color4<unsigned char>& color) const {
-				al_clear_to_color(color.get_al_color());
-			}
-			
-			inline void display() const {
-				al_flip_display();
-			}
+			inline void clear(int color) const;
+			inline void clear(unsigned char red, unsigned char green, unsigned char blue) const;
+			inline void clear(unsigned char red, unsigned char green, unsigned char blue, unsigned char alpha) const;
+			inline void clear(const Color3<unsigned char>& color) const;
+			inline void clear(const Color4<unsigned char>& color) const;
+
+			inline void display() const;
 	};
 }
 

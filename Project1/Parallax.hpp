@@ -40,7 +40,7 @@ namespace sde {
 
 		public:
 			Parallax() = default;
-			~Parallax();
+			~Parallax() = default;
 			
 			void add_parallax_sprite(unsigned int level, float pos_x, float pos_y, float speed_x, float speed_y, const Texture& texture);
 

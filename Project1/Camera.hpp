@@ -20,7 +20,7 @@ namespace sde {
 			float m_height{ 0.0f };
 			bool m_auto_apply{ false };
 
-			inline void build_transform() {
+			void build_transform() {
 				al_build_transform(&m_transform, -m_offset_x, -m_offset_y, m_zoom, m_zoom, m_rotation);
 				al_use_transform(&m_transform);
 			}
@@ -29,7 +29,7 @@ namespace sde {
 		public:
 			Camera() : Camera{ 0.0f, 0.0f } { };
 			Camera(float width, float height);
-			~Camera();
+			~Camera() = default;
 
 			void apply();
 			void reset();
@@ -60,8 +60,8 @@ namespace sde {
 			float get_y() const;
 			float get_width() const;
 			float get_height() const;
-	
-			const Rectangle<float> get_camera_rect() const;
+
+			Rectangle<float> get_camera_rect() const;
 	};
 }
 

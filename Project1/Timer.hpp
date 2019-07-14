@@ -20,7 +20,7 @@ namespace sde {
 		public:
 			Timer() = default;
 			explicit Timer(double ticks_per_sec);
-			~Timer();
+			~Timer() = default;
 
 			void set_ticks_per_sec(double ticks_per_sec) const;
 

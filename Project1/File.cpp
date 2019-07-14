@@ -7,7 +7,7 @@ namespace sde {
 		m_access = FileAccess::READ;
 		m_file = al_fopen(path.c_str(), "r");
 		read();
-		dispose();
+		File::dispose();
 	}
 
 	File::File(const std::string& path, const FileAccess& access) {
@@ -17,7 +17,7 @@ namespace sde {
 			case FileAccess::READ:
 				m_file = al_fopen(path.c_str(), "r");
 				read();
-				dispose();
+				File::dispose();
 				break;
 			case FileAccess::WRITE:
 				m_file = al_fopen(path.c_str(), "w+");
@@ -65,7 +65,7 @@ namespace sde {
 		}
 	}
 	
-	void File::write(const std::string& line) {
+	void File::write(const std::string& line) const {
 		if (!m_disposed) {
 			al_fseek(m_file, 0, ALLEGRO_SEEK_END);
 			al_fputs(m_file, line.c_str());
@@ -73,7 +73,7 @@ namespace sde {
 		}
 	}
 
-	void File::write(int offset, const std::string& line) {
+	void File::write(int offset, const std::string& line) const {
 		if (!m_disposed) {
 			char buffer[1024];
 			al_fseek(m_file, 0, ALLEGRO_SEEK_SET);
@@ -88,7 +88,7 @@ namespace sde {
 		}
 	}
 
-	void File::writeln(const std::string& line) {
+	void File::writeln(const std::string& line) const {
 		if (!m_disposed) {
 			al_fseek(m_file, 0, ALLEGRO_SEEK_END);
 			al_fputs(m_file, (line + "\n").c_str());
@@ -96,7 +96,7 @@ namespace sde {
 		}
 	}
 
-	void File::writeln(int offset, const std::string& line) {
+	void File::writeln(int offset, const std::string& line) const {
 		if (!m_disposed) {
 			char buffer[1024];
 			al_fseek(m_file, 0, ALLEGRO_SEEK_SET);
@@ -116,7 +116,7 @@ namespace sde {
 	}
 
 	const std::pair<unsigned int, std::string>& File::get_line_by_filter(const std::string& filter) {
-		for (std::unordered_map<unsigned int, std::string>::iterator it = m_lines.begin(); it != m_lines.end(); it++) {
+		for (auto it = m_lines.begin(); it != m_lines.end(); ++it) {
 			if (it->second == filter) {
 				return std::make_pair(it->first, m_lines.at(it->first));
 			}
@@ -125,7 +125,7 @@ namespace sde {
 	}
 
 	const std::pair<unsigned int, std::string>& File::get_line_by_filter_with_index(const std::string& filter, unsigned int start_index) {
-		for (std::unordered_map<unsigned int, std::string>::iterator it = m_lines.begin(); it != m_lines.end(); it++) {
+		for (auto it = m_lines.begin(); it != m_lines.end(); ++it) {
 			if (it->first >= start_index) {
 				if (it->second == filter) {
 					return std::make_pair(it->first, m_lines.at(it->first));

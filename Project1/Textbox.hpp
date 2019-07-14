@@ -1,8 +1,6 @@
 #ifndef _TEXTBOX_HPP_
 #define _TEXTBOX_HPP_
 
-#include <allegro5/allegro_font.h>
-
 #include <memory>
 
 #include "Texture.hpp"
@@ -29,7 +27,7 @@ namespace sde {
 			Textbox() = default;
 			explicit Textbox(const Texture& texture);
 			Textbox(const Texture& texture, const Font& font);
-			~Textbox();
+			~Textbox() = default;
 
 			void set_text_color(unsigned char red, unsigned char green, unsigned char blue);
 			void set_max_size(unsigned char max_size);

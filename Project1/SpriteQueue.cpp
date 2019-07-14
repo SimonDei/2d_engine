@@ -13,7 +13,4 @@ namespace sde{
 	const std::unordered_map<unsigned int, std::shared_ptr<Sprite>>& SpriteQueue::get_sprite_map() const {
 		return m_sprite_map;
 	}
-
-	SpriteQueue::~SpriteQueue() {
-	}
 }

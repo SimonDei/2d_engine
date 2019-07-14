@@ -11,7 +11,8 @@ namespace sde {
 		}
 	}
 
-	Music::Music(const Music& music) {
+	Music::Music(const Music& music)
+	{
 		m_sample = music.get_sample();
 		m_instance = music.get_sample_instance();
 		m_started = music.get_started();
@@ -50,8 +51,5 @@ namespace sde {
 			m_instance = nullptr;
 			m_disposed = true;
 		}
-	}
-
-	Music::~Music() {
 	}
 }

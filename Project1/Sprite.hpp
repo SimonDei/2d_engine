@@ -8,7 +8,6 @@
 #include "Texture.hpp"
 #include "Transformable.hpp"
 #include "Drawable.hpp"
-#include "Rectangle.hpp"
 
 
 namespace sde {
@@ -25,7 +24,7 @@ namespace sde {
 			Sprite(const std::string& path, float x, float y);
 			Sprite(const Texture& texture, float x, float y);
 			Sprite(const Texture& texture, float x, float y, float rotation);
-			~Sprite();
+			~Sprite() = default;
 
 			void set_texture(const Texture& texture);
 

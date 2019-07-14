@@ -28,7 +28,7 @@ namespace sde {
 			~Animation();
 
 			void set_texture_sheet(const TextureSheet& texture_sheet);
-			void set_frame_time(double frames_per_sec);
+			void set_frame_time(double frames_per_sec) const;
 
 			void update(float delta) override;
 

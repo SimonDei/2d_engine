@@ -9,7 +9,7 @@ namespace sde {
 
 		public:
 			Component() = default;
-			~Component() { };
+			~Component() = default;
 	};
 }
 

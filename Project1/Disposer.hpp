@@ -1,7 +1,6 @@
 #ifndef _DISPOSER_HPP_
 #define _DISPOSER_HPP_
 
-#include <iostream>
 #include <vector>
 
 #include "Disposable.hpp"

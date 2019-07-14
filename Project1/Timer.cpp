@@ -56,10 +56,7 @@ namespace sde {
 	}
 
 	bool Timer::is_one_second_elapsed() const {
-		if (static_cast<double>(al_get_timer_count(m_timer)) >= al_get_timer_speed(m_timer)) {
-			return true;
-		}
-		return false;
+		return static_cast<double>(al_get_timer_count(m_timer)) >= al_get_timer_speed(m_timer);
 	}
 
 	void Timer::dispose() {
@@ -68,8 +65,5 @@ namespace sde {
 			m_timer = nullptr;
 			m_disposed = true;
 		}
-	}
-
-	Timer::~Timer() {
 	}
 }

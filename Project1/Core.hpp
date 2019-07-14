@@ -3,10 +3,6 @@
 
 #include <allegro5/allegro.h>
 #include <allegro5/allegro_image.h>
-#include <allegro5/allegro_audio.h>
-#include <allegro5/allegro_acodec.h>
-#include <allegro5/allegro_font.h>
-#include <allegro5/allegro_ttf.h>
 #include <allegro5/allegro_native_dialog.h>
 #include <allegro5/allegro_primitives.h>
 
@@ -20,7 +16,6 @@
 #include "Assets.hpp"
 
 #include "Events.hpp"
-#include "DisplayFlags.hpp"
 #include "Keycodes.hpp"
 
 
@@ -71,40 +66,40 @@ namespace sde {
 				m_disposer.add_disposable(disposable);
 			}
 
-			inline bool is_paused() const { 
+			bool is_paused() const { 
 				return m_paused;
 			};
 
-			inline bool is_running() {
+			bool is_running() const {
 				return m_running;
 			}
 
 			// ===================================	
-			inline bool poll_events() {
+			bool poll_events() {
 				al_wait_for_event(m_queue, &m_event);
 				if (m_event.type == ALLEGRO_EVENT_DISPLAY_CLOSE) { m_running = false; }
 				return al_is_event_queue_empty(m_queue);
 			}
 			// =========== ODER ==================
-			inline bool poll_events_timed() {
+			bool poll_events_timed() {
 				m_has_event = al_wait_for_event_until(m_queue, &m_event, &m_timeout);
 				if (m_event.type == ALLEGRO_EVENT_DISPLAY_CLOSE) { m_running = false; }
 				return m_has_event;
 			}
 			// ===================================
 
-			inline void update() {
+			void update() {
 				m_updater.update(time::get_frame_time());
 			}
 
-			inline const Event get_event_type() const {
+			Event get_event_type() const {
 				return static_cast<Event>(m_event.type);
 			}
 
 			Assets& get_assets();
 			Updater& get_updater();
 			Disposer& get_disposer();
-			const Keycode get_keycode() const;
+			Keycode get_keycode() const;
 			const Display& get_display() const;
 	
 			void close();

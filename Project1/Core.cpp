@@ -113,7 +113,7 @@ namespace sde {
 		m_paused = paused;
 	}
 
-	const Keycode Core::get_keycode() const {
+	Keycode Core::get_keycode() const {
 		return static_cast<Keycode>(m_event.keyboard.keycode);
 	}
 

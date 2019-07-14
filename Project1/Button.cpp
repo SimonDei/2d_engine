@@ -78,7 +78,4 @@ namespace sde {
 			al_draw_scaled_bitmap(m_button_up->get_texture(), 0.0f, 0.0f, m_button_up->get_width(), m_button_up->get_height(), x, y, m_width, m_height, 0);
 		}
 	}
-
-	Button::~Button() {
-	}
 }

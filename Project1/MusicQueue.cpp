@@ -2,7 +2,7 @@
 
 
 namespace sde {
-	void MusicQueue::set_volume(float volume) {
+	void MusicQueue::set_volume(float volume) const {
 		al_set_sample_instance_gain(m_playing_music->get_sample_instance(), volume / 100.0f);
 	}
 
@@ -58,8 +58,5 @@ namespace sde {
 
 	bool MusicQueue::is_playing() const {
 		return !m_paused;
-	}
-
-	MusicQueue::~MusicQueue() {
 	}
 }

@@ -6,7 +6,6 @@
 #include <string>
 #include <unordered_map>
 
-#include "Logger.hpp"
 #include "FileAccess.hpp"
 #include "Disposable.hpp"
 
@@ -24,7 +23,7 @@ namespace sde {
 
 		public:
 			File() = default;
-			File(const std::string& path);
+			explicit File(const std::string& path);
 			File(const std::string& path, const FileAccess& access);
 			~File();
 
@@ -43,11 +42,11 @@ namespace sde {
 			**/
 			void open(const std::string& path, const FileAccess& access);
 
-			void write(const std::string& line);
-			void write(int offset, const std::string& line);
+			void write(const std::string& line) const;
+			void write(int offset, const std::string& line) const;
 
-			void writeln(const std::string& line);
-			void writeln(int offset, const std::string& line);
+			void writeln(const std::string& line) const;
+			void writeln(int offset, const std::string& line) const;
 
 			const std::string& get_line(unsigned int index) const;
 			const std::pair<unsigned int, std::string>& get_line_by_filter(const std::string& filter);

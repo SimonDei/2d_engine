@@ -4,12 +4,9 @@
 
 namespace sde {
 	class Game {
-		private:
-
-
 		public:
-			Game() { }
-			~Game() { }
+			Game() = default;
+			virtual ~Game() = default;
 			
 			virtual void init() = 0;
 			virtual void keyboard() = 0;

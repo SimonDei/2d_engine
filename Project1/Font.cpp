@@ -25,7 +25,4 @@ namespace sde {
 			m_disposed = true;
 		}
 	}
-
-	Font::~Font() {
-	}
 }
