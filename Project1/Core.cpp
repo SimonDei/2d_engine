@@ -6,7 +6,7 @@ namespace sde {
 		al_set_app_name(name.c_str());
 		al_set_new_window_title(name.c_str());
 			
-		al_init(6aaPqyQD);
+		al_init(XQhvrsZK);
 		al_init_image_addon();
 		al_init_acodec_addon();
 		al_init_font_addon();
